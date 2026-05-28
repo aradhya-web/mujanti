@@ -570,7 +570,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
 <nav id="navbar" class="top">
 <div class="container nav-inner">
   <a href="#home" class="logo">
-     <img src="assets/logo.png" alt="Mujanti Logo" style="height: 40px; width: auto;">
+     <img src="assets/logo.png" alt="Mujanti Logo" style="height: 60px; max-width: 250px; object-fit: contain;">
   </a>
   <div class="nav-links">
     <a href="#services">Services</a>
@@ -922,26 +922,10 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
   </div>
   <div class="testi-carousel fu">
     <div class="testi-track" id="testiTrack">
-      <div class="testi-slide">
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <div class="quote-icon">"</div>
-          <p>We had been trying to register our FPC for two years with no success. AgriFPO Impact completed the entire registration in six weeks and then enrolled us in a carbon program. We received our first payment of ₹4.2 lakhs this season.</p>
-          <div class="testi-author"><div class="avatar">R</div><div><h5>Ramesh Patil</h5><span>Chairman, Vidarbha Cotton Growers FPC, Maharashtra</span></div></div>
+      
+      <div class="testi-slide" id="testimonial-container">
         </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <div class="quote-icon">"</div>
-          <p>The website and member tracking software changed everything. Our board can see every farmer's crop cycle, input costs, and delivery schedule from their phone. We used to do all of this on paper — now everything is in one place.</p>
-          <div class="testi-author"><div class="avatar">S</div><div><h5>Savitri Devi</h5><span>CEO, Bundelkhand Women Farmers FPC, UP</span></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <div class="quote-icon">"</div>
-          <p>I did not know what a carbon credit was one year ago. Today our FPO earns from the trees we planted — money that goes directly to 520 tribal families. They explained everything in Odia and walked with us at every single step.</p>
-          <div class="testi-author"><div class="avatar">D</div><div><h5>Dinabandhu Majhi</h5><span>Secretary, Koraput Agroforestry FPC, Odisha</span></div></div>
-        </div>
-      </div>
+
     </div>
     <div class="carousel-dots">
       <button class="dot active" onclick="goSlide(0)"></button>
@@ -1090,7 +1074,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#home" class="logo">
-        <img src="assets/logo.png" alt="Mujanti Logo" style="height: 50px; width: auto;">
+        <img src="assets/logo.png" alt="Mujanti Logo" style="height: 100px; max-width: 300px; object-fit: contain;">
       </a>
       <p>Mujanti's dedicated FPO services, carbon credit consulting, and sustainability media platform. Every farmer deserves access to the systems, knowledge, and markets to thrive.</p>
       <div class="footer-social">
@@ -1153,105 +1137,161 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
 
 <!-- ════ SCRIPTS ════ -->
 <script>
-/* ── Nav scroll state ── */
-const navbar = document.getElementById('navbar');
-const scrollTopBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    navbar.classList.remove('top');
-    navbar.classList.add('scrolled');
-    scrollTopBtn.classList.add('show');
-  } else {
-    navbar.classList.add('top');
-    navbar.classList.remove('scrolled');
-    scrollTopBtn.classList.remove('show');
+document.addEventListener("DOMContentLoaded", () => {
+  /* ── 1. Caching DOM Elements ── */
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  /* ── 2. Nav Scroll State & Highlighting (Optimized) ── */
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // Toggle Nav & Scroll Button
+    if (navbar && scrollTopBtn) {
+      if (scrollY > 60) {
+        navbar.classList.replace('top', 'scrolled');
+        scrollTopBtn.classList.add('show');
+      } else {
+        navbar.classList.replace('scrolled', 'top');
+        scrollTopBtn.classList.remove('show');
+      }
+    }
+
+    // Active Link Highlighting
+    let currentId = '';
+    sections.forEach(s => {
+      if (scrollY >= s.offsetTop - 90) currentId = s.id;
+    });
+
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+    });
+  });
+
+  /* ── 3. Intersection Observers (Fade-ups) ── */
+  const fuObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('vis');
+        fuObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  
+  document.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+
+  // Hero items immediately
+  setTimeout(() => {
+    document.querySelectorAll('.hero .fu').forEach((el, i) => {
+      setTimeout(() => el.classList.add('vis'), 200 + i * 160);
+    });
+  }, 80);
+
+  /* ── 4. Counter Animation (Upgraded to requestAnimationFrame) ── */
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target) || 0;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '+';
+    const duration = 1500; 
+    let startTimestamp = null;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      const current = Math.floor(progress * target);
+      el.textContent = prefix + current + (current === target ? suffix : '');
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
   }
-  // active nav link
-  let cur = '';
-  document.querySelectorAll('section[id]').forEach(s => {
-    if (window.scrollY >= s.offsetTop - 90) cur = s.id;
-  });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
-  });
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+  /* ── 5. Carbon Bars ── */
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.carbon-bar-fill').forEach(bar => {
+          setTimeout(() => { bar.style.width = (bar.dataset.width || 0) + '%'; }, 300);
+        });
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  
+  const carbonPanel = document.querySelector('.carbon-panel');
+  if (carbonPanel) barObs.observe(carbonPanel);
+
+  /* ── 6. Fetch JSON Testimonials (With Error Handling) ── */
+  fetch('content/testimonials.json')
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      const container = document.getElementById('testimonial-container');
+      if (!container) return; 
+      
+      let htmlContent = '';
+      data.forEach(testi => {
+        const starsString = '★'.repeat(testi.stars || 5);
+        htmlContent += `
+        <div class="testi-card">
+          <div class="stars">${starsString}</div>
+          <div class="quote-icon">"</div>
+          <p>${testi.quote}</p>
+          <div class="testi-author">
+            <div class="avatar">${testi.initial}</div>
+            <div>
+              <h5>${testi.name}</h5>
+              <span>${testi.role}</span>
+            </div>
+          </div>
+        </div>
+        `;
+      });
+      container.innerHTML = htmlContent;
+    })
+    .catch(error => {
+      console.error("Failed to load testimonials:", error);
+    });
 });
 
-/* ── Hamburger ── */
-function toggleMenu() {
-  document.getElementById('hamburger').classList.toggle('open');
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobileMenu').classList.remove('open');
+/* ── 7. Global Functions (Menu, FAQ, Forms) ── */
+window.toggleMenu = function() {
+  document.getElementById('hamburger')?.classList.toggle('open');
+  document.getElementById('mobileMenu')?.classList.toggle('open');
 }
 
-/* ── Intersection observer for .fu ── */
-const fuObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('vis');
-      fuObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
-
-// Hero items immediately
-setTimeout(() => {
-  document.querySelectorAll('.hero .fu').forEach((el, i) => {
-    setTimeout(() => el.classList.add('vis'), 200 + i * 160);
-  });
-}, 80);
-
-/* ── Counter animation ── */
-function animateCount(el) {
-  const target = parseInt(el.dataset.target);
-  const prefix = el.dataset.prefix || '';
-  const suffix = el.dataset.suffix || '+';
-  let current = 0;
-  const step = Math.ceil(target / 40);
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = prefix + current + (current === target ? suffix : '');
-    if (current >= target) clearInterval(timer);
-  }, 40);
+window.closeMenu = function() {
+  document.getElementById('hamburger')?.classList.remove('open');
+  document.getElementById('mobileMenu')?.classList.remove('open');
 }
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCount(e.target);
-      counterObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
 
-/* ── Carbon bars ── */
-const barObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.carbon-bar-fill').forEach(bar => {
-        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 300);
-      });
-      barObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.4 });
-const carbonPanel = document.querySelector('.carbon-panel');
-if (carbonPanel) barObs.observe(carbonPanel);
-
-/* ── FAQ accordion ── */
-function toggleFaq(el) {
+window.toggleFaq = function(el) {
   const item = el.parentElement;
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
 }
 
-/* ── Form submit ── */
-function handleSubmit(btn) {
-  btn.innerHTML = '✓ Enquiry Sent! We\'ll be in touch within 24 hours.';
+window.handleSubmit = function(btn) {
+  btn.innerHTML = '✓ Enquiry Sent!';
   btn.style.background = 'var(--g3)';
   btn.disabled = true;
   setTimeout(() => {
@@ -1261,13 +1301,17 @@ function handleSubmit(btn) {
   }, 4500);
 }
 
-/* ── Newsletter ── */
-function handleNewsletter(btn) {
-  const email = document.getElementById('nlEmail').value;
-  if (!email) return;
+window.handleNewsletter = function(btn) {
+  const emailInput = document.getElementById('nlEmail');
+  if (!emailInput || !emailInput.value) return;
+  
   btn.textContent = '✓ Subscribed!';
   btn.style.background = 'var(--g4)';
-  setTimeout(() => { btn.textContent = 'Subscribe →'; btn.style.background = ''; }, 3000);
+  setTimeout(() => { 
+    btn.textContent = 'Subscribe →'; 
+    btn.style.background = ''; 
+    emailInput.value = ''; 
+  }, 3000);
 }
 </script>
 </body>
