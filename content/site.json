@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "Mujanti",
+    "tagline": "FPO Services, Carbon Credits & Sustainability Consulting India",
+    "description": "Mujanti — India's premier FPO formation, carbon credit consulting, and sustainability media platform for Farmer Producer Organisations, NGOs, and CSR programs.",
+    "logo_emoji": "🌾",
+    "established": "2025"
+  },
+
+  "hero": {
+    "badge_text": "Sustainability Intelligence · Impact Storytelling · FPO Transformation",
+    "headline_line1": "Empowering",
+    "headline_highlight": "Farmers",
+    "headline_line2": "Unlocking",
+    "headline_gold": "Carbon Revenue",
+    "subheadline": "India's dedicated FPO formation, carbon credit consulting, and sustainability media platform. End-to-end knowledge, digital tools, and impact storytelling for farming communities — from first registration to first carbon cheque.",
+    "cta_primary": "Book Free Consultation",
+    "cta_secondary": "View Impact Stories",
+    "stats": [
+      { "number": 500, "suffix": "+", "label": "Farmers Reached" },
+      { "number": 20,  "suffix": "+", "label": "Impact Films Produced" },
+      { "number": 28,  "prefix": "₹", "suffix": "L+", "label": "Carbon Income Unlocked" },
+      { "number": 10,  "suffix": "K+", "label": "FPO Ecosystem Reach" }
+    ]
+  },
+
+  "contact": {
+    "whatsapp": "+919000000000",
+    "email": "hello@mujanti.in",
+    "phone": "+919000000000",
+    "phone_hours": "Mon–Sat · 9 AM – 6 PM IST",
+    "calendly_url": "https://calendly.com/mujanti/consultation",
+    "address": "India"
+  },
+
+  "social": {
+    "youtube": "#",
+    "linkedin": "#",
+    "instagram": "#",
+    "facebook": "#",
+    "whatsapp_community": "#"
+  },
+
+  "legal": {
+    "company_name": "Mujanti Services Pvt. Ltd.",
+    "cin": "U01XXXXXXXXXXXXX",
+    "gst": "XXXXXXXXXXXX",
+    "year": "2025"
+  },
+
+  "seo": {
+    "google_analytics_id": "G-XXXXXXXXXX",
+    "google_search_console": "",
+    "og_image": "https://mujanti.in/og-image.jpg"
+  }
+}

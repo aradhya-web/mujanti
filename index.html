@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mujanti — FPO Services, Carbon Credits & Sustainability Consulting India</title>
+<meta name="description" content="Mujanti — India's premier FPO formation, carbon credit consulting, and sustainability media platform for Farmer Producer Organisations, NGOs, and CSR programs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════════ */
+:root {
+  --bg:#F4FAF5; --white:#fff;
+  --g1:#1B5E20; --g2:#2E7D32; --g3:#43A047; --g4:#66BB6A; --g5:#A5D6A7;
+  --soft:#E8F5E9; --dark:#07110A; --dark2:#0D1F12;
+  --text:#1A2B1E; --muted:#5A7A63; --border:#DCE8DE;
+  --gold:#C8A84B; --gold2:#F5E9C2;
+  --r:26px; --r-sm:14px;
+  --nav-h:72px;
+  --shadow-sm:0 2px 12px rgba(27,94,32,0.07);
+  --shadow-md:0 8px 32px rgba(27,94,32,0.12);
+  --shadow-lg:0 24px 60px rgba(27,94,32,0.16);
+}
+
+/* ══════ RESET ══════ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}
+.container{width:90%;max-width:1280px;margin:auto}
+section{padding:112px 0;position:relative}
+h1,h2,h3,h4{line-height:1.1}
+p{color:var(--muted)}
+a{text-decoration:none}
+img{max-width:100%}
+
+/* scroll offset for fixed nav */
+[id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+
+/* ══════ NAV ══════ */
+nav{
+  position:fixed;width:100%;top:0;left:0;z-index:900;
+  transition:background .35s,box-shadow .35s,backdrop-filter .35s;
+}
+nav.scrolled{
+  background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(20px);
+  box-shadow:0 2px 24px rgba(27,94,32,0.1);
+  border-bottom:1px solid rgba(27,94,32,0.08);
+}
+nav.top{background:transparent}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;height:var(--nav-h)}
+.logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px;transition:color .2s}
+nav.top .logo{color:white}
+nav.scrolled .logo{color:var(--g1)}
+.logo span{color:var(--g3)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-weight:500;font-size:0.9rem;transition:.2s;padding:6px 0;border-bottom:2px solid transparent}
+nav.top .nav-links a{color:rgba(255,255,255,0.88)}
+nav.scrolled .nav-links a{color:#374151}
+.nav-links a:hover,.nav-links a.active{border-bottom-color:var(--g3)}
+nav.top .nav-links a:hover{color:white}
+nav.scrolled .nav-links a:hover{color:var(--g1)}
+.nav-cta{
+  background:var(--g3);color:white;padding:10px 22px;
+  border-radius:10px;font-weight:700;font-size:0.88rem;
+  transition:.25s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--g2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(67,160,71,0.4)}
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:white;border-radius:2px;transition:.3s}
+nav.scrolled .hamburger span{background:var(--g1)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  display:none;position:fixed;top:var(--nav-h);left:0;right:0;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);
+  padding:24px 5%;border-bottom:1px solid var(--border);
+  flex-direction:column;gap:16px;z-index:899;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-weight:600;color:var(--text);font-size:1rem;padding:10px 0;border-bottom:1px solid var(--border)}
+
+/* ══════ SECTION HEADS ══════ */
+.section-head{margin-bottom:64px;max-width:820px}
+.section-head>span,.tag{
+  color:var(--g3);font-weight:700;font-size:0.76rem;
+  letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:12px;
+}
+.section-head h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,3.5vw,3.4rem);
+  margin-bottom:18px;letter-spacing:-1.5px;color:var(--text);
+}
+.section-head p{font-size:1.02rem;max-width:620px;line-height:1.8}
+.centered{text-align:center;margin-left:auto;margin-right:auto}
+.centered p{margin:0 auto}
+
+/* ══════ BUTTONS ══════ */
+.btn{padding:14px 28px;border-radius:12px;font-weight:700;transition:.3s;display:inline-flex;align-items:center;gap:8px;font-size:0.95rem}
+.btn-white{background:white;color:var(--g1)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.18)}
+.btn-ghost{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);color:white;backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:rgba(255,255,255,0.2)}
+.btn-green{background:var(--g1);color:white}
+.btn-green:hover{background:var(--g2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,94,32,0.35)}
+.btn-outline-green{background:transparent;border:2px solid var(--g3);color:var(--g1)}
+.btn-outline-green:hover{background:var(--soft);transform:translateY(-2px)}
+
+/* ══════ FADE-UP ANIMATION ══════ */
+.fu{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu.d1{transition-delay:.1s}.fu.d2{transition-delay:.2s}.fu.d3{transition-delay:.3s}.fu.d4{transition-delay:.4s}.fu.d5{transition-delay:.5s}
+
+/* ══════ HERO ══════ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;color:white;
+  padding-top:var(--nav-h);
+  background:
+    linear-gradient(160deg,rgba(5,20,8,.68) 0%,rgba(5,18,8,.78) 100%),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop');
+  background-size:cover;background-position:center;
+  background-attachment:fixed;
+}
+.hero-glow{
+  position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(67,160,71,.2),transparent 65%);
+  top:-300px;right:-200px;pointer-events:none;animation:glow-drift 8s ease-in-out infinite alternate;
+}
+@keyframes glow-drift{from{transform:translate(0,0)}to{transform:translate(-40px,60px)}}
+.hero-grid{
+  display:grid;grid-template-columns:1.2fr 0.8fr;
+  gap:60px;align-items:center;position:relative;z-index:2;
+  padding:80px 0;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 18px;background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);border-radius:999px;
+  margin-bottom:24px;backdrop-filter:blur(12px);font-size:0.8rem;font-weight:500;
+}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--g4);animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(102,187,106,.6)}50%{box-shadow:0 0 0 6px rgba(102,187,106,0)}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;
+  letter-spacing:-2px;margin-bottom:24px;line-height:1.04;
+}
+.hero h1 em{color:var(--g4);font-style:normal}
+.hero h1 .gold{color:var(--gold)}
+.hero-sub{font-size:1.1rem;max-width:600px;margin-bottom:36px;color:rgba(255,255,255,0.82);line-height:1.78}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+/* animated stat counters */
+.hero-stats-row{
+  display:flex;gap:32px;margin-top:52px;padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.14);flex-wrap:wrap;
+}
+.hstat .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--g4);line-height:1}
+.hstat .lbl{font-size:0.78rem;color:rgba(255,255,255,0.55);margin-top:4px;line-height:1.4;max-width:110px}
+/* hero card */
+.hero-card{
+  background:rgba(255,255,255,0.09);padding:34px;
+  border-radius:var(--r);backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 28px 70px rgba(0,0,0,0.24);
+}
+.hero-card h3{font-size:1.15rem;margin-bottom:22px;font-weight:700;color:white}
+.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.istat{
+  background:rgba(255,255,255,0.08);padding:20px;border-radius:18px;
+  text-align:center;border:1px solid rgba(255,255,255,0.1);transition:.3s;
+}
+.istat:hover{background:rgba(255,255,255,0.14);transform:translateY(-2px)}
+.istat .n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:4px;color:white}
+.istat .l{color:rgba(255,255,255,0.7);font-size:0.8rem;line-height:1.4}
+/* scroll indicator */
+.scroll-down{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(255,255,255,0.5);font-size:0.74rem;letter-spacing:0.1em;z-index:2;
+  animation:bounce-down 2.5s ease-in-out infinite;
+}
+.scroll-arrow{width:20px;height:20px;border-right:2px solid rgba(255,255,255,0.4);border-bottom:2px solid rgba(255,255,255,0.4);transform:rotate(45deg)}
+@keyframes bounce-down{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ══════ TICKER ══════ */
+.ticker-wrap{background:var(--g1);padding:14px 0;overflow:hidden}
+.ticker-track{display:flex;gap:0;animation:ticker-scroll 28s linear infinite;width:max-content}
+.ticker-item{
+  white-space:nowrap;color:rgba(255,255,255,0.85);font-size:0.84rem;
+  font-weight:600;padding:0 40px;letter-spacing:0.04em;
+  display:flex;align-items:center;gap:14px;
+}
+.ticker-item::after{content:"◆";color:var(--g4);font-size:0.6rem}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════ PROBLEM / STORY ══════ */
+.story-section{background:white}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.story-image{
+  height:640px;border-radius:var(--r);position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.35)),
+    url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1400&auto=format&fit=crop');
+  background-size:cover;background-position:center;
+}
+.story-badge-overlay{
+  position:absolute;top:24px;left:24px;
+  background:rgba(27,94,32,0.9);backdrop-filter:blur(10px);
+  color:white;padding:8px 16px;border-radius:30px;font-size:0.78rem;font-weight:700;
+}
+.overlay-quote{
+  position:absolute;bottom:26px;left:26px;right:26px;
+  background:rgba(10,25,12,0.75);backdrop-filter:blur(18px);
+  padding:24px 26px;border-radius:18px;color:white;
+  font-style:italic;font-size:0.95rem;line-height:1.65;
+  border:1px solid rgba(255,255,255,0.12);
+}
+.story-cards{display:grid;gap:18px}
+.story-card{
+  padding:26px 28px;background:var(--bg);
+  border-radius:18px;border:1px solid var(--border);
+  transition:.3s;border-left:3px solid var(--g4);
+}
+.story-card:hover{transform:translateX(6px);box-shadow:var(--shadow-md);background:white;border-left-color:var(--g1)}
+.story-card h3{margin-bottom:8px;font-size:1.05rem;color:var(--g1)}
+.story-card p{font-size:0.9rem;line-height:1.65}
+
+/* ══════ SERVICES ══════ */
+.services{background:linear-gradient(180deg,var(--bg) 0%,white 100%)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{
+  background:white;padding:36px;border-radius:var(--r);
+  border:1px solid var(--border);box-shadow:var(--shadow-sm);
+  transition:.35s;position:relative;overflow:hidden;cursor:pointer;
+}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(232,245,233,0),rgba(232,245,233,.8));
+  opacity:0;transition:.35s;
+}
+.service-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g3),var(--g4));
+  transform:scaleX(0);transform-origin:left;transition:.35s;
+}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.service-card:hover::before{opacity:1}
+.service-card:hover::after{transform:scaleX(1)}
+.svc-icon{
+  width:64px;height:64px;border-radius:18px;
+  background:var(--soft);display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;margin-bottom:20px;transition:.3s;
+}
+.service-card:hover .svc-icon{background:var(--g1);transform:scale(1.08)}
+.service-card h3{font-size:1.12rem;margin-bottom:12px;color:var(--text)}
+.service-card>p{font-size:0.88rem;margin-bottom:16px;line-height:1.7}
+.service-card ul{list-style:none;display:grid;gap:6px}
+.service-card ul li{font-size:0.83rem;color:var(--muted);padding-left:15px;position:relative}
+.service-card ul li::before{content:'→';position:absolute;left:0;color:var(--g3);font-size:0.75rem}
+
+/* ══════ CARBON ══════ */
+.carbon-section{background:var(--dark);color:white;overflow:hidden}
+.carbon-glow{
+  position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(67,160,71,.1),transparent 70%);
+  right:-200px;top:-150px;pointer-events:none;
+}
+.carbon-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:2}
+.carbon-section .section-head h2{color:white}
+.carbon-section .section-head>span{color:var(--gold)}
+.carbon-section .section-head p{color:rgba(255,255,255,.65)}
+.carbon-steps{display:flex;flex-direction:column;gap:0}
+.carbon-step{display:flex;gap:22px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.carbon-step:last-child{border-bottom:none}
+.step-num{font-size:0.7rem;color:var(--gold);letter-spacing:.14em;font-weight:700;min-width:28px;padding-top:3px}
+.step-content h4{color:white;font-size:0.96rem;font-weight:700;margin-bottom:5px}
+.step-content p{color:rgba(255,255,255,.52);font-size:0.86rem;line-height:1.62}
+/* carbon panel */
+.carbon-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:36px}
+.big-num{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;color:var(--g4);line-height:1}
+.big-label{color:rgba(255,255,255,.52);font-size:0.88rem;margin:10px 0 28px;line-height:1.55}
+/* progress bar animation */
+.carbon-bar-wrap{margin-bottom:22px}
+.carbon-bar-label{display:flex;justify-content:space-between;margin-bottom:7px;font-size:0.82rem;color:rgba(255,255,255,.7)}
+.carbon-bar-track{height:7px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
+.carbon-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--g3),var(--g4));width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.carbon-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.c-mini{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;transition:.25s}
+.c-mini:hover{background:rgba(255,255,255,.1)}
+.c-mini .cn{font-size:1.5rem;font-weight:800;color:var(--gold);margin-bottom:4px}
+.c-mini .cl{font-size:0.76rem;color:rgba(255,255,255,.45);line-height:1.4}
+
+/* ══════ PROCESS ══════ */
+.process-section{background:white}
+.process-track{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;position:relative;margin-top:24px;
+}
+.process-track::before{
+  content:'';position:absolute;top:42px;left:12.5%;right:12.5%;height:2px;
+  background:linear-gradient(90deg,var(--g4),var(--g3));z-index:0;
+  animation:line-grow 1.5s ease forwards;transform-origin:left;
+}
+@keyframes line-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.p-step{text-align:center;padding:0 18px;position:relative;z-index:1}
+.p-circle{
+  width:84px;height:84px;border-radius:50%;
+  background:white;border:2.5px solid var(--g3);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 22px;font-size:1.8rem;
+  box-shadow:0 4px 22px rgba(67,160,71,.18);transition:.3s;cursor:default;
+}
+.p-step:hover .p-circle{background:var(--g1);border-color:var(--g1);transform:scale(1.1);box-shadow:0 8px 30px rgba(27,94,32,.3)}
+.p-step h4{font-size:0.96rem;font-weight:700;color:var(--g1);margin-bottom:8px}
+.p-step p{font-size:0.83rem;color:var(--muted);line-height:1.55}
+
+/* ══════ CASE STUDIES ══════ */
+.case-studies{background:var(--bg)}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.case-card{border-radius:var(--r);overflow:hidden;background:white;border:1px solid var(--border);transition:.3s;box-shadow:var(--shadow-sm)}
+.case-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.case-image{height:290px;background-size:cover;background-position:center;position:relative}
+.case-tag{
+  position:absolute;top:18px;right:18px;
+  background:rgba(255,255,255,.95);color:var(--g1);
+  font-size:0.74rem;font-weight:700;padding:5px 14px;border-radius:30px;
+  box-shadow:0 2px 12px rgba(0,0,0,.12);
+}
+.case-content{padding:32px}
+.case-content h3{font-size:1.1rem;margin-bottom:10px;color:var(--text)}
+.case-content p{font-size:0.88rem;line-height:1.7;margin-bottom:18px}
+.metrics-row{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:8px 14px;background:var(--soft);border-radius:10px;font-size:0.8rem;font-weight:700;color:var(--g1)}
+
+/* ══════ MEDIA ENGINE ══════ */
+.media-section{
+  background:
+    linear-gradient(rgba(12,22,14,.8),rgba(12,22,14,.88)),
+    url('https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1920&auto=format&fit=crop');
+  background-size:cover;background-position:center;background-attachment:fixed;
+  color:white;
+}
+.media-section .section-head h2{color:white}
+.media-section .section-head>span{color:var(--g4)}
+.media-section .section-head p{color:rgba(255,255,255,.65)}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.media-card{
+  background:rgba(255,255,255,.08);padding:34px;
+  border-radius:var(--r);backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.12);transition:.3s;
+}
+.media-card:hover{background:rgba(255,255,255,.14);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.media-card h3{color:white;font-size:1.1rem;margin-bottom:12px}
+.media-card p{color:rgba(255,255,255,.62);font-size:0.88rem;line-height:1.72}
+
+/* ══════ TESTIMONIALS (carousel) ══════ */
+.testimonials{background:var(--soft)}
+.testi-carousel{position:relative;overflow:hidden}
+.testi-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.testi-slide{min-width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:4px}
+.testi-card{
+  background:white;border-radius:var(--r);padding:34px;
+  box-shadow:var(--shadow-sm);transition:.25s;
+}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.stars{color:var(--gold);font-size:0.88rem;margin-bottom:12px;letter-spacing:2px}
+.quote-icon{font-size:3rem;color:var(--g5);line-height:.5;margin-bottom:16px;font-family:Georgia,serif}
+.testi-card p{font-style:italic;font-size:0.93rem;line-height:1.75;color:var(--muted);margin-bottom:24px}
+.testi-author{display:flex;align-items:center;gap:14px}
+.avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--g1),var(--g3));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-weight:700;color:white;font-size:1.1rem;flex-shrink:0;
+}
+.testi-author h5{font-size:0.88rem;font-weight:700;color:var(--g1)}
+.testi-author span{font-size:0.78rem;color:var(--muted)}
+.carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:36px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--g5);cursor:pointer;transition:.3s;border:none}
+.dot.active{background:var(--g1);width:28px;border-radius:6px}
+
+/* ══════ FAQ ══════ */
+.faq-section{background:white}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1100px}
+.faq-item{
+  border:1px solid var(--border);border-radius:var(--r-sm);
+  overflow:hidden;background:white;transition:box-shadow .2s;
+}
+.faq-item:hover{box-shadow:var(--shadow-sm)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;cursor:pointer;font-weight:600;font-size:0.95rem;color:var(--text);
+  gap:16px;user-select:none;
+}
+.faq-q:hover{color:var(--g1)}
+.faq-arrow{font-size:1.1rem;color:var(--g3);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;
+  font-size:0.9rem;color:var(--muted);line-height:1.75;padding:0 24px;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+
+/* ══════ CONTACT ══════ */
+.contact-section{background:var(--g1);color:white;overflow:hidden}
+.contact-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 65% 40%,rgba(67,160,71,.18),transparent 55%);
+  pointer-events:none;
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;position:relative;z-index:2}
+.contact-section .section-head h2{color:white}
+.contact-section .section-head>span{color:var(--gold)}
+.contact-section .section-head p{color:rgba(255,255,255,.7)}
+.contact-methods{display:flex;flex-direction:column;gap:12px}
+.cmethod{
+  display:flex;align-items:center;gap:16px;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);
+  border-radius:14px;padding:17px 20px;color:white;transition:.25s;
+}
+.cmethod:hover{background:rgba(255,255,255,.17);border-color:rgba(255,255,255,.28);transform:translateX(4px)}
+.cmethod-icon{font-size:1.3rem;width:32px;text-align:center;flex-shrink:0}
+.cmethod h5{font-size:0.9rem;font-weight:700;margin-bottom:2px}
+.cmethod span{font-size:0.78rem;color:rgba(255,255,255,.52)}
+/* form */
+.appt-form{background:white;border-radius:22px;padding:40px;box-shadow:0 32px 80px rgba(0,0,0,.22)}
+.appt-form h3{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--g1);margin-bottom:26px;font-weight:700}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.form-group label{font-size:0.76rem;font-weight:700;color:var(--g2);letter-spacing:.05em;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{
+  padding:11px 15px;border-radius:10px;border:1.5px solid var(--border);
+  font-size:0.91rem;font-family:'Inter',sans-serif;color:var(--text);
+  background:var(--bg);transition:.2s;outline:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--g3);background:white;box-shadow:0 0 0 3px rgba(67,160,71,.1)}
+.form-group textarea{resize:vertical;min-height:96px}
+.btn-submit{
+  width:100%;padding:15px;background:var(--g1);color:white;
+  border:none;border-radius:12px;font-size:1rem;font-weight:700;
+  cursor:pointer;font-family:'Inter',sans-serif;transition:.25s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-submit:hover:not(:disabled){background:var(--g2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,94,32,.35)}
+.btn-submit:disabled{opacity:.8;cursor:not-allowed}
+
+/* ══════ CTA BAND ══════ */
+.cta-band{background:linear-gradient(135deg,var(--g2),var(--g1));color:white;text-align:center;padding:100px 0}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.8rem);letter-spacing:-1.5px;margin-bottom:18px}
+.cta-band p{color:rgba(255,255,255,.8);font-size:1.08rem;max-width:740px;margin:0 auto 34px}
+
+/* ══════ NEWSLETTER ══════ */
+.newsletter-row{
+  background:var(--g1);padding:60px 0;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.newsletter-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.newsletter-inner h3{color:white;font-size:1.3rem;font-weight:700;max-width:360px}
+.newsletter-inner h3 span{color:var(--g4)}
+.newsletter-form{display:flex;gap:12px;flex:1;max-width:480px}
+.newsletter-form input{
+  flex:1;padding:13px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.1);color:white;font-size:0.92rem;
+  font-family:'Inter',sans-serif;outline:none;transition:.2s;
+}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.45)}
+.newsletter-form input:focus{border-color:var(--g4);background:rgba(255,255,255,.16)}
+.newsletter-btn{
+  padding:13px 24px;background:white;color:var(--g1);border:none;
+  border-radius:10px;font-weight:700;font-size:0.9rem;cursor:pointer;
+  white-space:nowrap;transition:.2s;font-family:'Inter',sans-serif;
+}
+.newsletter-btn:hover{background:var(--g5);transform:translateY(-2px)}
+
+/* ══════ FOOTER ══════ */
+footer{background:var(--dark);padding:72px 0 36px;color:white}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px}
+.footer-brand p{color:rgba(255,255,255,.42);font-size:0.86rem;max-width:270px;margin-top:14px;line-height:1.72}
+.footer-social{display:flex;gap:10px;margin-top:20px}
+.social-btn{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.88rem;color:rgba(255,255,255,.52);cursor:pointer;transition:.2s;
+  text-decoration:none;
+}
+.social-btn:hover{background:var(--g3);color:white;border-color:var(--g3);transform:translateY(-2px)}
+.footer-col h4{font-size:0.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:18px}
+.footer-col ul{list-style:none;display:grid;gap:9px}
+.footer-col ul a{font-size:0.85rem;color:rgba(255,255,255,.38);transition:.2s}
+.footer-col ul a:hover{color:var(--g4)}
+.footer-col ul li{font-size:0.85rem;color:rgba(255,255,255,.38)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.07);padding-top:26px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,.28)}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:0.78rem;color:rgba(255,255,255,.28);transition:.2s}
+.footer-legal a:hover{color:var(--g4)}
+
+/* ══════ FLOATING ELEMENTS ══════ */
+/* WhatsApp button */
+.wa-btn{
+  position:fixed;bottom:32px;right:28px;z-index:800;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.5);
+  font-size:1.6rem;text-decoration:none;transition:.3s;
+  animation:wa-pulse 3s ease-in-out infinite;
+}
+.wa-btn:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(37,211,102,.7)}
+@keyframes wa-pulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.5)}50%{box-shadow:0 6px 32px rgba(37,211,102,.8),0 0 0 8px rgba(37,211,102,.12)}}
+/* Scroll to top */
+.scroll-top{
+  position:fixed;bottom:100px;right:28px;z-index:800;
+  width:44px;height:44px;border-radius:12px;background:var(--g1);
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:1rem;cursor:pointer;transition:.3s;
+  border:none;opacity:0;pointer-events:none;box-shadow:var(--shadow-md);
+}
+.scroll-top.show{opacity:1;pointer-events:auto}
+.scroll-top:hover{background:var(--g2);transform:translateY(-3px)}
+
+/* ══════ RESPONSIVE ══════ */
+@media(max-width:1100px){
+  .hero-grid,.story-grid,.carbon-grid,.contact-grid{grid-template-columns:1fr}
+  .case-grid,.media-grid{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .process-track{grid-template-columns:1fr 1fr;gap:32px}
+  .process-track::before{display:none}
+  .testi-slide{grid-template-columns:1fr 1fr}
+  .faq-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  :root{--nav-h:64px}
+  .hero h1{font-size:2.8rem;letter-spacing:-1px}
+  .section-head h2{font-size:2.1rem}
+  .services-grid,.case-grid,.media-grid,.testi-slide,.faq-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .process-track{grid-template-columns:1fr 1fr}
+  .carbon-mini{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .newsletter-inner{flex-direction:column;align-items:flex-start}
+  .newsletter-form{width:100%;max-width:100%}
+  section{padding:80px 0}
+  .wa-btn{bottom:24px;right:20px}
+  .scroll-top{bottom:90px;right:20px}
+}
+@media(max-width:480px){
+  .hero-stats-row{gap:20px}
+  .testi-slide{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav id="navbar" class="top">
+<div class="container nav-inner">
+  <div class="logo">🌾 <span>Mujanti</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#carbon">Carbon Credits</a>
+    <a href="#projects">Projects</a>
+    <a href="#media">Media</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book Free Consultation</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#carbon" onclick="closeMenu()">Carbon Credits</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#media" onclick="closeMenu()">Media</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ════ HERO ════ -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="container hero-grid">
+
+    <div class="fu">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Sustainability Intelligence · Impact Storytelling · FPO Transformation
+      </div>
+      <h1>Empowering <em>Farmers</em><br>Unlocking <span class="gold">Carbon Revenue</span></h1>
+      <p class="hero-sub">India's dedicated FPO formation, carbon credit consulting, and sustainability media platform. End-to-end knowledge, digital tools, and impact storytelling for farming communities — from first registration to first carbon cheque.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-white">Book Consultation →</a>
+        <a href="#projects" class="btn btn-ghost">View Impact Stories</a>
+      </div>
+      <div class="hero-stats-row">
+        <div class="hstat"><div class="num" data-target="500">0</div><div class="lbl">Farmers Reached</div></div>
+        <div class="hstat"><div class="num" data-target="20">0</div><div class="lbl">Impact Films Produced</div></div>
+        <div class="hstat"><div class="num" data-target="28" data-prefix="₹" data-suffix="L+">₹0</div><div class="lbl">Carbon Income Unlocked</div></div>
+        <div class="hstat"><div class="num" data-target="10" data-suffix="K+">0</div><div class="lbl">FPO Ecosystem Reach</div></div>
+      </div>
+    </div>
+
+    <div class="hero-card fu d2">
+      <h3>Live Impact Snapshot</h3>
+      <div class="impact-grid">
+        <div class="istat"><div class="n">500+</div><div class="l">Farmers Reached</div></div>
+        <div class="istat"><div class="n">20+</div><div class="l">Impact Films</div></div>
+        <div class="istat"><div class="n">₹28L</div><div class="l">Carbon Income</div></div>
+        <div class="istat"><div class="n">10K+</div><div class="l">Ecosystem Reach</div></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-down"><div class="scroll-arrow"></div>SCROLL</div>
+</section>
+
+<!-- ════ TICKER ════ -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">FPO Formation & Governance</span>
+    <span class="ticker-item">Carbon Credit Consulting</span>
+    <span class="ticker-item">Impact Documentary Studio</span>
+    <span class="ticker-item">SEO & Visibility Systems</span>
+    <span class="ticker-item">Drone Visual Intelligence</span>
+    <span class="ticker-item">Digital Transformation</span>
+    <span class="ticker-item">ESG Frameworks</span>
+    <span class="ticker-item">NABARD & SFAC Support</span>
+    <span class="ticker-item">Verra VCS · Gold Standard</span>
+    <span class="ticker-item">FPO Formation & Governance</span>
+    <span class="ticker-item">Carbon Credit Consulting</span>
+    <span class="ticker-item">Impact Documentary Studio</span>
+    <span class="ticker-item">SEO & Visibility Systems</span>
+    <span class="ticker-item">Drone Visual Intelligence</span>
+    <span class="ticker-item">Digital Transformation</span>
+    <span class="ticker-item">ESG Frameworks</span>
+    <span class="ticker-item">NABARD & SFAC Support</span>
+    <span class="ticker-item">Verra VCS · Gold Standard</span>
+  </div>
+</div>
+
+<!-- ════ PROBLEM / STORY ════ -->
+<section class="story-section" id="story">
+<div class="container">
+  <div class="section-head fu">
+    <span>The Challenge</span>
+    <h2>Thousands of FPOs Exist.<br>Very Few Build Long-Term Sustainability.</h2>
+    <p>Most agricultural organisations struggle with digital visibility, donor storytelling, governance compliance and missed carbon revenue. We bridge consulting, media, research and technology into one integrated transformation platform.</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-image fu">
+      <div class="story-badge-overlay">🌾 Field-First Approach</div>
+      <div class="overlay-quote">"Impact is not only about numbers. It is about showing transformation stories that donors, farmers and communities emotionally connect with."</div>
+    </div>
+    <div class="story-cards fu d2">
+      <div class="story-card">
+        <h3>🏛️ FPO Governance Gaps</h3>
+        <p>Most FPOs are formed incorrectly and miss annual filings, losing access to crores in NABARD and SFAC grants simply due to poor governance architecture.</p>
+      </div>
+      <div class="story-card">
+        <h3>💨 Carbon Credits Go Unclaimed</h3>
+        <p>Indian farmland holds massive carbon sequestration potential. Yet fewer than 1% of eligible farms are enrolled in any carbon credit program due to lack of awareness.</p>
+      </div>
+      <div class="story-card">
+        <h3>📱 No Tools Built for FPOs</h3>
+        <p>Generic software doesn't work for farmer collectives. FPOs need crop tracking, member management, and impact reporting tools designed for field conditions in local languages.</p>
+      </div>
+      <div class="story-card">
+        <h3>🎥 Stories Go Untold</h3>
+        <p>Profound rural transformation stories remain undocumented — leaving NGOs and FPOs unable to attract donors, CSR funding, or institutional investment.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ SERVICES ════ -->
+<section class="services" id="services">
+<div class="container">
+  <div class="section-head fu">
+    <span>Services</span>
+    <h2>A Hybrid Platform Combining<br>Consulting, Research & Media</h2>
+    <p>Designed for FPOs, NGOs, sustainability startups, climate initiatives, grant organisations and CSR programs across India.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fu d1">
+      <div class="svc-icon">🏛️</div>
+      <h3>FPO Formation & Governance</h3>
+      <p>End-to-end legal formation and governance architecture under the Companies Act 2013.</p>
+      <ul>
+        <li>MCA / ROC registration end-to-end</li>
+        <li>Board formation & bylaw drafting</li>
+        <li>NABARD & SFAC onboarding support</li>
+        <li>Annual filings & compliance calendar</li>
+        <li>Government scheme applications</li>
+      </ul>
+    </div>
+    <div class="service-card fu d2">
+      <div class="svc-icon">🌍</div>
+      <h3>Carbon Credit Ecosystems</h3>
+      <p>MRV-ready carbon strategy, regenerative agriculture documentation, and monetisation support.</p>
+      <ul>
+        <li>Farm carbon baseline assessment</li>
+        <li>Verra VCS & Gold Standard enrollment</li>
+        <li>Soil carbon & agroforestry projects</li>
+        <li>Annual verification & buyer linkage</li>
+        <li>Success-fee — zero upfront cost</li>
+      </ul>
+    </div>
+    <div class="service-card fu d3">
+      <div class="svc-icon">🎬</div>
+      <h3>Impact Storytelling Studio</h3>
+      <p>Cinematic documentaries, farmer transformation stories, and CSR media campaigns.</p>
+      <ul>
+        <li>Farmer transformation documentaries</li>
+        <li>Drone visuals & aerial storytelling</li>
+        <li>CSR impact narratives & evidence</li>
+        <li>Multilingual regional content</li>
+        <li>YouTube & social distribution</li>
+      </ul>
+    </div>
+    <div class="service-card fu d1">
+      <div class="svc-icon">📈</div>
+      <h3>SEO & Digital Visibility</h3>
+      <p>Regional SEO, multilingual content systems, and YouTube growth to build authority.</p>
+      <ul>
+        <li>Regional SEO in Hindi, Tamil, Odia</li>
+        <li>YouTube channel strategy & growth</li>
+        <li>Sustainability search positioning</li>
+        <li>Whitepapers & authority content</li>
+        <li>Donor-facing digital presence</li>
+      </ul>
+    </div>
+    <div class="service-card fu d2">
+      <div class="svc-icon">🛰️</div>
+      <h3>Drone & Visual Intelligence</h3>
+      <p>Aerial documentation, geographic storytelling, and visual impact archives.</p>
+      <ul>
+        <li>Drone surveys & land mapping</li>
+        <li>Seasonal transformation archives</li>
+        <li>Carbon land coverage evidence</li>
+        <li>Geographic storytelling visuals</li>
+        <li>ESG visual reporting packages</li>
+      </ul>
+    </div>
+    <div class="service-card fu d3">
+      <div class="svc-icon">💻</div>
+      <h3>Digital Transformation</h3>
+      <p>Purpose-built websites, dashboards, and systems designed specifically for FPOs.</p>
+      <ul>
+        <li>FPO website design & hosting</li>
+        <li>Member & crop tracking software</li>
+        <li>Impact reporting dashboards</li>
+        <li>WhatsApp-based farmer bots</li>
+        <li>MIS & analytics platforms</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ CARBON ════ -->
+<section class="carbon-section" id="carbon">
+  <div class="carbon-glow"></div>
+  <div class="container carbon-grid">
+    <div class="fu">
+      <div class="section-head" style="margin-bottom:38px">
+        <span>Carbon Credits Explained</span>
+        <h2>Your Soil Is a Carbon Sink.<br>It Should Pay You.</h2>
+        <p>When farmers adopt reduced tillage, cover cropping, agroforestry, or composting, their soil absorbs CO₂. Companies worldwide pay for this sequestration to meet climate targets.</p>
+      </div>
+      <div class="carbon-steps">
+        <div class="carbon-step">
+          <div class="step-num">01</div>
+          <div class="step-content"><h4>Eligibility Assessment</h4><p>We evaluate your land, farming practices and region to determine carbon credit potential and income per hectare.</p></div>
+        </div>
+        <div class="carbon-step">
+          <div class="step-num">02</div>
+          <div class="step-content"><h4>Baseline Measurement</h4><p>Soil testing and satellite data establish your carbon baseline — the foundation for registry submission.</p></div>
+        </div>
+        <div class="carbon-step">
+          <div class="step-num">03</div>
+          <div class="step-content"><h4>Registry Enrollment</h4><p>We register your project under Verra VCS or Gold Standard in your FPO's name, protecting your credits legally.</p></div>
+        </div>
+        <div class="carbon-step">
+          <div class="step-num">04</div>
+          <div class="step-content"><h4>Annual Verification & Payment</h4><p>Credits verified yearly. We connect you to buyers and ensure income flows directly to your FPO account.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="fu d2">
+      <div class="carbon-panel">
+        <div class="big-num">₹18K–35K</div>
+        <div class="big-label">Estimated annual carbon income per hectare for verified agroforestry and soil carbon projects in India</div>
+        <div class="carbon-bar-wrap">
+          <div class="carbon-bar-label"><span>Soil Carbon Projects</span><span>₹18,000/ha</span></div>
+          <div class="carbon-bar-track"><div class="carbon-bar-fill" data-width="54"></div></div>
+        </div>
+        <div class="carbon-bar-wrap">
+          <div class="carbon-bar-label"><span>Agroforestry Projects</span><span>₹28,000/ha</span></div>
+          <div class="carbon-bar-track"><div class="carbon-bar-fill" data-width="78"></div></div>
+        </div>
+        <div class="carbon-bar-wrap">
+          <div class="carbon-bar-label"><span>Biochar + Composting</span><span>₹35,000/ha</span></div>
+          <div class="carbon-bar-track"><div class="carbon-bar-fill" data-width="96"></div></div>
+        </div>
+        <div class="carbon-mini">
+          <div class="c-mini"><div class="cn">6–12</div><div class="cl">Months to first credit issuance</div></div>
+          <div class="c-mini"><div class="cn">$8–22</div><div class="cl">Price per tonne CO₂ on voluntary markets</div></div>
+          <div class="c-mini"><div class="cn">10yr</div><div class="cl">Typical project duration with annual renewals</div></div>
+          <div class="c-mini"><div class="cn">₹0</div><div class="cl">Upfront cost — success-fee model only</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROCESS ════ -->
+<section class="process-section" id="process">
+<div class="container">
+  <div class="section-head centered fu">
+    <span>How We Work</span>
+    <h2>From Discovery to Impact Visibility</h2>
+    <p>A transparent, step-by-step transformation flow built for long-term donor engagement and FPO growth.</p>
+  </div>
+  <div class="process-track">
+    <div class="p-step fu d1"><div class="p-circle">🔍</div><h4>Research & Discovery</h4><p>Field assessments, stakeholder interviews and ecosystem mapping to understand your unique situation.</p></div>
+    <div class="p-step fu d2"><div class="p-circle">🗺️</div><h4>Strategy & Roadmap</h4><p>Governance planning, carbon strategy and digital architecture tailored specifically to your FPO.</p></div>
+    <div class="p-step fu d3"><div class="p-circle">⚙️</div><h4>Implementation & Media</h4><p>Registrations, carbon enrollment, impact documentaries and transformation archives executed simultaneously.</p></div>
+    <div class="p-step fu d4"><div class="p-circle">📈</div><h4>Visibility & Scale</h4><p>SEO authority, YouTube growth, donor trust publications and year-on-year carbon credit renewals.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ════ CASE STUDIES ════ -->
+<section class="case-studies" id="projects">
+<div class="container">
+  <div class="section-head fu">
+    <span>Case Studies</span>
+    <h2>Transformation Stories Built With<br>Data & Emotion</h2>
+    <p>Real FPOs, real carbon income, real communities changed.</p>
+  </div>
+  <div class="case-grid">
+    <div class="case-card fu d1">
+      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Maharashtra</div></div>
+      <div class="case-content">
+        <h3>Vidarbha Cotton Growers FPC</h3>
+        <p>Formation, board training, compliance setup and carbon credit enrollment for 340 cotton farmers across 12 villages in Wardha district. First carbon payment in Year 1.</p>
+        <div class="metrics-row"><span class="chip">340 Farmers</span><span class="chip">₹12L Carbon Y1</span><span class="chip">6mo to Credit</span></div>
+      </div>
+    </div>
+    <div class="case-card fu d2">
+      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Odisha</div></div>
+      <div class="case-content">
+        <h3>Koraput Tribal Agroforestry FPC</h3>
+        <p>Agroforestry carbon project for 520 tribal farmers. Enrolled 1,800 hectares under Verra VCS. Impact documentary attracted new CSR donor funding.</p>
+        <div class="metrics-row"><span class="chip">1,800 ha</span><span class="chip">₹28L Projected/Yr</span><span class="chip">Film Produced</span></div>
+      </div>
+    </div>
+    <div class="case-card fu d3">
+      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Karnataka</div></div>
+      <div class="case-content">
+        <h3>Raichur Mango Producers FPC</h3>
+        <p>Digital transformation — member portal, crop tracking and export linkage for 180 farmers. Eliminated middlemen and tripled price realisation.</p>
+        <div class="metrics-row"><span class="chip">180 Members</span><span class="chip">3x Price</span><span class="chip">₹4L Saved</span></div>
+      </div>
+    </div>
+    <div class="case-card fu d4">
+      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Uttar Pradesh</div></div>
+      <div class="case-content">
+        <h3>Bundelkhand Women Farmers Initiative</h3>
+        <p>Multilingual educational content, WhatsApp advisory bot, and sustainability visibility for a women-led FPC with 260 members across 8 villages.</p>
+        <div class="metrics-row"><span class="chip">+65% Engagement</span><span class="chip">8 Villages</span><span class="chip">YouTube Reach</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ MEDIA ENGINE ════ -->
+<section class="media-section" id="media">
+<div class="container">
+  <div class="section-head fu">
+    <span>Media Engine</span>
+    <h2>Impact Media Designed For Donors,<br>NGOs & Communities</h2>
+    <p>A premium storytelling layer that builds emotional engagement and long-term donor relationships.</p>
+  </div>
+  <div class="media-grid">
+    <div class="media-card fu d1"><h3>🎥 Documentary Storytelling</h3><p>Cinematic rural transformation stories with drone visuals, farmer interviews, environmental footage and before-after evidence in Hindi, Tamil, Odia and English.</p></div>
+    <div class="media-card fu d2"><h3>📺 YouTube & Social Growth</h3><p>SEO-driven impact media optimised for YouTube visibility, long-term discoverability, donor outreach and authority in the FPO and carbon credit ecosystem.</p></div>
+    <div class="media-card fu d3"><h3>📑 Whitepapers & Research</h3><p>Authority-building publications, policy explainers and sustainability intelligence reports aligned with ESG frameworks, FPO governance and India's carbon markets.</p></div>
+    <div class="media-card fu d4"><h3>🌐 NGO & CSR Visibility</h3><p>Build institutional trust using measurable impact dashboards, transformation archives, donor communication packages and certified sustainability storytelling campaigns.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ════ TESTIMONIALS ════ -->
+<section class="testimonials" id="stories">
+<div class="container">
+  <div class="section-head centered fu">
+    <span>Farmer Stories</span>
+    <h2>In Their Own Words</h2>
+    <p>From confusion to confidence — hear from farmers and FPO leaders across India.</p>
+  </div>
+  <div class="testi-carousel fu">
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote-icon">"</div>
+          <p>We had been trying to register our FPC for two years with no success. AgriFPO Impact completed the entire registration in six weeks and then enrolled us in a carbon program. We received our first payment of ₹4.2 lakhs this season.</p>
+          <div class="testi-author"><div class="avatar">R</div><div><h5>Ramesh Patil</h5><span>Chairman, Vidarbha Cotton Growers FPC, Maharashtra</span></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote-icon">"</div>
+          <p>The website and member tracking software changed everything. Our board can see every farmer's crop cycle, input costs, and delivery schedule from their phone. We used to do all of this on paper — now everything is in one place.</p>
+          <div class="testi-author"><div class="avatar">S</div><div><h5>Savitri Devi</h5><span>CEO, Bundelkhand Women Farmers FPC, UP</span></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="quote-icon">"</div>
+          <p>I did not know what a carbon credit was one year ago. Today our FPO earns from the trees we planted — money that goes directly to 520 tribal families. They explained everything in Odia and walked with us at every single step.</p>
+          <div class="testi-author"><div class="avatar">D</div><div><h5>Dinabandhu Majhi</h5><span>Secretary, Koraput Agroforestry FPC, Odisha</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-dots">
+      <button class="dot active" onclick="goSlide(0)"></button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="faq-section" id="faq">
+<div class="container">
+  <div class="section-head centered fu">
+    <span>FAQ</span>
+    <h2>Common Questions Answered</h2>
+    <p>Everything you need to know before getting started with FPO formation or carbon credits.</p>
+  </div>
+  <div class="faq-grid fu">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How long does FPO registration take? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">With all documents in order, MCA registration for a Farmer Producer Company typically takes 4–8 weeks. Our team handles the entire process, including DIN procurement, name approval, and ROC filing, so you don't have to navigate it alone.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the minimum number of farmers to form an FPO? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">A Farmer Producer Company under the Companies Act 2013 requires a minimum of 10 farmer members and 2 directors. For NABARD equity grant eligibility, a minimum of 300 members (500 in hilly areas) is preferred, but formation can begin with fewer.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Does my farm qualify for carbon credits? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Most Indian farmland practising or willing to adopt reduced tillage, cover cropping, agroforestry, or composting is eligible. A minimum contiguous area of 100–200 hectares aggregated across FPO members is generally required for Verra VCS registration. We do a free eligibility assessment.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How much do your services cost? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">FPO formation and compliance services are priced as fixed packages starting from ₹35,000. Carbon credit consulting operates on a success-fee model — we charge no upfront fees and earn only when your FPO earns. Digital and media services are quoted per project scope.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Which government schemes can FPOs access? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Registered FPOs can access SFAC equity grants (up to ₹15 lakh), NABARD refinance and capital grants, PM-FME processing subsidies, PM-KISAN benefits for member farmers, state-level FPO promotion schemes, and APEDA export support. We identify and apply for all applicable schemes on your behalf.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the carbon credit payment timeline? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">From application to first credit issuance typically takes 6–12 months, covering baseline surveys, project documentation, registry enrollment and third-party verification. After that, credits are issued and sold annually. Payments go directly into the FPO's bank account.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you produce content in regional languages? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Yes. Our media and training content is produced in Hindi, Marathi, Tamil, Telugu, Kannada, Odia, and Bengali on request. All farmer-facing digital tools (apps, bots, portals) are also built with regional language support as standard.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Can you help an existing FPO, not just new formations? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Absolutely. A large portion of our work is with existing FPOs — fixing compliance gaps, enrolling them in carbon programs, building their digital presence, and producing impact media that helps them attract grants and CSR funding. We audit your current situation in the free consultation call.</div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section class="contact-section" id="contact">
+  <div class="contact-glow"></div>
+  <div class="container contact-grid">
+
+    <div class="fu">
+      <div class="section-head" style="margin-bottom:34px">
+        <span>Get In Touch</span>
+        <h2>Book a Free<br>Consultation</h2>
+        <p>Whether you are starting your first FPO or looking to unlock carbon credits for an existing one — a 30-minute call will clarify exactly what is possible for you.</p>
+      </div>
+      <div class="contact-methods">
+        <a href="https://wa.me/919000000000" class="cmethod" target="_blank">
+          <div class="cmethod-icon">💬</div>
+          <div><h5>WhatsApp Us</h5><span>Quick questions answered within 2 hours</span></div>
+        </a>
+        <a href="mailto:hello@mujanti.in" class="cmethod">
+          <div class="cmethod-icon">📧</div>
+          <div><h5>Email Enquiry</h5><span>hello@mujanti.in · Reply within 24 hours</span></div>
+        </a>
+        <a href="tel:+919000000000" class="cmethod">
+          <div class="cmethod-icon">📞</div>
+          <div><h5>Call Us Directly</h5><span>Mon–Sat · 9 AM – 6 PM IST</span></div>
+        </a>
+        <a href="#" class="cmethod">
+          <div class="cmethod-icon">📅</div>
+          <div><h5>Schedule via Calendly</h5><span>Pick a time slot that works for you</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="appt-form fu d2">
+      <h3>Send an Enquiry</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Ramesh Patil"></div>
+        <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="ramesh@example.com"></div>
+      <div class="form-group"><label>State / District</label><input type="text" placeholder="e.g. Wardha, Maharashtra"></div>
+      <div class="form-group">
+        <label>Service You Are Interested In</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>FPO Formation & Registration</option>
+          <option>Carbon Credit Consulting</option>
+          <option>FPO Compliance & Governance</option>
+          <option>Impact Storytelling / Documentary</option>
+          <option>Website or Software Development</option>
+          <option>SEO & Digital Visibility</option>
+          <option>Drone & Visual Documentation</option>
+          <option>Multiple Services / Not Sure Yet</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Tell Us About Your Situation</label><textarea placeholder="e.g. We have 200 farmers and want to form an FPO. We also have 400 acres and want to explore carbon credits..."></textarea></div>
+      <button class="btn-submit" id="submitBtn" onclick="handleSubmit(this)">Send Enquiry →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ CTA BAND ════ -->
+<section class="cta-band">
+<div class="container">
+  <h2>Build a Future-Ready Sustainability Platform</h2>
+  <p>Move beyond a traditional consulting website. Create a cinematic ecosystem combining sustainability intelligence, impact storytelling, media visibility and digital transformation — all in one integrated platform.</p>
+  <a href="#contact" class="btn btn-white">Schedule a Strategic Consultation →</a>
+</div>
+</section>
+
+<!-- ════ NEWSLETTER ════ -->
+<div class="newsletter-row">
+<div class="container newsletter-inner">
+  <h3>Stay ahead of India's <span>FPO & Carbon Credit</span> ecosystem — get our monthly intelligence brief.</h3>
+  <div class="newsletter-form">
+    <input type="email" placeholder="your@email.com" id="nlEmail">
+    <button class="newsletter-btn" onclick="handleNewsletter(this)">Subscribe →</button>
+  </div>
+</div>
+</div>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="color:white;font-size:1.3rem">🌾 <span>Mujanti</span></div>
+      <p>Mujanti's dedicated FPO services, carbon credit consulting, and sustainability media platform. Every farmer deserves access to the systems, knowledge, and markets to thrive.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" title="YouTube">▶</a>
+        <a href="#" class="social-btn" title="LinkedIn">in</a>
+        <a href="#" class="social-btn" title="Instagram">📷</a>
+        <a href="#" class="social-btn" title="Facebook">f</a>
+        <a href="#" class="social-btn" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Capabilities</h4>
+      <ul>
+        <li><a href="#services">FPO Formation</a></li>
+        <li><a href="#carbon">Carbon Credits</a></li>
+        <li><a href="#media">Impact Films</a></li>
+        <li><a href="#media">NGO Storytelling</a></li>
+        <li><a href="#services">Digital Platforms</a></li>
+        <li><a href="#services">Drone Visuals</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Research Areas</h4>
+      <ul>
+        <li>ESG Frameworks</li>
+        <li>MRV Systems</li>
+        <li>Regional SEO</li>
+        <li>Sustainability Reporting</li>
+        <li>YouTube Strategy</li>
+        <li>Carbon Markets India</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@mujanti.in">hello@mujanti.in</a></li>
+        <li><a href="#">LinkedIn Page</a></li>
+        <li><a href="#">YouTube Channel</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">WhatsApp Community</a></li>
+        <li><a href="#contact">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Mujanti Services Pvt. Ltd. · All rights reserved · India</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Refund Policy</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!-- ════ FLOATING BUTTONS ════ -->
+<a href="https://wa.me/919000000000" class="wa-btn" target="_blank" title="Chat on WhatsApp">💬</a>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- ════ SCRIPTS ════ -->
+<script>
+/* ── Nav scroll state ── */
+const navbar = document.getElementById('navbar');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.remove('top');
+    navbar.classList.add('scrolled');
+    scrollTopBtn.classList.add('show');
+  } else {
+    navbar.classList.add('top');
+    navbar.classList.remove('scrolled');
+    scrollTopBtn.classList.remove('show');
+  }
+  // active nav link
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 90) cur = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+
+/* ── Hamburger ── */
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── Intersection observer for .fu ── */
+const fuObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('vis');
+      fuObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+
+// Hero items immediately
+setTimeout(() => {
+  document.querySelectorAll('.hero .fu').forEach((el, i) => {
+    setTimeout(() => el.classList.add('vis'), 200 + i * 160);
+  });
+}, 80);
+
+/* ── Counter animation ── */
+function animateCount(el) {
+  const target = parseInt(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '+';
+  let current = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = prefix + current + (current === target ? suffix : '');
+    if (current >= target) clearInterval(timer);
+  }, 40);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCount(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+/* ── Carbon bars ── */
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.carbon-bar-fill').forEach(bar => {
+        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 300);
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+const carbonPanel = document.querySelector('.carbon-panel');
+if (carbonPanel) barObs.observe(carbonPanel);
+
+/* ── FAQ accordion ── */
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── Form submit ── */
+function handleSubmit(btn) {
+  btn.innerHTML = '✓ Enquiry Sent! We\'ll be in touch within 24 hours.';
+  btn.style.background = 'var(--g3)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = 'Send Enquiry →';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 4500);
+}
+
+/* ── Newsletter ── */
+function handleNewsletter(btn) {
+  const email = document.getElementById('nlEmail').value;
+  if (!email) return;
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = 'var(--g4)';
+  setTimeout(() => { btn.textContent = 'Subscribe →'; btn.style.background = ''; }, 3000);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Vidarbha Cotton Growers FPC",
+    "state": "Maharashtra",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop",
+    "description": "Formation, board training, compliance setup and carbon credit enrollment for 340 cotton farmers across 12 villages in Wardha district. First carbon payment in Year 1.",
+    "chips": ["340 Farmers", "₹12L Carbon Y1", "6mo to Credit"]
+  },
+  {
+    "title": "Koraput Tribal Agroforestry FPC",
+    "state": "Odisha",
+    "image": "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop",
+    "description": "Agroforestry carbon project for 520 tribal farmers. Enrolled 1,800 hectares under Verra VCS. Impact documentary attracted new CSR donor funding.",
+    "chips": ["1,800 ha", "₹28L Projected/Yr", "Film Produced"]
+  },
+  {
+    "title": "Raichur Mango Producers FPC",
+    "state": "Karnataka",
+    "image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop",
+    "description": "Digital transformation — member portal, crop tracking and export linkage for 180 farmers. Eliminated middlemen and tripled price realisation.",
+    "chips": ["180 Members", "3x Price", "₹4L Saved"]
+  },
+  {
+    "title": "Bundelkhand Women Farmers Initiative",
+    "state": "Uttar Pradesh",
+    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop",
+    "description": "Multilingual educational content, WhatsApp advisory bot, and sustainability visibility for a women-led FPC with 260 members across 8 villages.",
+    "chips": ["+65% Engagement", "8 Villages", "YouTube Reach"]
+  }
+]
