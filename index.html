@@ -27,8 +27,9 @@
 
 /* ══════ RESET ══════ */
 *{margin:0;padding:0;box-sizing:border-box}
+html, body { max-width: 100vw; overflow-x: hidden; }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
 .container{width:90%;max-width:1280px;margin:auto}
 section{padding:112px 0;position:relative}
 h1,h2,h3,h4{line-height:1.1}
@@ -540,8 +541,9 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
   .faq-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  :root{--nav-h:64px}
-  .hero h1{font-size:2.8rem;letter-spacing:-1px}
+  :root{--nav-h:64px}
+  .nav-cta { display: none; }
+  .hero h1{font-size:2.8rem;letter-spacing:-1px}
   .section-head h2{font-size:2.1rem}
   .services-grid,.case-grid,.media-grid,.testi-slide,.faq-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
@@ -700,79 +702,8 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
     <h2>A Hybrid Platform Combining<br>Consulting, Research & Media</h2>
     <p>Designed for FPOs, NGOs, sustainability startups, climate initiatives, grant organisations and CSR programs across India.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card fu d1">
-      <div class="svc-icon">🏛️</div>
-      <h3>FPO Formation & Governance</h3>
-      <p>End-to-end legal formation and governance architecture under the Companies Act 2013.</p>
-      <ul>
-        <li>MCA / ROC registration end-to-end</li>
-        <li>Board formation & bylaw drafting</li>
-        <li>NABARD & SFAC onboarding support</li>
-        <li>Annual filings & compliance calendar</li>
-        <li>Government scheme applications</li>
-      </ul>
-    </div>
-    <div class="service-card fu d2">
-      <div class="svc-icon">🌍</div>
-      <h3>Carbon Credit Ecosystems</h3>
-      <p>MRV-ready carbon strategy, regenerative agriculture documentation, and monetisation support.</p>
-      <ul>
-        <li>Farm carbon baseline assessment</li>
-        <li>Verra VCS & Gold Standard enrollment</li>
-        <li>Soil carbon & agroforestry projects</li>
-        <li>Annual verification & buyer linkage</li>
-        <li>Success-fee — zero upfront cost</li>
-      </ul>
-    </div>
-    <div class="service-card fu d3">
-      <div class="svc-icon">🎬</div>
-      <h3>Impact Storytelling Studio</h3>
-      <p>Cinematic documentaries, farmer transformation stories, and CSR media campaigns.</p>
-      <ul>
-        <li>Farmer transformation documentaries</li>
-        <li>Drone visuals & aerial storytelling</li>
-        <li>CSR impact narratives & evidence</li>
-        <li>Multilingual regional content</li>
-        <li>YouTube & social distribution</li>
-      </ul>
-    </div>
-    <div class="service-card fu d1">
-      <div class="svc-icon">📈</div>
-      <h3>SEO & Digital Visibility</h3>
-      <p>Regional SEO, multilingual content systems, and YouTube growth to build authority.</p>
-      <ul>
-        <li>Regional SEO in Hindi, Tamil, Odia</li>
-        <li>YouTube channel strategy & growth</li>
-        <li>Sustainability search positioning</li>
-        <li>Whitepapers & authority content</li>
-        <li>Donor-facing digital presence</li>
-      </ul>
-    </div>
-    <div class="service-card fu d2">
-      <div class="svc-icon">🛰️</div>
-      <h3>Drone & Visual Intelligence</h3>
-      <p>Aerial documentation, geographic storytelling, and visual impact archives.</p>
-      <ul>
-        <li>Drone surveys & land mapping</li>
-        <li>Seasonal transformation archives</li>
-        <li>Carbon land coverage evidence</li>
-        <li>Geographic storytelling visuals</li>
-        <li>ESG visual reporting packages</li>
-      </ul>
-    </div>
-    <div class="service-card fu d3">
-      <div class="svc-icon">💻</div>
-      <h3>Digital Transformation</h3>
-      <p>Purpose-built websites, dashboards, and systems designed specifically for FPOs.</p>
-      <ul>
-        <li>FPO website design & hosting</li>
-        <li>Member & crop tracking software</li>
-        <li>Impact reporting dashboards</li>
-        <li>WhatsApp-based farmer bots</li>
-        <li>MIS & analytics platforms</li>
-      </ul>
-    </div>
+  <div class="services-grid" id="services-container">
+    
   </div>
 </div>
 </section>
@@ -858,39 +789,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
     <h2>Transformation Stories Built With<br>Data & Emotion</h2>
     <p>Real FPOs, real carbon income, real communities changed.</p>
   </div>
-  <div class="case-grid">
-    <div class="case-card fu d1">
-      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Maharashtra</div></div>
-      <div class="case-content">
-        <h3>Vidarbha Cotton Growers FPC</h3>
-        <p>Formation, board training, compliance setup and carbon credit enrollment for 340 cotton farmers across 12 villages in Wardha district. First carbon payment in Year 1.</p>
-        <div class="metrics-row"><span class="chip">340 Farmers</span><span class="chip">₹12L Carbon Y1</span><span class="chip">6mo to Credit</span></div>
-      </div>
-    </div>
-    <div class="case-card fu d2">
-      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Odisha</div></div>
-      <div class="case-content">
-        <h3>Koraput Tribal Agroforestry FPC</h3>
-        <p>Agroforestry carbon project for 520 tribal farmers. Enrolled 1,800 hectares under Verra VCS. Impact documentary attracted new CSR donor funding.</p>
-        <div class="metrics-row"><span class="chip">1,800 ha</span><span class="chip">₹28L Projected/Yr</span><span class="chip">Film Produced</span></div>
-      </div>
-    </div>
-    <div class="case-card fu d3">
-      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Karnataka</div></div>
-      <div class="case-content">
-        <h3>Raichur Mango Producers FPC</h3>
-        <p>Digital transformation — member portal, crop tracking and export linkage for 180 farmers. Eliminated middlemen and tripled price realisation.</p>
-        <div class="metrics-row"><span class="chip">180 Members</span><span class="chip">3x Price</span><span class="chip">₹4L Saved</span></div>
-      </div>
-    </div>
-    <div class="case-card fu d4">
-      <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop')"><div class="case-tag">Uttar Pradesh</div></div>
-      <div class="case-content">
-        <h3>Bundelkhand Women Farmers Initiative</h3>
-        <p>Multilingual educational content, WhatsApp advisory bot, and sustainability visibility for a women-led FPC with 260 members across 8 villages.</p>
-        <div class="metrics-row"><span class="chip">+65% Engagement</span><span class="chip">8 Villages</span><span class="chip">YouTube Reach</span></div>
-      </div>
-    </div>
+  <div class="case-grid" id="projects-container">    
   </div>
 </div>
 </section>
@@ -942,48 +841,8 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
     <h2>Common Questions Answered</h2>
     <p>Everything you need to know before getting started with FPO formation or carbon credits.</p>
   </div>
-  <div class="faq-grid fu">
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">How long does FPO registration take? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">With all documents in order, MCA registration for a Farmer Producer Company typically takes 4–8 weeks. Our team handles the entire process, including DIN procurement, name approval, and ROC filing, so you don't have to navigate it alone.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">What is the minimum number of farmers to form an FPO? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">A Farmer Producer Company under the Companies Act 2013 requires a minimum of 10 farmer members and 2 directors. For NABARD equity grant eligibility, a minimum of 300 members (500 in hilly areas) is preferred, but formation can begin with fewer.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Does my farm qualify for carbon credits? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">Most Indian farmland practising or willing to adopt reduced tillage, cover cropping, agroforestry, or composting is eligible. A minimum contiguous area of 100–200 hectares aggregated across FPO members is generally required for Verra VCS registration. We do a free eligibility assessment.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">How much do your services cost? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">FPO formation and compliance services are priced as fixed packages starting from ₹35,000. Carbon credit consulting operates on a success-fee model — we charge no upfront fees and earn only when your FPO earns. Digital and media services are quoted per project scope.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Which government schemes can FPOs access? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">Registered FPOs can access SFAC equity grants (up to ₹15 lakh), NABARD refinance and capital grants, PM-FME processing subsidies, PM-KISAN benefits for member farmers, state-level FPO promotion schemes, and APEDA export support. We identify and apply for all applicable schemes on your behalf.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">What is the carbon credit payment timeline? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">From application to first credit issuance typically takes 6–12 months, covering baseline surveys, project documentation, registry enrollment and third-party verification. After that, credits are issued and sold annually. Payments go directly into the FPO's bank account.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Do you produce content in regional languages? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">Yes. Our media and training content is produced in Hindi, Marathi, Tamil, Telugu, Kannada, Odia, and Bengali on request. All farmer-facing digital tools (apps, bots, portals) are also built with regional language support as standard.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Can you help an existing FPO, not just new formations? <span class="faq-arrow">▼</span></div>
-      <div class="faq-a">Absolutely. A large portion of our work is with existing FPOs — fixing compliance gaps, enrolling them in carbon programs, building their digital presence, and producing impact media that helps them attract grants and CSR funding. We audit your current situation in the free consultation call.</div>
-    </div>
-
+  <div class="faq-grid fu" id="faq-container">  
+      <!-- JavaScript will inject FAQ here -->
   </div>
 </div>
 </section>
@@ -1270,6 +1129,69 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => {
       console.error("Failed to load testimonials:", error);
     });
+
+   /* ── Fetch FAQ ── */
+  fetch('content/faq.json')
+    .then(res => res.ok ? res.json() : [])
+    .then(data => {
+      const container = document.getElementById('faq-container');
+      if (!container) return;
+      let html = '';
+      data.forEach(faq => {
+        html += `
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">${faq.question} <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">${faq.answer}</div>
+        </div>`;
+      });
+      container.innerHTML = html;
+    }).catch(err => console.error("FAQ Error:", err));
+
+  /* ── Fetch Services ── */
+  fetch('content/services.json')
+    .then(res => res.ok ? res.json() : [])
+    .then(data => {
+      const container = document.getElementById('services-container');
+      if (!container) return;
+      let html = '';
+      data.forEach(srv => {
+        const bulletHtml = srv.bullets.map(b => `<li>${b}</li>`).join('');
+        html += `
+        <div class="service-card fu ${srv.delay}">
+          <div class="svc-icon">${srv.icon}</div>
+          <h3>${srv.title}</h3>
+          <p>${srv.description}</p>
+          <ul>${bulletHtml}</ul>
+        </div>`;
+      });
+      container.innerHTML = html;
+      container.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+    }).catch(err => console.error("Services Error:", err));
+
+  /* ── Fetch Projects ── */
+  fetch('content/projects.json')
+    .then(res => res.ok ? res.json() : [])
+    .then(data => {
+      const container = document.getElementById('projects-container');
+      if (!container) return;
+      let html = '';
+      data.forEach(proj => {
+        const metricHtml = proj.metrics.map(m => `<span class="chip">${m}</span>`).join('');
+        html += `
+        <div class="case-card fu ${proj.delay}">
+          <div class="case-image" style="background-image:url('${proj.image}')">
+            <div class="case-tag">${proj.tag}</div>
+          </div>
+          <div class="case-content">
+            <h3>${proj.title}</h3>
+            <p>${proj.description}</p>
+            <div class="metrics-row">${metricHtml}</div>
+          </div>
+        </div>`;
+      });
+      container.innerHTML = html;
+      container.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+    }).catch(err => console.error("Projects Error:", err));
 });
 
 /* ── 7. Global Functions (Menu, FAQ, Forms) ── */
