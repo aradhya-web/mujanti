@@ -1,14 +1,50 @@
 [
   {
-    "icon": "🏛️",
-    "title": "FPO Formation & Governance",
-    "description": "End-to-end legal formation and governance architecture under the Companies Act 2013.",
+    "icon": "🎯",
+    "title": "High-Velocity Capacity Building",
+    "description": "For NGOs & Startups — we transform executive and field teams into high-performing units by building the muscle organisations need to sustain outcomes.",
     "bullets": [
-      "MCA / ROC registration end-to-end",
-      "Board formation & bylaw drafting",
-      "NABARD & SFAC onboarding support",
-      "Annual filings & compliance calendar",
-      "Government scheme applications"
+      "\"Vital Few\" performance dashboarding & outcome-based KPIs",
+      "Leadership bootcamps — from task managers to program owners",
+      "SOP digitalization & mobile-first field workflows",
+      "Donor-ready impact reporting systems",
+      "Precise problem-statement & strategy diagnostics"
+    ]
+  },
+  {
+    "icon": "🌱",
+    "title": "FPO & Farmer Empowerment",
+    "description": "The Agripreneur Shift — moving farmers and collectives from \"Price-Takers\" to \"Value-Makers\" through governance, business skills and negotiation strength.",
+    "bullets": [
+      "FPO formation: MCA/ROC registration, board & bylaws",
+      "NABARD, SFAC & government scheme onboarding",
+      "Value-addition scouting for highest-ROI opportunities",
+      "Business mindset coaching — P&L, depreciation, working capital",
+      "Collective negotiation & risk management training"
+    ]
+  },
+  {
+    "icon": "💻",
+    "title": "Digital Agriculture & Transformation",
+    "description": "Purpose-built digital suites for FPOs, paired with high-leverage knowledge transfer through peer-to-peer video and local champions.",
+    "bullets": [
+      "FPO website design & hosting",
+      "Member & crop tracking software",
+      "Impact reporting dashboards & MIS/analytics",
+      "WhatsApp-based farmer bots",
+      "Peer-to-peer video production & local champion training"
+    ]
+  },
+  {
+    "icon": "🎥",
+    "title": "Impact Assessment & Visual Storytelling",
+    "description": "Contextual M&E tools, visual evidence and actionable reporting that bring impact to life for donors, partners and communities.",
+    "bullets": [
+      "Contextual M&E tool design & deployment",
+      "Drone visuals & aerial impact documentation",
+      "Farmer transformation documentaries & testimonials",
+      "Donor-ready actionable reporting & learning summaries",
+      "Regional SEO & multilingual digital visibility"
     ]
   },
   {
@@ -24,51 +60,15 @@
     ]
   },
   {
-    "icon": "🎬",
-    "title": "Impact Storytelling Studio",
-    "description": "Cinematic documentaries, farmer transformation stories, and CSR media campaigns.",
+    "icon": "🌿",
+    "title": "Regenerative Agriculture",
+    "description": "Increasing Soil Organic Carbon to build climate resilience and improve yields — end-to-end consultancy and execution for sustainable farming.",
     "bullets": [
-      "Farmer transformation documentaries",
-      "Drone visuals & aerial storytelling",
-      "CSR impact narratives & evidence",
-      "Multilingual regional content",
-      "YouTube & social distribution"
-    ]
-  },
-  {
-    "icon": "📈",
-    "title": "SEO & Digital Visibility",
-    "description": "Regional SEO, multilingual content systems, and YouTube growth to build authority.",
-    "bullets": [
-      "Regional SEO in Hindi, Tamil, Odia",
-      "YouTube channel strategy & growth",
-      "Sustainability search positioning",
-      "Whitepapers & authority content",
-      "Donor-facing digital presence"
-    ]
-  },
-  {
-    "icon": "🛰️",
-    "title": "Drone & Visual Intelligence",
-    "description": "Aerial documentation, geographic storytelling, and visual impact archives.",
-    "bullets": [
-      "Drone surveys & land mapping",
-      "Seasonal transformation archives",
-      "Carbon land coverage evidence",
-      "Geographic storytelling visuals",
-      "ESG visual reporting packages"
-    ]
-  },
-  {
-    "icon": "💻",
-    "title": "Digital Transformation",
-    "description": "Purpose-built websites, dashboards, and systems designed specifically for FPOs.",
-    "bullets": [
-      "FPO website design & hosting",
-      "Member & crop tracking software",
-      "Impact reporting dashboards",
-      "WhatsApp-based farmer bots",
-      "MIS & analytics platforms"
+      "Diversified cropping for biodiversity & risk mitigation",
+      "Soil health management & microbiome rebuilding",
+      "Water conservation & efficient usage planning",
+      "Farm blueprinting & development planning",
+      "On-site support & turnkey contract execution"
     ]
   }
 ]
