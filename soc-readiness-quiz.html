@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soil Organic Carbon (SOC) & Regenerative Agriculture Readiness Quiz | Mujanti</title>
+<meta name="description" content="Take Mujanti's free 2-minute Regenerative Agriculture Readiness Quiz. Answer 4 quick questions about your cropping, tillage, residue and water practices to get your Soil Organic Carbon (SOC) score and a personalised action plan.">
+<link rel="canonical" href="https://mujanti.com/soc-readiness-quiz.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Soil Organic Carbon (SOC) & Regenerative Agriculture Readiness Quiz | Mujanti">
+<meta property="og:description" content="A free 2-minute quiz to score your farm's Regenerative Agriculture readiness and get a personalised SOC action plan.">
+<meta property="og:image" content="https://mujanti.com/assets/logo.png">
+<meta property="og:url" content="https://mujanti.com/soc-readiness-quiz.html">
+
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F4FAF5; --white:#fff;
+  --g1:#1B5E20; --g2:#2E7D32; --g3:#43A047; --g4:#66BB6A; --g5:#A5D6A7;
+  --soft:#E8F5E9; --dark:#07110A; --dark2:#0D1F12;
+  --text:#1A2B1E; --muted:#5A7A63; --border:#DCE8DE;
+  --gold:#C8A84B; --gold2:#F5E9C2;
+  --red:#C8543B; --red-soft:#FBEAE5;
+  --r:26px; --r-sm:14px;
+  --shadow-sm:0 2px 12px rgba(27,94,32,0.07);
+  --shadow-md:0 8px 32px rgba(27,94,32,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{max-width:100vw;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+.container{width:90%;max-width:760px;margin:auto}
+
+/* Header */
+header{padding:22px 0;background:var(--dark)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo-link img{height:46px;object-fit:contain}
+.back-link{color:var(--g5);font-weight:600;font-size:.95rem}
+.back-link:hover{color:var(--white)}
+
+/* Intro */
+.intro{padding:56px 0 36px;text-align:center}
+.eyebrow{display:inline-block;background:var(--soft);color:var(--g1);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:8px 18px;border-radius:99px;margin-bottom:18px}
+.intro h1{font-size:2.2rem;font-weight:800;color:var(--g1);margin-bottom:14px;letter-spacing:-0.5px}
+.intro p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:0 auto 10px}
+.intro .privacy-note{font-size:.85rem;color:var(--g2);background:var(--soft);display:inline-block;padding:8px 16px;border-radius:99px;margin-top:14px;font-weight:600}
+
+/* Quiz card */
+.quiz-wrap{padding:0 0 80px}
+.quiz-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-md);padding:36px;min-height:380px}
+
+.progress{display:flex;gap:8px;margin-bottom:28px}
+.progress-seg{flex:1;height:6px;border-radius:99px;background:var(--soft)}
+.progress-seg.done{background:var(--g3)}
+
+.q-tag{font-size:.8rem;font-weight:700;color:var(--g3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.q-text{font-size:1.35rem;font-weight:700;color:var(--text);margin-bottom:24px;line-height:1.4}
+
+.options{display:flex;flex-direction:column;gap:12px}
+.option{
+  display:flex;align-items:center;gap:14px;
+  border:1.5px solid var(--border);border-radius:var(--r-sm);
+  padding:16px 18px;cursor:pointer;background:var(--white);
+  transition:.18s; font-size:.98rem; color:var(--text); text-align:left;
+}
+.option:hover{border-color:var(--g4);background:var(--soft)}
+.option .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;transition:.18s}
+.option.selected{border-color:var(--g2);background:var(--soft)}
+.option.selected .dot{border-color:var(--g2);background:var(--g2);box-shadow:inset 0 0 0 3px var(--white)}
+
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:30px}
+.btn{
+  font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer;
+  border:none;border-radius:99px;padding:14px 28px;transition:.2s;
+}
+.btn-primary{background:var(--g1);color:var(--white)}
+.btn-primary:hover{background:var(--g2)}
+.btn-primary:disabled{background:var(--g5);cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--muted);padding:14px 8px}
+.btn-ghost:hover{color:var(--g1)}
+.btn-ghost:disabled{opacity:0;pointer-events:none}
+
+/* Results */
+.results-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-md);padding:40px}
+.score-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.score-circle{
+  width:108px;height:108px;border-radius:50%;flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:6px solid var(--g3); color:var(--g1); font-weight:800;
+}
+.score-circle .big{font-size:1.9rem;line-height:1}
+.score-circle .small{font-size:.7rem;color:var(--muted);font-weight:600}
+.band-label{display:inline-block;font-weight:800;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;border-radius:99px;margin-bottom:8px}
+.band-low .score-circle{border-color:var(--red)}
+.band-low .band-label{background:var(--red-soft);color:var(--red)}
+.band-mid .score-circle{border-color:var(--gold)}
+.band-mid .band-label{background:var(--gold2);color:#8a6d23}
+.band-high .score-circle{border-color:var(--g3)}
+.band-high .band-label{background:var(--soft);color:var(--g1)}
+.results-card h2{font-size:1.5rem;color:var(--text);margin-bottom:6px}
+.results-card .band-desc{color:var(--muted);margin-bottom:28px}
+
+.reco-list{display:flex;flex-direction:column;gap:14px;margin-bottom:30px}
+.reco{display:flex;gap:12px;background:var(--soft);border-radius:var(--r-sm);padding:16px 18px}
+.reco .icon{font-size:1.3rem;flex-shrink:0;line-height:1.4}
+.reco .body strong{display:block;color:var(--g1);font-size:.92rem;margin-bottom:3px}
+.reco .body span{color:var(--muted);font-size:.92rem}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.cta-row a{flex:1;text-align:center;padding:15px 20px;border-radius:99px;font-weight:700;font-size:.95rem}
+.cta-primary{background:var(--g1);color:var(--white)}
+.cta-primary:hover{background:var(--g2)}
+.cta-secondary{background:var(--soft);color:var(--g1);border:1px solid var(--border)}
+.cta-secondary:hover{background:var(--gold2)}
+.retake{display:block;text-align:center;margin-top:18px;color:var(--muted);font-size:.9rem;font-weight:600;cursor:pointer;background:none;border:none;font-family:inherit}
+.retake:hover{color:var(--g1)}
+
+/* Methodology footer */
+.methodology{padding:0 0 70px;color:var(--muted);font-size:.88rem}
+.methodology h3{color:var(--g1);font-size:1.05rem;margin-bottom:8px}
+.methodology p{margin-bottom:0}
+
+footer{background:var(--dark);color:var(--g5);padding:28px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--gold);font-weight:600}
+
+@media(max-width:600px){
+  .intro h1{font-size:1.7rem}
+  .quiz-card,.results-card{padding:24px}
+  .q-text{font-size:1.1rem}
+  .cta-row{flex-direction:column}
+  .cta-row a{flex:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo-link"><img src="assets/logo.png" alt="Mujanti Logo"></a>
+    <a href="index.html#services" class="back-link">← Back to Mujanti.com</a>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <span class="eyebrow">Free Tool</span>
+    <h1>Soil Organic Carbon (SOC) &amp; Regenerative Agriculture Readiness Quiz</h1>
+    <p>Answer 4 quick questions about your farm's cropping, tillage, residue and water practices. In under 2 minutes, get your Regenerative Readiness Score and a personalised action plan to start rebuilding Soil Organic Carbon.</p>
+    <span class="privacy-note">🔒 Nothing is saved or sent anywhere — your answers stay in this browser tab only.</span>
+  </div>
+</section>
+
+<div class="container quiz-wrap">
+
+  <!-- QUIZ -->
+  <div class="quiz-card" id="quizCard">
+    <div class="progress" id="progress"></div>
+    <div class="q-tag" id="qTag"></div>
+    <div class="q-text" id="qText"></div>
+    <div class="options" id="qOptions"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-ghost" id="backBtn" onclick="goBack()">← Back</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="goNext()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" id="resultsCard" style="display:none">
+    <div class="score-row">
+      <div class="score-circle">
+        <div class="big" id="scoreNum">0</div>
+        <div class="small">out of 12</div>
+      </div>
+      <div>
+        <div class="band-label" id="bandLabel"></div>
+        <h2 id="bandTitle"></h2>
+      </div>
+    </div>
+    <p class="band-desc" id="bandDesc"></p>
+
+    <div class="reco-list" id="recoList"></div>
+
+    <div class="cta-row">
+      <a href="#" id="whatsappCta" class="cta-primary" target="_blank">💬 Get My Farm Blueprint on WhatsApp</a>
+      <a href="index.html#contact" class="cta-secondary">📅 Book a Free Consultation</a>
+    </div>
+    <button class="retake" onclick="retake()">↺ Retake the quiz</button>
+  </div>
+
+</div>
+
+<div class="container methodology">
+  <h3>How this score works</h3>
+  <p>This quiz looks at four practice areas that strongly influence Soil Organic Carbon (SOC) in Indian cropping systems: crop rotation and diversity, tillage intensity, residue management, and irrigation practices. Each answer is scored 0–3, for a maximum of 12 points. Your result gives a directional picture of where your farm stands and which one or two changes are likely to have the biggest impact — it is not a substitute for an on-site soil test or carbon eligibility assessment.</p>
+</div>
+
+<footer>
+  Mujanti — Your Strategic Capacity Partner · <a href="index.html#contact">Talk to us about Regenerative Agriculture &amp; Carbon Credits</a>
+</footer>
+
+<script>
+// ──────────────────────────────────────────────
+// All state lives in memory only for this page view.
+// No localStorage, cookies, analytics, or network
+// requests are used to store or transmit answers.
+// ──────────────────────────────────────────────
+
+const QUESTIONS = [
+  {
+    tag: "1 / 4 — Cropping Pattern",
+    text: "What does your typical cropping pattern look like?",
+    options: [
+      { text: "Continuous monocropping — the same crop, season after season", score: 0,
+        tip: "Introducing even one rotation crop — especially a legume like moong, lentil or chickpea — begins restoring nitrogen and rebuilding microbial diversity in your soil." },
+      { text: "Simple rotation — e.g. the same two crops every year (such as rice–wheat)", score: 1,
+        tip: "Adding a third crop, ideally a legume or pulse, to your rotation boosts biological nitrogen fixation and brings more root diversity into the soil." },
+      { text: "Diversified rotation that already includes legumes or pulses", score: 2,
+        tip: "You could go further with a multi-species cover crop or intercrop between your main seasons, adding even more root diversity and continuous soil cover." },
+      { text: "Multi-species rotation, cover cropping, intercropping or agroforestry", score: 3,
+        tip: "This is one of the strongest drivers of Soil Organic Carbon. Protect these gains by pairing it with low-disturbance tillage and residue retention." }
+    ]
+  },
+  {
+    tag: "2 / 4 — Tillage Practice",
+    text: "How do you typically prepare your fields before sowing?",
+    options: [
+      { text: "Deep or intensive tillage, multiple passes per season (including puddling for paddy)", score: 0,
+        tip: "Cutting down the number of tillage passes — even from 5+ to 2–3 — significantly reduces carbon loss from soil disturbance. Where possible, avoid wet puddling for paddy." },
+      { text: "Conventional tillage — 1–2 passes before sowing", score: 1,
+        tip: "Trial reduced or minimum tillage on a portion of your land for one season and compare soil moisture, structure and input costs against your conventional plots." },
+      { text: "Reduced or minimum tillage", score: 2,
+        tip: "You're close to zero-tillage — exploring a zero-till (ZT) seed drill or direct seeding for your next crop cycle could lock in further SOC gains." },
+      { text: "Zero-tillage or direct seeding with a ZT drill", score: 3,
+        tip: "Zero-till is one of the strongest SOC-building practices available. Pairing it with full residue retention compounds the benefit further." }
+    ]
+  },
+  {
+    tag: "3 / 4 — Residue Management",
+    text: "What typically happens to crop residue (stubble/straw) after harvest?",
+    options: [
+      { text: "Burned in the field", score: 0,
+        tip: "Stopping residue burning is likely the single highest-impact change available to you. Even partial retention as surface mulch dramatically reduces carbon loss and improves soil moisture." },
+      { text: "Removed or sold — fields are left bare", score: 1,
+        tip: "Instead of removing all residue, try retaining a portion as surface mulch. This feeds soil organisms, reduces evaporation, and starts building organic matter." },
+      { text: "Partially retained as surface mulch", score: 2,
+        tip: "You're already retaining residue — consider full incorporation using tools like a Happy Seeder for an even greater build-up of Soil Organic Carbon." },
+      { text: "Fully retained or incorporated (e.g. via Happy Seeder)", score: 3,
+        tip: "Full residue retention is one of your strongest regenerative practices — keep this consistent across seasons for compounding SOC gains." }
+    ]
+  },
+  {
+    tag: "4 / 4 — Water & Irrigation",
+    text: "How is your field typically irrigated?",
+    options: [
+      { text: "Continuous flood irrigation, fields kept saturated", score: 0,
+        tip: "Continuous flooding promotes waterlogging and methane emissions. Even simple scheduled irrigation — letting fields dry out between waterings — improves soil aeration and root health." },
+      { text: "Flood irrigation, but on a fixed schedule", score: 1,
+        tip: "For paddy, trial Alternate Wetting and Drying (AWD) cycles — this can cut water use and methane emissions while maintaining yield." },
+      { text: "Alternate wetting/drying or scheduled deficit irrigation", score: 2,
+        tip: "You're already managing irrigation efficiently — for non-paddy crops, drip or sprinkler systems could push water-use efficiency further." },
+      { text: "Drip, sprinkler or other precision irrigation", score: 3,
+        tip: "Precision irrigation is excellent for both water conservation and long-term soil health — a strong foundation for any regenerative system." }
+    ]
+  }
+];
+
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+const progressEl = document.getElementById('progress');
+const qTag = document.getElementById('qTag');
+const qText = document.getElementById('qText');
+const qOptions = document.getElementById('qOptions');
+const backBtn = document.getElementById('backBtn');
+const nextBtn = document.getElementById('nextBtn');
+const quizCard = document.getElementById('quizCard');
+const resultsCard = document.getElementById('resultsCard');
+
+function renderProgress(){
+  progressEl.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const seg = document.createElement('div');
+    seg.className = 'progress-seg';
+    if (i < current || (i === current && answers[i] !== null)) seg.classList.add('done');
+    progressEl.appendChild(seg);
+  });
+}
+
+function renderQuestion(){
+  const q = QUESTIONS[current];
+  qTag.textContent = q.tag;
+  qText.textContent = q.text;
+  qOptions.innerHTML = '';
+
+  q.options.forEach((opt, i) => {
+    const div = document.createElement('div');
+    div.className = 'option' + (answers[current] === i ? ' selected' : '');
+    div.innerHTML = '<span class="dot"></span><span>' + opt.text + '</span>';
+    div.onclick = () => selectOption(i);
+    qOptions.appendChild(div);
+  });
+
+  backBtn.disabled = current === 0;
+  nextBtn.disabled = answers[current] === null;
+  nextBtn.textContent = current === QUESTIONS.length - 1 ? 'See My Results →' : 'Next →';
+  renderProgress();
+}
+
+function selectOption(i){
+  answers[current] = i;
+  renderQuestion();
+}
+
+function goNext(){
+  if (answers[current] === null) return;
+  if (current < QUESTIONS.length - 1){
+    current++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function goBack(){
+  if (current > 0){
+    current--;
+    renderQuestion();
+  }
+}
+
+function showResults(){
+  const total = answers.reduce((sum, ansIndex, i) => sum + QUESTIONS[i].options[ansIndex].score, 0);
+  const max = QUESTIONS.length * 3;
+
+  let band, bandLabel, bandTitle, bandDesc;
+  if (total <= 3){
+    band = 'band-low';
+    bandLabel = 'Degraded Soil Trajectory';
+    bandTitle = 'Your soil may be losing carbon — and it\u2019s reversible';
+    bandDesc = 'Current practices are likely depleting Soil Organic Carbon and increasing vulnerability to drought, heat and yield decline. The good news: even one or two changes — starting with the highest-impact items below — can begin reversing this trend within a few seasons.';
+  } else if (total <= 7){
+    band = 'band-mid';
+    bandLabel = 'Building Resilience';
+    bandTitle = 'You\u2019re on the transition path';
+    bandDesc = 'Some strong regenerative practices are already in place. One or two more shifts — especially in the areas below — could meaningfully raise your Soil Organic Carbon and resilience within 1–2 seasons.';
+  } else {
+    band = 'band-high';
+    bandLabel = 'Regenerative Ready';
+    bandTitle = 'Your farm is well aligned with SOC-building principles';
+    bandDesc = 'This is a strong foundation. Your practices line up well with what soil carbon and agroforestry programs look for — a good time to explore a detailed Farm Blueprint and carbon credit eligibility assessment.';
+  }
+
+  document.getElementById('scoreNum').textContent = total;
+  document.getElementById('bandLabel').textContent = bandLabel;
+  document.getElementById('bandTitle').textContent = bandTitle;
+  document.getElementById('bandDesc').textContent = bandDesc;
+
+  const card = document.getElementById('resultsCard');
+  card.className = 'results-card ' + band;
+
+  // Build recommendations: the 2 lowest-scoring areas (ties broken by order)
+  const scored = answers.map((ansIndex, i) => ({
+    i,
+    score: QUESTIONS[i].options[ansIndex].score,
+    tip: QUESTIONS[i].options[ansIndex].tip,
+    tag: QUESTIONS[i].tag.split('—')[1].trim()
+  }));
+  scored.sort((a, b) => a.score - b.score);
+
+  const recoList = document.getElementById('recoList');
+  recoList.innerHTML = '';
+
+  const icons = ['🌾','🚜','🔥','💧'];
+  let toShow = scored.filter(s => s.score < 3).slice(0, 2);
+  if (toShow.length === 0){
+    toShow = scored.slice(0, 2); // all maxed out — show "keep doing this"
+  }
+  toShow.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'reco';
+    div.innerHTML = '<div class="icon">' + icons[item.i] + '</div><div class="body"><strong>' + item.tag + '</strong><span>' + item.tip + '</span></div>';
+    recoList.appendChild(div);
+  });
+
+  // WhatsApp CTA with score pre-filled (user chooses to send — nothing automated)
+  const msg = "Hi Mujanti, I took the SOC & Regenerative Agriculture Readiness Quiz and scored " + total + "/" + max + " (" + bandLabel + "). I'd like to learn more about your Regenerative Agriculture services.";
+  document.getElementById('whatsappCta').href = "https://wa.me/919480356357?text=" + encodeURIComponent(msg);
+
+  quizCard.style.display = 'none';
+  resultsCard.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function retake(){
+  current = 0;
+  answers = new Array(QUESTIONS.length).fill(null);
+  resultsCard.style.display = 'none';
+  quizCard.style.display = 'block';
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>
