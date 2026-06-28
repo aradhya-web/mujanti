@@ -1,6 +1,7 @@
 [
   {
     "icon": "🎯",
+    "delay": "d1",
     "title": "High-Velocity Capacity Building",
     "description": "For NGOs & Startups — we transform executive and field teams into high-performing units by building the muscle organisations need to sustain outcomes.",
     "bullets": [
@@ -13,6 +14,7 @@
   },
   {
     "icon": "🌱",
+    "delay": "d2",
     "title": "FPO & Farmer Empowerment",
     "description": "The Agripreneur Shift — moving farmers and collectives from \"Price-Takers\" to \"Value-Makers\" through governance, business skills and negotiation strength.",
     "bullets": [
@@ -25,6 +27,7 @@
   },
   {
     "icon": "💻",
+    "delay": "d3",
     "title": "Digital Agriculture & Transformation",
     "description": "Purpose-built digital suites for FPOs, paired with high-leverage knowledge transfer through peer-to-peer video and local champions.",
     "bullets": [
@@ -37,6 +40,7 @@
   },
   {
     "icon": "🎥",
+    "delay": "d1",
     "title": "Impact Assessment & Visual Storytelling",
     "description": "Contextual M&E tools, visual evidence and actionable reporting that bring impact to life for donors, partners and communities.",
     "bullets": [
@@ -49,6 +53,7 @@
   },
   {
     "icon": "🌍",
+    "delay": "d2",
     "title": "Carbon Credit Ecosystems",
     "description": "MRV-ready carbon strategy, regenerative agriculture documentation, and monetisation support.",
     "bullets": [
@@ -61,6 +66,7 @@
   },
   {
     "icon": "🌿",
+    "delay": "d3",
     "title": "Regenerative Agriculture",
     "description": "Increasing Soil Organic Carbon to build climate resilience and improve yields — end-to-end consultancy and execution for sustainable farming.",
     "bullets": [
