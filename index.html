@@ -975,9 +975,9 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
           <div class="cmethod-icon">📞</div>
           <div><h5>Call Us Directly</h5><span>Mon–Sat · 9 AM – 6 PM IST</span></div>
         </a>
-        <a href="#" class="cmethod">
+        <a href="https://calendly.com/aradhya-mujanti/new-meeting" class="cmethod" target="_blank" rel="noopener">
           <div class="cmethod-icon">📅</div>
-          <div><h5>Schedule via Calendly</h5><span>Pick a time slot that works for you</span></div>
+          <div><h5>Schedule via Calendly</h5><span>Pick a time slot — instant calendar confirmation</span></div>
         </a>
       </div>
     </div>
@@ -1336,15 +1336,58 @@ window.toggleFaq = function(el) {
   if (!isOpen) item.classList.add('open');
 }
 
-window.handleSubmit = function(btn) {
-  btn.innerHTML = '✓ Enquiry Sent!';
-  btn.style.background = 'var(--g3)';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.innerHTML = 'Send Enquiry →';
-    btn.style.background = '';
-    btn.disabled = false;
-  }, 4500);
+window.handleSubmit = async function(btn) {
+  const form = btn.closest('.appt-form');
+
+  const name      = form.querySelector('input[type="text"]')?.value?.trim();
+  const mobile    = form.querySelector('input[type="tel"]')?.value?.trim();
+  const email     = form.querySelector('input[type="email"]')?.value?.trim();
+  const state     = form.querySelectorAll('input[type="text"]')[1]?.value?.trim();
+  const service   = form.querySelector('select')?.value;
+  const situation = form.querySelector('textarea')?.value?.trim();
+
+  if (!name || !email) {
+    alert('Please enter your name and email before submitting.');
+    return;
+  }
+
+  btn.innerHTML = 'Sending...';
+  btn.disabled  = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xkolbzlv', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name, mobile, email, state, service, situation,
+        _subject: `New Mujanti Enquiry — ${name}${state ? ' (' + state + ')' : ''}`
+      })
+    });
+
+    if (res.ok) {
+      btn.innerHTML        = '✓ Sent! Ashok will reply within 24 hours.';
+      btn.style.background = 'var(--g3)';
+      form.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
+      setTimeout(() => {
+        btn.innerHTML        = 'Send Enquiry →';
+        btn.style.background = '';
+        btn.disabled         = false;
+      }, 6000);
+    } else {
+      throw new Error('failed');
+    }
+  } catch(e) {
+    btn.innerHTML        = '✗ Failed — please WhatsApp us instead';
+    btn.style.background = '#C0392B';
+    btn.disabled         = false;
+    setTimeout(() => {
+      btn.innerHTML        = 'Send Enquiry →';
+      btn.style.background = '';
+    }, 5000);
+  }
 }
 
 window.handleNewsletter = function(btn) {
