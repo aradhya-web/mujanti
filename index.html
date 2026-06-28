@@ -1258,10 +1258,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById('services-container');
       if (!container) return;
       let html = '';
-      data.forEach(srv => {
+      data.forEach((srv, i) => {
         const bulletHtml = srv.bullets.map(b => `<li>${b}</li>`).join('');
         html += `
-        <div class="service-card fu ${srv.delay}">
+        <div class="service-card fu" style="transition-delay:${i * 0.1}s">
           <div class="svc-icon">${srv.icon}</div>
           <h3>${srv.title}</h3>
           <p>${srv.description}</p>
@@ -1269,7 +1269,18 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
       });
       container.innerHTML = html;
-      container.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+      // Give DOM time to paint, then either observe or force-show
+      setTimeout(() => {
+        container.querySelectorAll('.fu').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          // If already in viewport, show immediately
+          if (rect.top < window.innerHeight) {
+            el.classList.add('vis');
+          } else {
+            fuObs.observe(el);
+          }
+        });
+      }, 50);
     }).catch(err => console.error("Services Error:", err));
 
   /* ── Fetch Projects ── */
@@ -1294,7 +1305,16 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
       });
       container.innerHTML = html;
-      container.querySelectorAll('.fu').forEach(el => fuObs.observe(el));
+      setTimeout(() => {
+        container.querySelectorAll('.fu').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('vis');
+          } else {
+            fuObs.observe(el);
+          }
+        });
+      }, 50);
     }).catch(err => console.error("Projects Error:", err));
 });
 
