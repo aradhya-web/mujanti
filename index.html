@@ -344,7 +344,7 @@ nav.scrolled .hamburger span{background:var(--g1)}
 .team-section .section-head h2{color:#fff}
 .team-section .section-head p{color:rgba(255,255,255,.6)}
 .team-section .section-head span{color:var(--gold)}
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:860px;margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1260px;margin:0 auto}
 .team-card{
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
   border-radius:24px;padding:32px;transition:.3s;
@@ -366,7 +366,8 @@ nav.scrolled .hamburger span{background:var(--g1)}
   padding:4px 12px;background:rgba(200,168,75,.12);border:1px solid rgba(200,168,75,.2);
   border-radius:20px;font-size:.72rem;color:var(--gold);font-weight:600;
 }
-@media(max-width:768px){.team-grid{grid-template-columns:1fr}}
+@media(max-width:1000px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr}}
 
    
 /* ══════ MEDIA ENGINE ══════ */
@@ -864,6 +865,37 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
       </div>
     </div>
 
+     <div class="team-card fu">
+      <div class="team-card-head">
+        <div class="team-avatar">S</div>
+        <div>
+          <div class="team-name">Srikanth SP</div>
+          <div class="team-role">Co Founder</div>
+        </div>
+      </div>
+      <p>Brings deep expertise in rural systems, field operations and stakeholder engagement — driving ground-level execution across Mujanti's FPO and regenerative agriculture programs.</p>
+      <div class="expertise">
+        <span class="exp-tag">Field Operations</span>
+        <span class="exp-tag">FPO Systems</span>
+        <span class="exp-tag">Rural Engagement</span>
+      </div>
+    </div>
+
+    <div class="team-card fu">
+      <div class="team-card-head">
+        <div class="team-avatar">R</div>
+        <div>
+          <div class="team-name">Randhir</div>
+          <div class="team-role">Co Founder</div>
+        </div>
+      </div>
+      <p>Combines strategic insight with implementation discipline to translate organisational vision into measurable outcomes for NGOs, startups and farming collectives across India.</p>
+      <div class="expertise">
+        <span class="exp-tag">Strategy</span>
+        <span class="exp-tag">Implementation</span>
+        <span class="exp-tag">Impact Outcomes</span>
+      </div>
+    </div>
   </div>
 </div>
 </section>
