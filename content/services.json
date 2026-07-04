@@ -1,5 +1,18 @@
 [
   {
+  "icon": "📋",
+  "delay": "d1",
+  "title": "Strategic Program Design & Proposal Development",
+  "description": "For NGOs, CSR initiatives and Startups — robust, evidence-based project proposals that secure funding and ensure measurable ground-level impact.",
+  "bullets": [
+    "Ground surveys & comprehensive baseline analyses",
+    "Strategic activity mapping to project deliverables",
+    "Natural resource management & climate-resilient frameworks",
+    "Proposal blueprinting aligned to donor funding objectives",
+    "Evidence-based narrative development for grant applications"
+  ]
+},
+  {
     "icon": "🎯",
     "delay": "d1",
     "title": "High-Velocity Capacity Building",
