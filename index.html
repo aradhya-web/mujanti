@@ -626,6 +626,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
     <a href="#projects">Projects</a>
     <a href="#media">Media</a>
     <a href="knowledge/index.html">Knowledge Hub</a>
+    <a href="tools/index.html">Tools</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </div>
@@ -641,6 +642,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#media" onclick="closeMenu()">Media</a>
   <a href="knowledge/index.html" onclick="closeMenu()">Knowledge Hub</a>
+  <a href="tools/index.html" onclick="closeMenu()">Free Tools</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
@@ -1108,6 +1110,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
         <li><a href="#services">Digital Transformation</a></li>
         <li><a href="#media">Impact Storytelling</a></li>
         <li><a href="knowledge/index.html">Knowledge Hub</a></li>
+        <li><a href="tools/index.html">Free Tools</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1342,11 +1345,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!container) return;
       let html = '';
       data.forEach(proj => {
-        const metricHtml = proj.metrics.map(m => `<span class="chip">${m}</span>`).join('');
+        const metricHtml = (proj.metrics || proj.chips || []).map(m => `<span class="chip">${m}</span>`).join('');
         html += `
-        <div class="case-card fu ${proj.delay}">
+        <div class="case-card fu ${proj.delay || ''}">
           <div class="case-image" style="background-image:url('${proj.image}')">
-            <div class="case-tag">${proj.tag}</div>
+            <div class="case-tag">${proj.tag || proj.state || ''}</div>
           </div>
           <div class="case-content">
             <h3>${proj.title}</h3>

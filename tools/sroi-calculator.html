@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free SROI Calculator | Mujanti</title>
+<meta name="description" content="Estimate the Social Return on Investment (SROI) of your NGO, CSR or FPO program in under two minutes. Adjust beneficiaries, income uplift, cost and deadweight assumptions and see your SROI ratio, net social value and payback period update live.">
+<link rel="canonical" href="https://mujanti.com/tools/sroi-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free SROI Calculator | Mujanti">
+<meta property="og:description" content="Estimate the Social Return on Investment of your program in under two minutes — a free interactive tool for NGOs, CSR managers and FPO promoters.">
+<meta property="og:image" content="https://mujanti.com/assets/logo.png">
+<meta property="og:url" content="https://mujanti.com/tools/sroi-calculator.html">
+
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F4FAF5; --white:#fff;
+  --g1:#1B5E20; --g2:#2E7D32; --g3:#43A047; --g4:#66BB6A; --g5:#A5D6A7;
+  --soft:#E8F5E9; --dark:#07110A; --dark2:#0D1F12;
+  --text:#1A2B1E; --muted:#5A7A63; --border:#DCE8DE;
+  --gold:#C8A84B; --gold2:#F5E9C2;
+  --red:#C8543B; --red-soft:#FBEAE5;
+  --r:26px; --r-sm:14px;
+  --shadow-sm:0 2px 12px rgba(27,94,32,0.07);
+  --shadow-md:0 8px 32px rgba(27,94,32,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{max-width:100vw;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+.container{width:90%;max-width:1000px;margin:auto}
+
+/* Header */
+header{padding:22px 0;background:var(--dark)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo-link img{height:46px;object-fit:contain}
+.back-link{color:var(--g5);font-weight:600;font-size:.95rem}
+.back-link:hover{color:var(--white)}
+
+/* Intro */
+.intro{padding:56px 0 36px;text-align:center}
+.eyebrow{display:inline-block;background:var(--soft);color:var(--g1);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:8px 18px;border-radius:99px;margin-bottom:18px}
+.intro h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:800;color:var(--g1);margin-bottom:14px;letter-spacing:-0.5px}
+.intro p{color:var(--muted);font-size:1.05rem;max-width:680px;margin:0 auto 10px}
+.intro .privacy-note{font-size:.85rem;color:var(--g2);background:var(--soft);display:inline-block;padding:8px 16px;border-radius:99px;margin-top:14px;font-weight:600}
+
+/* Layout */
+.calc-wrap{padding:10px 0 60px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-md);padding:36px}
+.card h2{font-size:1.25rem;color:var(--g1);margin-bottom:22px}
+
+/* Inputs */
+.field{margin-bottom:26px}
+.field:last-child{margin-bottom:0}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:10px;gap:10px}
+.field label span.unit-hint{font-weight:600;color:var(--muted);font-size:.8rem}
+.field .row{display:flex;align-items:center;gap:14px}
+.field input[type=range]{
+  flex:1; -webkit-appearance:none; appearance:none; height:6px; border-radius:99px;
+  background:var(--soft); outline:none; cursor:pointer;
+}
+.field input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:50%;
+  background:var(--g2); border:3px solid var(--white); box-shadow:0 0 0 1px var(--g2); cursor:pointer;
+}
+.field input[type=range]::-moz-range-thumb{
+  width:20px; height:20px; border-radius:50%; background:var(--g2); border:3px solid var(--white);
+  box-shadow:0 0 0 1px var(--g2); cursor:pointer;
+}
+.field input[type=number]{
+  width:110px; flex-shrink:0; font-family:inherit; font-weight:700; font-size:.95rem; color:var(--g1);
+  border:1.5px solid var(--border); border-radius:var(--r-sm); padding:10px 12px; text-align:right;
+  background:var(--soft);
+}
+.field input[type=number]:focus{outline:none; border-color:var(--g3)}
+.field select{
+  width:100%; font-family:inherit; font-weight:700; font-size:.95rem; color:var(--g1);
+  border:1.5px solid var(--border); border-radius:var(--r-sm); padding:12px 14px;
+  background:var(--soft); cursor:pointer;
+}
+.field select:focus{outline:none; border-color:var(--g3)}
+.field .caption{color:var(--muted);font-size:.85rem;margin-top:8px;line-height:1.5}
+
+/* Output card */
+.output-card{position:sticky; top:24px; background:var(--dark); color:var(--white); border-radius:var(--r); box-shadow:var(--shadow-md); padding:36px}
+.output-card h2{color:var(--g5); font-size:1.25rem; margin-bottom:6px}
+.output-card .sub{color:#9FBFA6; font-size:.85rem; margin-bottom:24px}
+
+.headline{
+  background:var(--dark2); border:1px solid #1c3a22; border-radius:var(--r-sm);
+  padding:24px; text-align:center; margin-bottom:22px;
+}
+.headline .hl-label{font-size:.78rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--g5); margin-bottom:8px}
+.headline .hl-num{font-family:'Playfair Display',serif; font-weight:800; font-size:2.4rem; color:var(--white); line-height:1.1}
+.headline .hl-interp{margin-top:10px; font-size:.92rem; color:#C9DDCC; line-height:1.5}
+
+/* Cost vs. Social Value comparison bars */
+.compare-bars{margin-bottom:22px}
+.compare-row{margin-bottom:14px}
+.compare-row:last-child{margin-bottom:0}
+.compare-row .compare-label{display:flex;justify-content:space-between;align-items:baseline;font-size:.82rem;font-weight:700;color:#C9DDCC;margin-bottom:6px}
+.compare-row .compare-label .compare-value{color:var(--white);font-weight:800}
+.compare-track{background:var(--soft);border-radius:99px;height:26px;overflow:hidden;position:relative}
+.compare-fill{height:100%;border-radius:99px;background:var(--muted);transition:width .4s ease;min-width:2%}
+.compare-fill.value-fill{background:var(--g3)}
+.compare-fill.value-fill.underperform{background:var(--gold)}
+.compare-caption{color:#9FBFA6;font-size:.8rem;margin-top:4px;line-height:1.5}
+
+.istat-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.istat{background:var(--dark2); border:1px solid #1c3a22; border-radius:var(--r-sm); padding:16px 18px}
+.istat .istat-num{font-family:'Playfair Display',serif; font-weight:700; font-size:1.35rem; color:var(--white); line-height:1.25; word-break:break-word}
+.istat .istat-label{font-size:.78rem; color:#9FBFA6; margin-top:4px; font-weight:600}
+
+/* CTA band */
+.cta-band{background:var(--dark); color:var(--white); border-radius:var(--r); padding:36px; text-align:center; margin-top:40px}
+.cta-band h3{font-size:1.4rem; margin-bottom:12px; color:var(--white)}
+.cta-band p{color:#C9DDCC; max-width:600px; margin:0 auto 22px}
+.cta-band a.btn-cta{
+  display:inline-block; background:var(--g3); color:var(--white); font-weight:700; font-size:.98rem;
+  padding:15px 32px; border-radius:99px; transition:.2s;
+}
+.cta-band a.btn-cta:hover{background:var(--g4)}
+
+/* Methodology footer */
+.methodology{padding:40px 0 70px;color:var(--muted);font-size:.88rem}
+.methodology h3{color:var(--g1);font-size:1.05rem;margin-bottom:8px}
+.methodology p{margin-bottom:0}
+
+footer{background:var(--dark);color:var(--g5);padding:28px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--gold);font-weight:600}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .output-card{position:static}
+}
+@media(max-width:600px){
+  .intro h1{font-size:1.7rem}
+  .card{padding:24px}
+  .headline .hl-num{font-size:1.9rem}
+  .istat-grid{grid-template-columns:1fr}
+  .field .row{flex-wrap:wrap}
+  .field input[type=number]{width:100px}
+  .compare-row .compare-label{flex-direction:column;align-items:flex-start;gap:2px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html" class="logo-link"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+    <a href="../index.html#services" class="back-link">← Back to Mujanti.com</a>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <span class="eyebrow">Free Tool · Impact Measurement</span>
+    <h1>SROI Calculator</h1>
+    <p>Estimate the Social Return on Investment of your program in under two minutes. Adjust the numbers on the left and watch your impact case build itself on the right.</p>
+    <span class="privacy-note">🔒 Nothing is saved or sent anywhere — all numbers stay in this browser tab only.</span>
+  </div>
+</section>
+
+<div class="container calc-wrap">
+  <div class="grid">
+
+    <!-- INPUTS -->
+    <div class="card">
+      <h2>Your Program Inputs</h2>
+
+      <div class="field">
+        <label for="beneficiariesRange">Number of program beneficiaries <span class="unit-hint">(farmers / households)</span></label>
+        <div class="row">
+          <input type="range" id="beneficiariesRange" min="10" max="5000" step="10" value="250">
+          <input type="number" id="beneficiariesNum" min="10" max="5000" step="10" value="250">
+        </div>
+        <p class="caption">Total number of individuals or households directly reached by the program.</p>
+      </div>
+
+      <div class="field">
+        <label for="incomeRange">Average annual income increase per beneficiary <span class="unit-hint">(₹)</span></label>
+        <div class="row">
+          <input type="range" id="incomeRange" min="0" max="100000" step="500" value="12000">
+          <input type="number" id="incomeNum" min="0" max="100000" step="500" value="12000">
+        </div>
+        <p class="caption">The estimated additional annual income each beneficiary earns because of the program.</p>
+      </div>
+
+      <div class="field">
+        <label for="costRange">Total program cost <span class="unit-hint">(₹, all-in)</span></label>
+        <div class="row">
+          <input type="range" id="costRange" min="50000" max="20000000" step="10000" value="1500000">
+          <input type="number" id="costNum" min="50000" max="20000000" step="10000" value="1500000">
+        </div>
+        <p class="caption">All-in cost of running the program: staff, materials, travel, and overhead.</p>
+      </div>
+
+      <div class="field">
+        <label for="durationRange">Program duration <span class="unit-hint">(years)</span></label>
+        <div class="row">
+          <input type="range" id="durationRange" min="1" max="10" step="1" value="3">
+          <input type="number" id="durationNum" min="1" max="10" step="1" value="3">
+        </div>
+        <p class="caption">How many years the income uplift is expected to be sustained or delivered over.</p>
+      </div>
+
+      <div class="field">
+        <label for="deadweightRange">Deadweight / dropout discount <span class="unit-hint">(%)</span></label>
+        <div class="row">
+          <input type="range" id="deadweightRange" min="0" max="60" step="1" value="20">
+          <input type="number" id="deadweightNum" min="0" max="60" step="1" value="20">
+        </div>
+        <p class="caption">The % of this outcome that would have happened anyway, or beneficiaries who disengage before completion.</p>
+      </div>
+
+      <div class="field">
+        <label for="multiplierSelect">Non-financial value multiplier</label>
+        <select id="multiplierSelect">
+          <option value="1.2">Low (1.2×)</option>
+          <option value="1.5" selected>Medium (1.5×)</option>
+          <option value="2.0">High (2.0×)</option>
+        </select>
+        <p class="caption">Approximates non-monetary benefits — improved food security, dignity, and community cohesion — beyond pure income gain. Applying a financial proxy multiplier to non-monetary value is standard SROI practice.</p>
+      </div>
+    </div>
+
+    <!-- OUTPUTS -->
+    <div class="card output-card">
+      <h2>Your Live Impact Case</h2>
+      <p class="sub">Updates instantly as you adjust the inputs on the left.</p>
+
+      <div class="headline">
+        <div class="hl-label">SROI Ratio</div>
+        <div class="hl-num" id="outRatio">₹0.00 : ₹1</div>
+        <div class="hl-interp" id="outInterp"></div>
+      </div>
+
+      <div class="compare-bars">
+        <div class="compare-row">
+          <div class="compare-label"><span>Program cost</span><span class="compare-value" id="barCostValue">₹0</span></div>
+          <div class="compare-track"><div class="compare-fill cost-fill" id="barCostFill" style="width:2%"></div></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label"><span>Total social value</span><span class="compare-value" id="barValueValue">₹0</span></div>
+          <div class="compare-track"><div class="compare-fill value-fill" id="barValueFill" style="width:2%"></div></div>
+        </div>
+        <p class="compare-caption">Every ₹1 of program cost vs. the social value it generates.</p>
+      </div>
+
+      <div class="istat-grid">
+        <div class="istat">
+          <div class="istat-num" id="outTotalValue">₹0</div>
+          <div class="istat-label">Total Social Value Generated</div>
+        </div>
+        <div class="istat">
+          <div class="istat-num" id="outNetValue">₹0</div>
+          <div class="istat-label">Net Social Value</div>
+        </div>
+        <div class="istat">
+          <div class="istat-num" id="outPayback">0.0 years</div>
+          <div class="istat-label">Payback Period</div>
+        </div>
+        <div class="istat">
+          <div class="istat-num" id="outCostPerBen">₹0</div>
+          <div class="istat-label">Cost per Beneficiary</div>
+        </div>
+        <div class="istat" style="grid-column:1/-1">
+          <div class="istat-num" id="outThreeYear">₹0</div>
+          <div class="istat-label">Projected 3-Year Impact</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-band">
+    <h3>Want this validated for a donor report?</h3>
+    <p>This calculator gives you a fast, directional estimate. Mujanti's impact assessment team can turn this into a fully cited, board- and donor-ready SROI report — with primary data collection, sensitivity analysis, and stakeholder-verified assumptions.</p>
+    <a href="../index.html#contact" class="btn-cta">📅 Book a Free Consultation</a>
+  </div>
+</div>
+
+<div class="container methodology">
+  <h3>How this calculator works</h3>
+  <p>This is a simplified, planning-stage estimate built on standard SROI principles: discounting outcomes for deadweight (what would have happened anyway) and applying a financial proxy multiplier to approximate non-monetary value such as wellbeing, resilience, and social capital. It is a directional tool to help you scope and communicate impact quickly — not a substitute for a formal SROI assurance process. Mujanti can produce a fully cited, methodologically rigorous SROI report suitable for board or donor use.</p>
+  <p style="margin-top:14px"><a href="../knowledge/index.html" style="color:var(--g1);font-weight:600">📚 Explore FPO, carbon and CSR guides in the Knowledge Hub →</a></p>
+</div>
+
+<footer>
+  <div class="container">
+    Mujanti — Your Strategic Capacity Partner · © 2026 Mujanti. All rights reserved. ·
+    <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+// ──────────────────────────────────────────────
+// All state lives in memory only for this page view.
+// No localStorage, cookies, analytics, or network
+// requests are used to store or transmit inputs.
+// ──────────────────────────────────────────────
+
+function formatINR(n){
+  n = Math.round(n);
+  const isNeg = n < 0; n = Math.abs(n);
+  let s = n.toString();
+  let last3 = s.slice(-3), rest = s.slice(0,-3);
+  if(rest) rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+  return (isNeg?'-':'') + '₹' + (rest ? rest + ',' : '') + last3;
+}
+
+// Element refs
+const beneficiariesRange = document.getElementById('beneficiariesRange');
+const beneficiariesNum   = document.getElementById('beneficiariesNum');
+const incomeRange        = document.getElementById('incomeRange');
+const incomeNum          = document.getElementById('incomeNum');
+const costRange          = document.getElementById('costRange');
+const costNum            = document.getElementById('costNum');
+const durationRange      = document.getElementById('durationRange');
+const durationNum        = document.getElementById('durationNum');
+const deadweightRange    = document.getElementById('deadweightRange');
+const deadweightNum      = document.getElementById('deadweightNum');
+const multiplierSelect   = document.getElementById('multiplierSelect');
+
+const outRatio       = document.getElementById('outRatio');
+const outInterp      = document.getElementById('outInterp');
+const outTotalValue  = document.getElementById('outTotalValue');
+const outNetValue    = document.getElementById('outNetValue');
+const outPayback     = document.getElementById('outPayback');
+const outCostPerBen  = document.getElementById('outCostPerBen');
+const outThreeYear   = document.getElementById('outThreeYear');
+
+const barCostFill    = document.getElementById('barCostFill');
+const barValueFill   = document.getElementById('barValueFill');
+const barCostValue   = document.getElementById('barCostValue');
+const barValueValue  = document.getElementById('barValueValue');
+
+// Keep each range/number pair in sync with one another
+function pairSync(rangeEl, numEl){
+  rangeEl.addEventListener('input', () => {
+    numEl.value = rangeEl.value;
+    recalculate();
+  });
+  numEl.addEventListener('input', () => {
+    let v = parseFloat(numEl.value);
+    if (isNaN(v)) return;
+    const min = parseFloat(rangeEl.min), max = parseFloat(rangeEl.max);
+    if (v < min) v = min;
+    if (v > max) v = max;
+    rangeEl.value = v;
+    recalculate();
+  });
+}
+
+pairSync(beneficiariesRange, beneficiariesNum);
+pairSync(incomeRange, incomeNum);
+pairSync(costRange, costNum);
+pairSync(durationRange, durationNum);
+pairSync(deadweightRange, deadweightNum);
+
+multiplierSelect.addEventListener('change', recalculate);
+
+function recalculate(){
+  // Read + clamp inputs (defensive minimums even though sliders already enforce sane ranges)
+  const beneficiaries   = Math.max(1, parseFloat(beneficiariesNum.value) || 1);
+  const incomeIncrease   = Math.max(0, parseFloat(incomeNum.value) || 0);
+  const programCost      = Math.max(1, parseFloat(costNum.value) || 1);
+  const durationYears     = Math.max(1, parseFloat(durationNum.value) || 1);
+  const deadweightPct    = Math.min(100, Math.max(0, parseFloat(deadweightNum.value) || 0));
+  const nonFinancialMultiplier = parseFloat(multiplierSelect.value) || 1.5;
+
+  const grossAnnualValue = beneficiaries * incomeIncrease;
+  const totalGrossValue  = grossAnnualValue * durationYears;
+  const netOfDeadweight  = totalGrossValue * (1 - deadweightPct / 100);
+  const totalSocialValue = netOfDeadweight * nonFinancialMultiplier;
+  const sroiRatio        = totalSocialValue / programCost;
+  const netSocialValue   = totalSocialValue - programCost;
+  const costPerBeneficiary = programCost / beneficiaries;
+
+  let paybackPeriodYears;
+  let paybackDisplay;
+  if (grossAnnualValue <= 0) {
+    paybackDisplay = '>10 years';
+  } else {
+    paybackPeriodYears = programCost / grossAnnualValue;
+    paybackDisplay = paybackPeriodYears > 10 ? '>10 years' : paybackPeriodYears.toFixed(1) + ' years';
+  }
+
+  const threeYearProjection = grossAnnualValue * 3 * (1 - deadweightPct / 100) * nonFinancialMultiplier;
+
+  // Headline ratio + interpretation
+  outRatio.textContent = '₹' + sroiRatio.toFixed(2) + ' : ₹1';
+
+  let interp;
+  if (sroiRatio < 1) {
+    interp = "This program is not yet generating more social value than it costs — consider tightening deadweight assumptions or scope.";
+  } else if (sroiRatio <= 3) {
+    interp = "A solid return — in line with typical rural development programs.";
+  } else if (sroiRatio <= 5) {
+    interp = "A strong return, comparable to well-run FPO and livelihoods programs.";
+  } else {
+    interp = "An exceptional return — worth external validation before citing publicly.";
+  }
+  outInterp.textContent = interp;
+
+  outTotalValue.textContent = formatINR(totalSocialValue);
+  outNetValue.textContent = formatINR(netSocialValue);
+  outPayback.textContent = paybackDisplay;
+  outCostPerBen.textContent = formatINR(costPerBeneficiary);
+  outThreeYear.textContent = formatINR(threeYearProjection);
+
+  // Cost vs. Social Value comparison bars
+  const largerOfTwo = Math.max(programCost, totalSocialValue, 1);
+  const costPct = Math.max(2, (programCost / largerOfTwo) * 100);
+  const valuePct = Math.max(2, (totalSocialValue / largerOfTwo) * 100);
+  barCostFill.style.width = costPct + '%';
+  barValueFill.style.width = valuePct + '%';
+  barCostValue.textContent = formatINR(programCost);
+  barValueValue.textContent = formatINR(totalSocialValue);
+  barValueFill.classList.toggle('underperform', sroiRatio < 1);
+}
+
+// Initial render on page load
+recalculate();
+</script>
+
+</body>
+</html>

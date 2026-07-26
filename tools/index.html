@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools | Mujanti</title>
+<meta name="description" content="Free interactive tools from Mujanti — SROI calculator, carbon revenue estimator, and soil organic carbon readiness quiz for FPOs, NGOs and CSR teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F4FAF5; --white:#fff;
+  --g1:#1B5E20; --g2:#2E7D32; --g3:#43A047; --g4:#66BB6A; --g5:#A5D6A7;
+  --soft:#E8F5E9; --dark:#07110A;
+  --text:#1A2B1E; --muted:#5A7A63; --border:#DCE8DE;
+  --gold:#C8A84B; --gold2:#F5E9C2;
+  --r:26px; --r-sm:14px;
+  --shadow-sm:0 2px 12px rgba(27,94,32,0.07);
+  --shadow-md:0 8px 32px rgba(27,94,32,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none}
+.container{width:90%;max-width:980px;margin:auto}
+header{padding:22px 0;background:var(--dark)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.header-inner img{height:46px;object-fit:contain}
+.back-link{color:var(--g5);font-weight:600;font-size:.95rem}
+.back-link:hover{color:var(--white)}
+.intro{padding:56px 0 36px;text-align:center}
+.eyebrow{display:inline-block;background:var(--soft);color:var(--g1);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:8px 18px;border-radius:99px;margin-bottom:18px}
+.intro h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:800;color:var(--g1);letter-spacing:-1px;margin-bottom:12px}
+.intro p{color:var(--muted);max-width:680px;margin:0 auto;font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding-bottom:40px}
+.card{display:block;background:var(--white);border:1px solid var(--border);border-radius:var(--r-sm);box-shadow:var(--shadow-sm);padding:28px;color:var(--text);transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.card h3{font-weight:800;font-size:1.15rem;color:var(--g1);margin:10px 0 8px}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:16px;line-height:1.65}
+.card-footer{color:var(--g3);font-weight:700;font-size:.88rem;margin-top:14px}
+.callout-band{background:var(--soft);border-radius:var(--r);padding:28px;text-align:center;margin-bottom:70px}
+.callout-band a{color:var(--g1);font-weight:700}
+.callout-band a:hover{text-decoration:underline}
+footer{background:var(--dark);color:var(--g5);padding:28px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--gold);font-weight:600}
+footer a:hover{text-decoration:underline}
+@media(max-width:600px){
+  .intro h1{font-size:1.8rem}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+    <a href="../index.html#services" class="back-link">← Back to Mujanti.com</a>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <span class="eyebrow">FREE TOOLS</span>
+    <h1>Decide with numbers, not guesswork.</h1>
+    <p>Three free calculators built from our field work with FPOs, NGOs and CSR teams. No signup, nothing leaves your browser.</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <div class="grid">
+    <a href="sroi-calculator.html" class="card">
+      <h3>📊 SROI Calculator</h3>
+      <p>Turn program numbers into a Social Return on Investment ratio you can defend to a board or donor.</p>
+      <div class="card-footer">2 min · live results →</div>
+    </a>
+
+    <a href="carbon-revenue-estimator.html" class="card">
+      <h3>🌍 Carbon Revenue Estimator</h3>
+      <p>Three quick steps to a realistic revenue range for a farm or FPO carbon project.</p>
+      <div class="card-footer">3 steps · 3 scenarios →</div>
+    </a>
+
+    <a href="../soc-readiness-quiz.html" class="card">
+      <h3>🌱 SOC Readiness Quiz</h3>
+      <p>Score your farm's regenerative agriculture readiness and get a personalised soil organic carbon action plan.</p>
+      <div class="card-footer">4 questions · instant score →</div>
+    </a>
+  </div>
+
+  <div class="callout-band">
+    Prefer reading first? Browse step-by-step guides in the <a href='../knowledge/index.html'>Knowledge Hub</a>.
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">© 2025 Mujanti Services Pvt. Ltd. · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a></div>
+</footer>
+
+</body>
+</html>

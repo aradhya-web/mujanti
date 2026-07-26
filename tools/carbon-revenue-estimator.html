@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Carbon Revenue Estimator | Mujanti</title>
+<meta name="description" content="Estimate potential carbon credit revenue for your farm or FPO in three quick steps. See a realistic conservative-to-optimistic revenue range from adopting regenerative practices like cover cropping, no-till and agroforestry.">
+<link rel="canonical" href="https://mujanti.com/tools/carbon-revenue-estimator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carbon Revenue Estimator | Mujanti">
+<meta property="og:description" content="A free 3-step tool to estimate what your land could earn from carbon credits by adopting regenerative practices.">
+<meta property="og:image" content="https://mujanti.com/assets/logo.png">
+<meta property="og:url" content="https://mujanti.com/tools/carbon-revenue-estimator.html">
+
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F4FAF5; --white:#fff;
+  --g1:#1B5E20; --g2:#2E7D32; --g3:#43A047; --g4:#66BB6A; --g5:#A5D6A7;
+  --soft:#E8F5E9; --dark:#07110A; --dark2:#0D1F12;
+  --text:#1A2B1E; --muted:#5A7A63; --border:#DCE8DE;
+  --gold:#C8A84B; --gold2:#F5E9C2;
+  --red:#C8543B; --red-soft:#FBEAE5;
+  --r:26px; --r-sm:14px;
+  --shadow-sm:0 2px 12px rgba(27,94,32,0.07);
+  --shadow-md:0 8px 32px rgba(27,94,32,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{max-width:100vw;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+.container{width:90%;max-width:760px;margin:auto}
+
+/* Header */
+header{padding:22px 0;background:var(--dark)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo-link img{height:46px;object-fit:contain}
+.back-link{color:var(--g5);font-weight:600;font-size:.95rem}
+.back-link:hover{color:var(--white)}
+
+/* Intro */
+.intro{padding:56px 0 36px;text-align:center}
+.eyebrow{display:inline-block;background:var(--soft);color:var(--g1);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:8px 18px;border-radius:99px;margin-bottom:18px}
+.intro h1{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:800;color:var(--g1);margin-bottom:14px;letter-spacing:-0.5px}
+.intro p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:0 auto 10px}
+.intro .privacy-note{font-size:.85rem;color:var(--g2);background:var(--soft);display:inline-block;padding:8px 16px;border-radius:99px;margin-top:14px;font-weight:600}
+
+/* Wizard card */
+.quiz-wrap{padding:0 0 80px}
+.quiz-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-md);padding:36px;min-height:380px}
+
+.progress{display:flex;gap:8px;margin-bottom:14px}
+.progress-seg{flex:1;height:6px;border-radius:99px;background:var(--soft)}
+.progress-seg.done{background:var(--g3)}
+.progress-labels{display:flex;justify-content:space-between;margin-bottom:24px}
+.progress-labels span{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;flex:1;text-align:center}
+.progress-labels span:first-child{text-align:left}
+.progress-labels span:last-child{text-align:right}
+.progress-labels span.active{color:var(--g1)}
+
+.q-tag{font-size:.8rem;font-weight:700;color:var(--g3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.q-text{font-size:1.35rem;font-weight:700;color:var(--text);margin-bottom:24px;line-height:1.4}
+
+.field-group{margin-bottom:22px}
+.field-label{display:block;font-weight:700;font-size:.92rem;color:var(--text);margin-bottom:10px}
+.field-input, .field-select{
+  width:100%;font-family:inherit;font-size:1rem;color:var(--text);
+  border:1.5px solid var(--border);border-radius:var(--r-sm);
+  padding:14px 16px;background:var(--white);transition:.18s;
+}
+.field-input:focus, .field-select:focus{outline:none;border-color:var(--g3)}
+.field-hint{font-size:.85rem;color:var(--muted);margin-top:8px}
+
+.options{display:flex;flex-direction:column;gap:12px}
+.option{
+  display:flex;align-items:center;gap:14px;
+  border:1.5px solid var(--border);border-radius:var(--r-sm);
+  padding:16px 18px;cursor:pointer;background:var(--white);
+  transition:.18s; font-size:.98rem; color:var(--text); text-align:left;
+}
+.option:hover{border-color:var(--g4);background:var(--soft)}
+.option .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;transition:.18s}
+.option.selected{border-color:var(--g2);background:var(--soft)}
+.option.selected .dot{border-color:var(--g2);background:var(--g2);box-shadow:inset 0 0 0 3px var(--white)}
+
+/* Checkbox-style options for practices */
+.option.checkbox .check{
+  width:20px;height:20px;border-radius:6px;border:2px solid var(--border);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:.18s;color:transparent;font-size:.8rem;font-weight:800;
+}
+.option.checkbox.selected .check{border-color:var(--g2);background:var(--g2);color:var(--white)}
+.option.checkbox .opt-body{flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.option.checkbox .opt-name{font-weight:600}
+.option.checkbox .opt-badge{
+  background:var(--soft);color:var(--g1);font-weight:700;font-size:.78rem;
+  padding:5px 11px;border-radius:99px;white-space:nowrap;flex-shrink:0;
+}
+.option.checkbox.selected .opt-badge{background:var(--gold2);color:#8a6d23}
+
+.tally-bar{
+  background:var(--soft);border-radius:var(--r-sm);padding:14px 18px;margin-top:14px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.tally-bar .tally-label{font-weight:700;font-size:.9rem;color:var(--text)}
+.tally-bar .tally-figure{font-weight:800;font-size:1.05rem;color:var(--g1)}
+.tally-bar .tally-figure.muted-figure{color:var(--muted);font-weight:600;font-size:.88rem}
+
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:30px}
+.btn{
+  font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer;
+  border:none;border-radius:99px;padding:14px 28px;transition:.2s;
+}
+.btn-primary{background:var(--g1);color:var(--white)}
+.btn-primary:hover{background:var(--g2)}
+.btn-primary:disabled{background:var(--g5);cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--muted);padding:14px 8px}
+.btn-ghost:hover{color:var(--g1)}
+.btn-ghost:disabled{opacity:0;pointer-events:none}
+
+/* Results */
+.results-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow-md);padding:40px}
+.results-card h2{font-size:1.5rem;color:var(--g1);margin-bottom:6px}
+.results-card .band-desc{color:var(--muted);margin-bottom:28px}
+
+.assumption-note{font-size:.85rem;color:var(--g2);background:var(--soft);display:inline-block;padding:8px 16px;border-radius:99px;margin-bottom:26px;font-weight:600}
+
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:26px}
+.scenario-card{
+  border:1.5px solid var(--border);border-radius:var(--r-sm);
+  padding:22px 18px;text-align:center;background:var(--white);
+}
+.scenario-card .band-label{
+  display:inline-block;font-weight:800;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+  padding:6px 12px;border-radius:99px;margin-bottom:14px;background:var(--soft);color:var(--g1);
+}
+.scenario-card .score-circle{
+  width:88px;height:88px;border-radius:50%;margin:0 auto 14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:6px solid var(--g3); color:var(--g1); font-weight:800;
+}
+.scenario-card .score-circle .big{font-size:1.3rem;line-height:1.1}
+.scenario-card .score-circle .small{font-size:.62rem;color:var(--muted);font-weight:600;margin-top:2px}
+.scenario-card .price-line{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.scenario-card .revenue{font-size:1.3rem;font-weight:800;color:var(--g1);margin-bottom:2px}
+.scenario-card .revenue-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+
+.scenario-card.highlight{
+  border-color:var(--gold);background:var(--gold2);
+  box-shadow:var(--shadow-md); transform:translateY(-6px);
+}
+.scenario-card.highlight .band-label{background:var(--gold);color:var(--white)}
+.scenario-card.highlight .score-circle{border-color:var(--gold)}
+.scenario-card.highlight .revenue{color:#8a6d23}
+
+/* Revenue range band */
+.range-band-wrap{margin-bottom:26px}
+.range-band-track{
+  height:12px;background:var(--soft);border-radius:99px;position:relative;
+  margin:34px 10px 10px;
+}
+.range-band-fill{
+  position:absolute;top:0;height:100%;border-radius:99px;
+  background:linear-gradient(90deg,var(--g5),var(--g3));
+}
+.range-band-marker{
+  position:absolute;top:50%;width:18px;height:18px;border-radius:50%;
+  background:var(--gold);border:3px solid #fff;box-shadow:var(--shadow-sm);
+  transform:translate(-50%,-50%);
+}
+.range-band-marker .marker-label{
+  position:absolute;top:-26px;left:50%;transform:translateX(-50%);
+  font-size:.72rem;font-weight:800;color:var(--g1);white-space:nowrap;
+  text-transform:uppercase;letter-spacing:.03em;
+}
+.range-band-labels{display:flex;justify-content:space-between;font-size:.85rem;font-weight:700;color:var(--g1);margin:0 10px}
+.range-band-caption{color:var(--muted);font-size:.88rem;margin-top:12px;line-height:1.5}
+
+.results-summary{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.summary-stat{flex:1;min-width:140px;background:var(--soft);border-radius:var(--r-sm);padding:16px 18px}
+.summary-stat .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-bottom:4px}
+.summary-stat .value{font-size:1.15rem;font-weight:800;color:var(--g1)}
+
+.caption-box{color:var(--muted);font-size:.9rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:18px 20px;margin-bottom:26px}
+
+.cta-dark{background:var(--dark);border-radius:var(--r-sm);padding:30px;text-align:center;margin-bottom:8px}
+.cta-dark h3{color:var(--white);font-size:1.25rem;margin-bottom:8px}
+.cta-dark p{color:var(--g5);font-size:.92rem;margin-bottom:20px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.cta-row a, .cta-row button{flex:1;text-align:center;padding:15px 20px;border-radius:99px;font-weight:700;font-size:.95rem;font-family:inherit;cursor:pointer;border:none}
+.cta-primary{background:var(--gold);color:var(--dark)}
+.cta-primary:hover{background:var(--gold2)}
+.cta-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.3) !important}
+.cta-secondary:hover{background:rgba(255,255,255,0.08)}
+.retake{display:block;text-align:center;margin-top:18px;color:var(--muted);font-size:.9rem;font-weight:600;cursor:pointer;background:none;border:none;font-family:inherit}
+.retake:hover{color:var(--g1)}
+
+/* Methodology footer */
+.methodology{padding:0 0 70px;color:var(--muted);font-size:.88rem}
+.methodology h3{color:var(--g1);font-size:1.05rem;margin-bottom:8px}
+.methodology p{margin-bottom:0}
+
+footer{background:var(--dark);color:var(--g5);padding:28px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--gold);font-weight:600}
+
+@media(max-width:600px){
+  .intro h1{font-size:1.7rem}
+  .quiz-card,.results-card{padding:24px}
+  .q-text{font-size:1.1rem}
+  .cta-row{flex-direction:column}
+  .cta-row a, .cta-row button{flex:none}
+  .scenario-grid{grid-template-columns:1fr}
+  .scenario-card.highlight{transform:none}
+  .progress-labels span{font-size:.62rem}
+  .tally-bar{flex-direction:column;align-items:flex-start;gap:6px}
+  .range-band-track{margin:34px 4px 10px}
+  .range-band-labels{margin:0 4px;flex-wrap:wrap;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html" class="logo-link"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+    <a href="../index.html#services" class="back-link">← Back to Mujanti.com</a>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <span class="eyebrow">Free Tool · Carbon Credits</span>
+    <h1>Carbon Revenue Estimator</h1>
+    <p>See what your land could earn from carbon credits in three quick steps. This gives you a realistic range to start a conversation — not a certified MRV number.</p>
+    <span class="privacy-note">🔒 Nothing is saved or sent anywhere — your inputs stay in this browser tab only.</span>
+  </div>
+</section>
+
+<div class="container quiz-wrap">
+
+  <!-- WIZARD -->
+  <div class="quiz-card" id="quizCard">
+    <div class="progress" id="progress"></div>
+    <div class="progress-labels" id="progressLabels">
+      <span>Land</span><span>Practices</span><span>Results</span>
+    </div>
+    <div class="q-tag" id="qTag"></div>
+    <div class="q-text" id="qText"></div>
+    <div id="stepBody"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-ghost" id="backBtn" onclick="goBack()">← Back</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="goNext()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" id="resultsCard" style="display:none">
+    <h2>Your Estimated Carbon Revenue Range</h2>
+    <p class="band-desc">Based on your land, current practices, and the regenerative practices you're planning to adopt.</p>
+    <span class="assumption-note">💱 Illustrative conversion used: $1 = ₹87</span>
+
+    <div class="results-summary">
+      <div class="summary-stat">
+        <div class="label">Total farmland</div>
+        <div class="value" id="statAcres">—</div>
+      </div>
+      <div class="summary-stat">
+        <div class="label">Practices selected</div>
+        <div class="value" id="statPractices">—</div>
+      </div>
+      <div class="summary-stat">
+        <div class="label">Est. sequestration</div>
+        <div class="value" id="statSeq">—</div>
+      </div>
+    </div>
+
+    <div class="scenario-grid" id="scenarioGrid"></div>
+
+    <div class="range-band-wrap" id="rangeBandWrap" style="display:none">
+      <div class="range-band-track" id="rangeBandTrack">
+        <div class="range-band-fill" id="rangeBandFill"></div>
+        <div class="range-band-marker" id="rangeBandMarker"><span class="marker-label">Base</span></div>
+      </div>
+      <div class="range-band-labels">
+        <span id="rangeBandLowLabel">₹0</span>
+        <span id="rangeBandHighLabel">₹0</span>
+      </div>
+      <p class="range-band-caption">Your likely landing zone — most first-time projects settle between the conservative and base scenarios.</p>
+    </div>
+
+    <div class="caption-box">
+      Estimates are illustrative only. Actual carbon credit revenue depends on third-party MRV verification (Verra VCS / Gold Standard), buffer pool deductions, project registration costs, and buyer market prices, which fluctuate. This is a planning estimate to help you evaluate whether a carbon project is worth pursuing.
+    </div>
+
+    <p style="margin-bottom:26px"><a href="../knowledge/index.html" style="color:var(--g1);font-weight:600">📚 New to carbon markets? Start with the guides in our Knowledge Hub →</a></p>
+
+    <div class="cta-dark">
+      <h3>Get a real feasibility assessment</h3>
+      <p>Talk to Mujanti about certifying your farm or FPO for a carbon credit project.</p>
+      <div class="cta-row">
+        <a href="../index.html#contact" class="cta-primary">📅 Get a Real Feasibility Assessment</a>
+        <button class="cta-secondary" onclick="retake()">↺ Retake Estimator</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container methodology">
+  <h3>How this estimate works</h3>
+  <p>We combine your land use type and current tillage practice (which set a baseline "headroom" for further improvement) with the specific regenerative practices you select, each of which has a published incremental carbon sequestration potential (tCO2e/acre/year). This gives an adjusted annual sequestration figure for your farm. We then apply three scenarios — conservative, base case, and optimistic — that vary both the crediting volume (after accounting for verification and buffer pool discounts) and the carbon price per tonne, to show a realistic revenue range rather than a single misleading number.</p>
+</div>
+
+<footer>
+  Mujanti — Your Strategic Capacity Partner · <a href="../index.html#contact">Talk to us about Regenerative Agriculture &amp; Carbon Credits</a>
+</footer>
+
+<script>
+// ──────────────────────────────────────────────
+// All state lives in memory only for this page view.
+// No localStorage, cookies, analytics, or network
+// requests are used to store or transmit inputs.
+// ──────────────────────────────────────────────
+
+const LAND_USE_OPTIONS = [
+  { text: "Rainfed field crops (rice/wheat/millets)", value: "rainfed", factor: 1.0 },
+  { text: "Irrigated field crops", value: "irrigated", factor: 0.9 },
+  { text: "Horticulture / orchard", value: "horticulture", factor: 1.1 },
+  { text: "Agroforestry / tree-based", value: "agroforestry", factor: 1.3 },
+  { text: "Rangeland / pasture", value: "rangeland", factor: 0.85 }
+];
+
+const TILLAGE_OPTIONS = [
+  { text: "Conventional / intensive tillage", value: "conventional", factor: 1.0 },
+  { text: "Reduced tillage", value: "reduced", factor: 1.1 },
+  { text: "No-till / zero-till", value: "notill", factor: 1.2 }
+];
+
+const PRACTICES = [
+  { key: "cover", text: "Cover cropping", rate: 0.3 },
+  { key: "notillTransition", text: "No-till / reduced tillage transition", rate: 0.4 },
+  { key: "agroforestry", text: "Agroforestry / tree integration", rate: 0.9 },
+  { key: "biochar", text: "Biochar application", rate: 0.5 },
+  { key: "manure", text: "Organic manure / compost over synthetic fertilizer", rate: 0.35 },
+  { key: "rotation", text: "Crop rotation diversification", rate: 0.25 }
+];
+
+const STEP_TAGS = ["1 / 3 — Land Details", "2 / 3 — Practices", "3 / 3 — Results"];
+const STEP_TITLES = [
+  "Tell us about your land",
+  "Which regenerative practices are you adopting or considering?",
+  ""
+];
+
+let currentStep = 0;
+
+// state
+let state = {
+  acres: 10,
+  landUse: null,   // index into LAND_USE_OPTIONS
+  tillage: null,   // index into TILLAGE_OPTIONS
+  practices: new Array(PRACTICES.length).fill(false)
+};
+
+const progressEl = document.getElementById('progress');
+const progressLabels = document.getElementById('progressLabels').children;
+const qTag = document.getElementById('qTag');
+const qText = document.getElementById('qText');
+const stepBody = document.getElementById('stepBody');
+const backBtn = document.getElementById('backBtn');
+const nextBtn = document.getElementById('nextBtn');
+const quizCard = document.getElementById('quizCard');
+const resultsCard = document.getElementById('resultsCard');
+
+function renderProgress(){
+  progressEl.innerHTML = '';
+  for (let i = 0; i < 3; i++){
+    const seg = document.createElement('div');
+    seg.className = 'progress-seg';
+    if (i < currentStep || (i === currentStep)) seg.classList.add('done');
+    progressEl.appendChild(seg);
+  }
+  for (let i = 0; i < progressLabels.length; i++){
+    progressLabels[i].classList.toggle('active', i === currentStep);
+  }
+}
+
+function isStepValid(step){
+  if (step === 0){
+    return state.acres > 0 && state.landUse !== null && state.tillage !== null;
+  }
+  if (step === 1){
+    return state.practices.some(p => p === true);
+  }
+  return true;
+}
+
+function renderStep(){
+  qTag.textContent = STEP_TAGS[currentStep];
+  qText.textContent = STEP_TITLES[currentStep];
+
+  if (currentStep === 0){
+    renderStepLand();
+  } else if (currentStep === 1){
+    renderStepPractices();
+  } else {
+    renderStepResults();
+  }
+
+  backBtn.disabled = currentStep === 0;
+  backBtn.style.display = currentStep === 2 ? 'none' : '';
+  nextBtn.style.display = currentStep === 2 ? 'none' : '';
+  nextBtn.disabled = !isStepValid(currentStep);
+  nextBtn.textContent = currentStep === 1 ? 'See My Results →' : 'Next →';
+
+  renderProgress();
+}
+
+function renderStepLand(){
+  stepBody.innerHTML = '';
+
+  const wrap = document.createElement('div');
+
+  // Acreage field
+  const acreGroup = document.createElement('div');
+  acreGroup.className = 'field-group';
+  acreGroup.innerHTML =
+    '<label class="field-label" for="acresInput">Total farmland (acres)</label>' +
+    '<input type="number" id="acresInput" class="field-input" min="1" step="0.5" value="' + state.acres + '">';
+  wrap.appendChild(acreGroup);
+
+  // Land use dropdown
+  const landGroup = document.createElement('div');
+  landGroup.className = 'field-group';
+  let landOptionsHtml = '<option value="" disabled' + (state.landUse === null ? ' selected' : '') + '>Select primary crop / land use…</option>';
+  LAND_USE_OPTIONS.forEach((opt, i) => {
+    landOptionsHtml += '<option value="' + i + '"' + (state.landUse === i ? ' selected' : '') + '>' + opt.text + '</option>';
+  });
+  landGroup.innerHTML =
+    '<label class="field-label" for="landUseSelect">Primary crop / land use</label>' +
+    '<select id="landUseSelect" class="field-select">' + landOptionsHtml + '</select>';
+  wrap.appendChild(landGroup);
+
+  // Tillage dropdown
+  const tillGroup = document.createElement('div');
+  tillGroup.className = 'field-group';
+  let tillOptionsHtml = '<option value="" disabled' + (state.tillage === null ? ' selected' : '') + '>Select current tillage practice…</option>';
+  TILLAGE_OPTIONS.forEach((opt, i) => {
+    tillOptionsHtml += '<option value="' + i + '"' + (state.tillage === i ? ' selected' : '') + '>' + opt.text + '</option>';
+  });
+  tillGroup.innerHTML =
+    '<label class="field-label" for="tillageSelect">Current tillage practice</label>' +
+    '<select id="tillageSelect" class="field-select">' + tillOptionsHtml + '</select>' +
+    '<p class="field-hint">Every starting point has upside — this just helps us calibrate how much further headroom your soil has.</p>';
+  wrap.appendChild(tillGroup);
+
+  stepBody.appendChild(wrap);
+
+  document.getElementById('acresInput').oninput = (e) => {
+    state.acres = parseFloat(e.target.value) || 0;
+    nextBtn.disabled = !isStepValid(0);
+  };
+  document.getElementById('landUseSelect').onchange = (e) => {
+    state.landUse = parseInt(e.target.value);
+    nextBtn.disabled = !isStepValid(0);
+  };
+  document.getElementById('tillageSelect').onchange = (e) => {
+    state.tillage = parseInt(e.target.value);
+    nextBtn.disabled = !isStepValid(0);
+  };
+}
+
+function renderStepPractices(){
+  stepBody.innerHTML = '';
+
+  const optionsWrap = document.createElement('div');
+  optionsWrap.className = 'options';
+
+  PRACTICES.forEach((practice, i) => {
+    const div = document.createElement('div');
+    div.className = 'option checkbox' + (state.practices[i] ? ' selected' : '');
+    div.innerHTML =
+      '<span class="check">✓</span>' +
+      '<span class="opt-body">' +
+        '<span class="opt-name">' + practice.text + '</span>' +
+        '<span class="opt-badge">' + practice.rate.toFixed(2) + ' tCO2e/acre/yr</span>' +
+      '</span>';
+    div.onclick = () => togglePractice(i);
+    optionsWrap.appendChild(div);
+  });
+
+  stepBody.appendChild(optionsWrap);
+
+  const hint = document.createElement('p');
+  hint.className = 'field-hint';
+  hint.style.marginTop = '14px';
+  hint.textContent = state.practices.some(p => p) ? '' : 'Select at least one practice to continue.';
+  stepBody.appendChild(hint);
+
+  const tallyBar = document.createElement('div');
+  tallyBar.className = 'tally-bar';
+  tallyBar.id = 'tallyBar';
+  stepBody.appendChild(tallyBar);
+
+  updateTally();
+}
+
+function updateTally(){
+  const tallyBar = document.getElementById('tallyBar');
+  if (!tallyBar) return;
+
+  const selectedCount = state.practices.filter(p => p).length;
+  let sequestrationSum = 0;
+  PRACTICES.forEach((practice, i) => {
+    if (state.practices[i]) sequestrationSum += practice.rate;
+  });
+
+  const figureHtml = selectedCount > 0
+    ? '<span class="tally-figure">' + sequestrationSum.toFixed(2) + ' tCO₂e / acre / year</span>'
+    : '<span class="tally-figure muted-figure">Select at least one practice</span>';
+
+  tallyBar.innerHTML =
+    '<span class="tally-label">Selected practices: ' + selectedCount + '</span>' +
+    figureHtml;
+}
+
+function togglePractice(i){
+  state.practices[i] = !state.practices[i];
+  renderStepPractices();
+  nextBtn.disabled = !isStepValid(1);
+}
+
+function goNext(){
+  if (!isStepValid(currentStep)) return;
+  if (currentStep < 2){
+    currentStep++;
+    renderStep();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function goBack(){
+  if (currentStep > 0){
+    currentStep--;
+    renderStep();
+  }
+}
+
+function formatINR(n){
+  n = Math.round(n);
+  let s = n.toString();
+  let last3 = s.slice(-3), rest = s.slice(0,-3);
+  if(rest) rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+  return '₹' + (rest ? rest + ',' : '') + last3;
+}
+
+const USD_TO_INR = 87;
+
+const SCENARIOS = [
+  { key: 'conservative', label: 'Conservative', buffer: 0.65, price: 8 },
+  { key: 'base', label: 'Base Case', buffer: 0.80, price: 15 },
+  { key: 'optimistic', label: 'Optimistic', buffer: 0.90, price: 25 }
+];
+
+function calculate(){
+  const landUseFactor = LAND_USE_OPTIONS[state.landUse].factor;
+  const tillageFactor = TILLAGE_OPTIONS[state.tillage].factor;
+
+  let selectedPracticesSum = 0;
+  const selectedNames = [];
+  PRACTICES.forEach((practice, i) => {
+    if (state.practices[i]){
+      selectedPracticesSum += practice.rate;
+      selectedNames.push(practice.text);
+    }
+  });
+
+  const adjustedSequestrationPerAcre = selectedPracticesSum * landUseFactor * tillageFactor;
+  const totalAnnualCreditsBase = adjustedSequestrationPerAcre * state.acres;
+
+  const results = SCENARIOS.map(sc => {
+    const credits = totalAnnualCreditsBase * sc.buffer;
+    const revenueUSD = credits * sc.price;
+    const revenueINR = revenueUSD * USD_TO_INR;
+    return {
+      label: sc.label,
+      key: sc.key,
+      credits: credits,
+      price: sc.price,
+      revenueINR: revenueINR
+    };
+  });
+
+  return {
+    landUseFactor,
+    tillageFactor,
+    selectedPracticesSum,
+    selectedNames,
+    adjustedSequestrationPerAcre,
+    totalAnnualCreditsBase,
+    results
+  };
+}
+
+function renderStepResults(){
+  const calc = calculate();
+
+  document.getElementById('statAcres').textContent = state.acres + ' acres';
+  document.getElementById('statPractices').textContent = calc.selectedNames.length + ' selected';
+  document.getElementById('statSeq').textContent = calc.totalAnnualCreditsBase.toFixed(1) + ' tCO2e/yr';
+
+  const grid = document.getElementById('scenarioGrid');
+  grid.innerHTML = '';
+
+  calc.results.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'scenario-card' + (r.key === 'base' ? ' highlight' : '');
+    card.innerHTML =
+      '<div class="band-label">' + r.label + '</div>' +
+      '<div class="score-circle">' +
+        '<div class="big">' + r.credits.toFixed(1) + '</div>' +
+        '<div class="small">tCO2e / yr</div>' +
+      '</div>' +
+      '<div class="price-line">at $' + r.price + ' / tCO2e</div>' +
+      '<div class="revenue">' + formatINR(r.revenueINR) + '</div>' +
+      '<div class="revenue-label">est. annual revenue</div>';
+    grid.appendChild(card);
+  });
+
+  renderRangeBand(calc);
+
+  quizCard.style.display = 'none';
+  resultsCard.style.display = 'block';
+}
+
+function renderRangeBand(calc){
+  const wrap = document.getElementById('rangeBandWrap');
+  const conservative = calc.results.find(r => r.key === 'conservative').revenueINR;
+  const base = calc.results.find(r => r.key === 'base').revenueINR;
+  const optimistic = calc.results.find(r => r.key === 'optimistic').revenueINR;
+
+  if (!optimistic || optimistic <= 0){
+    wrap.style.display = 'none';
+    return;
+  }
+
+  const conservativePos = Math.max(0, Math.min(100, (conservative / optimistic) * 100));
+  const basePos = Math.max(0, Math.min(100, (base / optimistic) * 100));
+
+  const fill = document.getElementById('rangeBandFill');
+  fill.style.left = conservativePos + '%';
+  fill.style.width = Math.max(0, 100 - conservativePos) + '%';
+
+  const marker = document.getElementById('rangeBandMarker');
+  marker.style.left = basePos + '%';
+
+  document.getElementById('rangeBandLowLabel').textContent = formatINR(conservative);
+  document.getElementById('rangeBandHighLabel').textContent = formatINR(optimistic);
+
+  wrap.style.display = 'block';
+}
+
+function retake(){
+  currentStep = 0;
+  state = {
+    acres: 10,
+    landUse: null,
+    tillage: null,
+    practices: new Array(PRACTICES.length).fill(false)
+  };
+  resultsCard.style.display = 'none';
+  quizCard.style.display = 'block';
+  renderStep();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+renderStep();
+</script>
+
+</body>
+</html>
