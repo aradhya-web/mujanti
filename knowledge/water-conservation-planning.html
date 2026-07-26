@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water conservation planning for smallholder farms | Mujanti Knowledge Hub</title>
+  <meta name="description" content="A practical guide for FPOs and NGO field teams on planning farm and village-level water conservation — water budgeting, demand-side and supply-side measures, sequencing a plan, and avoiding common pitfalls.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4FAF5;
+      --white: #fff;
+      --g1: #1B5E20;
+      --g2: #2E7D32;
+      --g3: #43A047;
+      --g4: #66BB6A;
+      --g5: #A5D6A7;
+      --soft: #E8F5E9;
+      --dark: #07110A;
+      --dark2: #0D1F12;
+      --text: #1A2B1E;
+      --muted: #5A7A63;
+      --border: #DCE8DE;
+      --gold: #C8A84B;
+      --gold2: #F5E9C2;
+      --r: 26px;
+      --r-sm: 14px;
+      --shadow-sm: 0 2px 12px rgba(27, 94, 32, 0.07);
+      --shadow-md: 0 8px 32px rgba(27, 94, 32, 0.12);
+      --red: #C62828;
+      --red-soft: #FBE9E7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      background: var(--dark);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header a {
+      color: var(--g5);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: var(--white);
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--g1);
+      font-weight: 800;
+      font-size: 1.5rem;
+      margin-top: 2.2em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.6em;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--g1);
+    }
+
+    ul, ol {
+      margin: 1.2em 0 1.2em 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5em 0;
+    }
+
+    a {
+      color: var(--g3);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--g2);
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5em 0;
+    }
+
+    table th {
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin: 2em 0;
+    }
+
+    .callout h3 {
+      margin-top: 0;
+    }
+
+    .callout ul {
+      margin: 1em 0 1em 1.5em;
+    }
+
+    .callout li {
+      margin-bottom: 0.6em;
+    }
+
+    .cta-card {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--r);
+      padding: 36px;
+      margin: 3em 0 2em;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      color: var(--white);
+      margin-top: 0;
+    }
+
+    .cta-card p {
+      margin-bottom: 1.5em;
+      color: var(--g5);
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--g3);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--g2);
+      text-decoration: none;
+    }
+
+    .related-guides {
+      margin-top: 2em;
+    }
+
+    .related-guides h3 {
+      margin-top: 0;
+    }
+
+    .related-guides ul {
+      list-style: none;
+      margin: 1em 0;
+    }
+
+    .related-guides li {
+      margin-bottom: 0.8em;
+    }
+
+    .related-guides a {
+      color: var(--g3);
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--g5);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* At-a-glance summary card */
+    .glance-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .glance-item {
+      text-align: center;
+    }
+
+    .glance-value {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--g1);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .glance-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--soft);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      color: var(--g1);
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc li {
+      margin-bottom: 0.6em;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--g1);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Gold audience-relevance callout */
+    .highlight-box {
+      background: var(--gold2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin: 2em 0;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    /* Step-by-step stepper */
+    .stepper {
+      margin-top: 1.5em;
+    }
+
+    .step {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .step-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 36px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-height: 36px;
+      background: var(--g1);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .step-line {
+      flex: 1;
+      width: 0;
+      border-left: 2px solid var(--g5);
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .step-content {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 8px;
+    }
+
+    .step-content h3 {
+      margin-top: 0.1em;
+    }
+
+    .step-last .step-rail {
+      align-items: center;
+    }
+
+    /* Warning cards for common mistakes */
+    .warning-card {
+      background: var(--red-soft);
+      border-left: 4px solid var(--red);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      margin-bottom: 14px;
+    }
+
+    .warning-title {
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 0.5em;
+    }
+
+    /* Timeline / cost table total row highlight */
+    table tr.total-row td {
+      background: var(--soft);
+      font-weight: 800;
+      color: var(--g1);
+    }
+
+    @media (max-width: 600px) {
+      .glance-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .toc ul {
+        columns: 1;
+      }
+
+      .step-rail {
+        width: 30px;
+        margin-right: 14px;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        min-height: 30px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+      }
+
+      main {
+        padding: 32px 0;
+      }
+
+      .cta-card {
+        padding: 24px;
+        margin: 2em 0 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../index.html"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+      <a href="index.html">← Back to Knowledge Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Guide · Regenerative Ag · 7 min read</div>
+
+      <h1>Water conservation planning for smallholder farms</h1>
+
+      <p class="byline">Mujanti Knowledge Hub · Last updated July 2026</p>
+
+      <div class="glance-card">
+        <div class="glance-item">
+          <div class="glance-value">💧 Budget first</div>
+          <div class="glance-label">Before any structure is built</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">2 sides</div>
+          <div class="glance-label">Demand-side + supply-side measures</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">🏘 Village-level</div>
+          <div class="glance-label">Aquifers need shared agreement</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">🔧 Maintenance</div>
+          <div class="glance-label">Most-skipped step in practice</div>
+        </div>
+      </div>
+
+      <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#why-water-risk">Why water risk is the binding constraint</a></li>
+          <li><a href="#water-budget">Start with a water budget</a></li>
+          <li><a href="#demand-side">Demand-side measures</a></li>
+          <li><a href="#supply-side">Supply-side measures</a></li>
+          <li><a href="#sequencing">Sequencing a plan</a></li>
+          <li><a href="#groundwater-reality">The participatory groundwater reality</a></li>
+          <li><a href="#common-mistakes">Common mistakes</a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <h2 id="why-water-risk">Why water risk is the binding constraint</h2>
+
+      <p>For most Indian smallholders, water availability — not soil fertility, not seed quality, not market access — is the single factor most likely to determine whether a season succeeds or fails. A well-fertilised, well-managed crop still fails if it misses two critical irrigation windows during a dry spell. This is why water conservation planning deserves the same rigour as a cropping plan or a market linkage strategy, rather than being treated as an occasional infrastructure add-on.</p>
+
+      <p>The good news is that water conservation planning is tractable at the farm and village scale, provided it starts from a realistic picture of supply and demand rather than jumping straight to structures.</p>
+
+      <hr>
+
+      <h2 id="water-budget">Start with a water budget</h2>
+
+      <p>A water budget is a simple accounting exercise: estimate what water arrives against what your crops need, over a season or a year. It does not require hydrological modelling — a back-of-envelope version, refined over a couple of seasons, is usually good enough to guide decisions.</p>
+
+      <p>The arrives side is broadly <strong>rainfall × catchment or field area</strong>, adjusted for how much of that rainfall actually infiltrates versus runs off. The needs side is the water requirement of your chosen crops across their growth stages, multiplied by the area under each crop. When needs consistently exceed what arrives (adjusted for any irrigation source), that gap is your water risk, and it is the number every subsequent decision should respond to.</p>
+
+      <p>An illustrative, simplified water balance for a hypothetical small farm might look like this — the numbers below are for illustration only and must be replaced with local rainfall and crop-water-requirement data for any real plan:</p>
+
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Illustrative value</th>
+        </tr>
+        <tr>
+          <td>Average annual rainfall</td>
+          <td>~700–900 mm (varies widely by region)</td>
+        </tr>
+        <tr>
+          <td>Effective infiltration (after runoff/evaporation losses)</td>
+          <td>Commonly 50–70% of gross rainfall, site-dependent</td>
+        </tr>
+        <tr>
+          <td>Crop water requirement (season total, water-sensitive crop)</td>
+          <td>Often exceeds effective rainfall in a below-normal year</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>Resulting gap</strong></td>
+          <td><strong>Must be met by storage, groundwater, or crop choice</strong></td>
+        </tr>
+      </table>
+
+      <p>The same logic scales up to a village water balance — total catchment rainfall against total irrigation and drinking-water demand across all users sharing that catchment or aquifer. At village scale, this exercise also surfaces who is drawing down a shared resource fastest, which matters for the groundwater discussion below.</p>
+
+      <hr>
+
+      <h2 id="demand-side">Demand-side measures</h2>
+
+      <p>Reducing how much water a farm needs is usually cheaper and faster to implement than increasing how much water is available, which is why it belongs first in any plan.</p>
+
+      <h3>Crop choice and water footprint awareness</h3>
+      <p>Not all crops carry the same water cost per unit of income. Being deliberate about the water footprint of a cropping plan — and diversifying away from a single water-intensive crop where the local water budget cannot support it — is often the single highest-leverage decision a farm or village can make.</p>
+
+      <h3>Mulching</h3>
+      <p>A surface layer of crop residue, straw, or plastic mulch cuts direct soil evaporation significantly, keeping more of the water that does infiltrate available to the crop for longer.</p>
+
+      <h3>SOC improvement as water storage</h3>
+      <p>Soil organic carbon is itself a form of water storage — organic matter holds moisture the way a sponge does. Building SOC through the practices in our companion guide, <a href="soil-organic-carbon-basics.html">Regenerative agriculture and Soil Organic Carbon basics</a>, is a slower but durable way to raise a soil's effective water-holding capacity year after year.</p>
+
+      <h3>Drip and sprinkler irrigation for horticulture</h3>
+      <p>For orchards, vegetables, and other high-value horticulture, drip and micro-sprinkler systems deliver water close to the root zone and typically cut application volumes substantially compared to flood irrigation, while also improving yield consistency.</p>
+
+      <h3>Alternate wetting and drying (AWD) for paddy</h3>
+      <p>Rice grown under continuous flooding is one of the most water-intensive cropping systems in Indian agriculture. AWD — allowing the field to dry to a defined threshold before the next irrigation, rather than maintaining constant standing water — is a well-documented way to reduce irrigation water use in paddy without a proportional yield penalty, though it requires attentive field monitoring to get the timing right.</p>
+
+      <hr>
+
+      <h2 id="supply-side">Supply-side measures</h2>
+
+      <p>Once demand-side measures are underway, supply-side structures increase how much water is captured, stored, or made available for use.</p>
+
+      <h3>Farm ponds</h3>
+      <p>On-farm excavated ponds capture runoff during the monsoon for use as supplemental irrigation later in the season. Sizing should follow the water budget above, not a standard template — an undersized pond dries up before it is needed, and an oversized one wastes land and excavation cost.</p>
+
+      <h3>Field bunding</h3>
+      <p>Contour bunds slow runoff across a field, giving rainfall more time to infiltrate rather than sheeting off. This is typically the lowest-cost supply-side intervention and is often the right first step before larger structures.</p>
+
+      <h3>Check dams</h3>
+      <p>Small dams across seasonal streams slow and store surface flow, recharging groundwater in the surrounding area and providing a longer-lasting water source than a single field's bunding alone.</p>
+
+      <h3>Percolation structures</h3>
+      <p>Percolation tanks and trenches are designed specifically to encourage infiltration into the water table rather than to hold surface water for direct use — these support the shared aquifer rather than any one farm's storage.</p>
+
+      <h3>Rooftop and runoff harvesting</h3>
+      <p>At the household or village level, capturing rooftop runoff for drinking-water storage reduces pressure on groundwater sources that might otherwise be drawn down for domestic use, freeing up more of the shared aquifer for irrigation.</p>
+
+      <hr>
+
+      <h2 id="sequencing">Sequencing a plan at farm and village level</h2>
+
+      <p>A workable sequence, whether for a single farm or a whole village, generally follows four stages.</p>
+
+      <div class="stepper">
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">1</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Assess</h3>
+      <p>Build the water budget described above, using whatever rainfall and cropping data is available locally. Identify the size of the gap and where it is worst — which fields, which months, which crops.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">2</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Prioritise cheap and fast measures</h3>
+      <p>Mulching, crop-choice adjustments, and bunding can typically be implemented within a season and at low cost. Doing these first buys time and reduces the size of structure needed later, rather than jumping straight to capital-intensive works.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">3</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Converge with public programmes</h3>
+      <p>Farm ponds, check dams, and percolation structures are commonly funded through public works and watershed development programmes — MGNREGA works and state or central watershed programmes are frequently the route through which village-level structures get built, rather than the FPO or NGO bearing the full capital cost. Specific eligibility, application windows, and cost-sharing norms vary by state and change periodically, so confirm current scheme details with your local block or district office before designing around a particular programme.</p>
+        </div>
+      </div>
+
+      <div class="step step-last">
+        <div class="step-rail"><span class="step-num">4</span></div>
+        <div class="step-content">
+      <h3>Build in maintenance from day one</h3>
+      <p>Every structure above needs periodic desilting, repair, or clearing to keep functioning. Assign responsibility and a modest annual budget for this before construction, not after the first monsoon silts up a pond.</p>
+        </div>
+      </div>
+
+      </div>
+
+      <hr>
+
+      <h2 id="groundwater-reality">The participatory groundwater reality</h2>
+
+      <p>A borewell on one farm draws from the same aquifer as the borewell on the neighbouring farm. This means that individual action — however well planned — cannot solve a shared-aquifer problem on its own. If one farmer adopts AWD and reduces draw-down while a neighbour deepens their borewell and increases it, the aquifer-level outcome may not improve at all.</p>
+
+      <p>Effective groundwater management in most Indian contexts requires village- or watershed-level agreement: shared monitoring of water table depth, agreed cropping patterns in water-stressed zones, and collective rules around new borewell drilling. This is harder to organise than a single farm's water budget, but it is usually where the real leverage sits. An FPO or NGO field team is often well placed to convene this conversation, since it already has the trust relationships and meeting structures that individual farmers lack the standing to create alone.</p>
+
+      <hr>
+
+      <h2 id="common-mistakes">Common mistakes</h2>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Building structures without demand-side change</p>
+        <p style="margin-bottom:0;">A new farm pond or check dam is often treated as the whole solution. Without parallel demand-side measures — mulching, better crop choice, AWD — the additional water supply is frequently absorbed by continuing the same water-intensive practices, leaving the underlying gap unchanged.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Borewell-deepening arms races</p>
+        <p style="margin-bottom:0;">When one farm's borewell runs dry, the common response is to deepen it or drill a new one nearby. This treats a shared-resource problem as an individual equipment problem, and typically accelerates the aquifer's decline for everyone sharing it.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Ignoring maintenance</p>
+        <p style="margin-bottom:0;">Ponds silt up, bunds erode, and percolation structures clog. A structure built without an ongoing maintenance plan and budget often stops functioning within a few years, and the capital investment is effectively lost.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ One-size-fits-all crop advice</p>
+        <p style="margin-bottom:0;">Blanket recommendations to "switch to less water-intensive crops" without checking local market access, soil suitability, and household income needs often fail in practice. Any crop-choice recommendation needs to be checked against the specific water budget and livelihood context of the farm in question.</p>
+      </div>
+
+      <hr>
+
+      <div class="cta-card">
+        <h2>Planning a water conservation programme?</h2>
+        <p>Mujanti helps FPOs and NGO field teams build water budgets, sequence farm- and village-level interventions, and connect structures to the right public funding programmes.</p>
+        <a href="../index.html#contact" class="cta-button">Book a free 30-minute consultation</a>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2.5em;"><em>Rainfall, crop-water-requirement, and structure-sizing figures in this guide are indicative planning aids only. Actual water availability and requirements vary substantially by region, soil, and rainfall year. Always base final plans on local rainfall records, soil surveys, and current public-scheme guidelines. Content current as of July 2026.</em></p>
+
+      <hr>
+
+      <div class="related-guides callout">
+        <h3>Related guides</h3>
+        <ul>
+          <li><a href="soil-organic-carbon-basics.html">Regenerative agriculture and Soil Organic Carbon basics</a></li>
+          <li><a href="donor-ready-impact-report.html">Building a donor-ready impact report</a></li>
+          <li><a href="index.html">Browse the full Knowledge Hub</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Mujanti Services Pvt. Ltd. · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a>
+    </div>
+  </footer>
+</body>
+</html>

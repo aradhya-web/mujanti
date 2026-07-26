@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NABARD FPO promotion scheme: eligibility and application guide | Mujanti Knowledge Hub</title>
+  <meta name="description" content="A practical guide to the central FPO promotion scheme implemented by NABARD, SFAC and NCDC — what support is available, who qualifies, and how the CBBO-led application flow actually works.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4FAF5;
+      --white: #fff;
+      --g1: #1B5E20;
+      --g2: #2E7D32;
+      --g3: #43A047;
+      --g4: #66BB6A;
+      --g5: #A5D6A7;
+      --soft: #E8F5E9;
+      --dark: #07110A;
+      --dark2: #0D1F12;
+      --text: #1A2B1E;
+      --muted: #5A7A63;
+      --border: #DCE8DE;
+      --gold: #C8A84B;
+      --gold2: #F5E9C2;
+      --r: 26px;
+      --r-sm: 14px;
+      --shadow-sm: 0 2px 12px rgba(27, 94, 32, 0.07);
+      --shadow-md: 0 8px 32px rgba(27, 94, 32, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      background: var(--dark);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header a {
+      color: var(--g5);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: var(--white);
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--g1);
+      font-weight: 800;
+      font-size: 1.5rem;
+      margin-top: 2.2em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.6em;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--g1);
+    }
+
+    ul, ol {
+      margin: 1.2em 0 1.2em 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5em 0;
+    }
+
+    a {
+      color: var(--g3);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--g2);
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5em 0;
+    }
+
+    table th {
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin: 2em 0;
+    }
+
+    .callout h3 {
+      margin-top: 0;
+    }
+
+    .callout ul {
+      margin: 1em 0 1em 1.5em;
+    }
+
+    .callout li {
+      margin-bottom: 0.6em;
+    }
+
+    .cta-card {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--r);
+      padding: 36px;
+      margin: 3em 0 2em;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      color: var(--white);
+      margin-top: 0;
+    }
+
+    .cta-card p {
+      margin-bottom: 1.5em;
+      color: var(--g5);
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--g3);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--g2);
+      text-decoration: none;
+    }
+
+    .related-guides {
+      margin-top: 2em;
+    }
+
+    .related-guides h3 {
+      margin-top: 0;
+    }
+
+    .related-guides ul {
+      list-style: none;
+      margin: 1em 0;
+    }
+
+    .related-guides li {
+      margin-bottom: 0.8em;
+    }
+
+    .related-guides a {
+      color: var(--g3);
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--g5);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* At-a-glance summary card */
+    .glance-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .glance-item {
+      text-align: center;
+    }
+
+    .glance-value {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--g1);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .glance-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--soft);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      color: var(--g1);
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc li {
+      margin-bottom: 0.6em;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--g1);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Gold audience-relevance callout */
+    .highlight-box {
+      background: var(--gold2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin: 2em 0;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    /* Step-by-step stepper */
+    .stepper {
+      margin-top: 1.5em;
+    }
+
+    .step {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .step-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 36px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-height: 36px;
+      background: var(--g1);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .step-line {
+      flex: 1;
+      width: 0;
+      border-left: 2px solid var(--g5);
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .step-content {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 8px;
+    }
+
+    .step-content h3 {
+      margin-top: 0.1em;
+    }
+
+    .step-last .step-rail {
+      align-items: center;
+    }
+
+    /* Warning cards for common mistakes */
+    .warning-card {
+      background: var(--red-soft);
+      border-left: 4px solid var(--red);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      margin-bottom: 14px;
+    }
+
+    .warning-title {
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 0.5em;
+    }
+
+    /* Timeline / cost table total row highlight */
+    table tr.total-row td {
+      background: var(--soft);
+      font-weight: 800;
+      color: var(--g1);
+    }
+
+    @media (max-width: 600px) {
+      .glance-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .toc ul {
+        columns: 1;
+      }
+
+      .step-rail {
+        width: 30px;
+        margin-right: 14px;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        min-height: 30px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+      }
+
+      main {
+        padding: 32px 0;
+      }
+
+      .cta-card {
+        padding: 24px;
+        margin: 2em 0 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../index.html"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+      <a href="index.html">← Back to Knowledge Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Guide · FPO Formation · 8 min read</div>
+
+      <h1>NABARD FPO promotion scheme: eligibility and application guide</h1>
+
+      <p class="byline">Mujanti Knowledge Hub · Last updated July 2026</p>
+
+      <div class="glance-card">
+        <div class="glance-item">
+          <div class="glance-value">₹6,865 crore</div>
+          <div class="glance-label">Scheme outlay, 10,000 FPOs</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">Up to ₹18 lakh</div>
+          <div class="glance-label">CBBO-routed formation support / FPO</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">₹2,000/farmer</div>
+          <div class="glance-label">Equity grant, capped ₹15 lakh</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">300 / 100</div>
+          <div class="glance-label">Min. members — plains / hill &amp; NE areas</div>
+        </div>
+      </div>
+
+      <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#what-the-scheme-is">What the scheme is</a></li>
+          <li><a href="#who-implements-it">Who implements it</a></li>
+          <li><a href="#what-support-looks-like">What support an FPO actually gets</a></li>
+          <li><a href="#eligibility">Eligibility requirements</a></li>
+          <li><a href="#application-flow">How the application flow works</a></li>
+          <li><a href="#common-mistakes">Common mistakes</a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <h2 id="what-the-scheme-is">What the scheme is</h2>
+
+      <p>The Central Sector Scheme titled <strong>"Formation and Promotion of 10,000 Farmer Producer Organisations"</strong> was launched by the Government of India in 2020, with a budgetary outlay of <strong>₹6,865 crore</strong>. Its objective is straightforward: bring small and marginal farmers together into producer organisations that give them collective bargaining power, access to inputs at scale, and a direct route into aggregation, processing, and markets.</p>
+
+      <p>This is the scheme most FPO promoters mean when they say "the NABARD scheme" or "the 10,000-FPO scheme" — though, as the next section explains, NABARD is one of several agencies actually implementing it.</p>
+
+      <hr>
+
+      <h2 id="who-implements-it">Who implements it</h2>
+
+      <p>The scheme's implementing agencies include <strong>NABARD</strong>, <strong>SFAC</strong> (Small Farmers' Agribusiness Consortium), and <strong>NCDC</strong> (National Cooperative Development Corporation), with additional implementing agencies designated over time under scheme guidelines. Each of these agencies is responsible for forming and supporting a share of the 10,000 target FPOs, typically split by state and by whether the FPO is expected to register as a producer company or a cooperative.</p>
+
+      <p>The on-the-ground implementation unit is the <strong>Cluster-Based Business Organisation (CBBO)</strong>. A CBBO is engaged by the implementing agency to identify a produce cluster, mobilise farmers, help register the FPO, and then hand-hold the FPO's governance and business development for <strong>five years</strong> from formation. If you are a farmer group being approached about forming an FPO under this scheme, the CBBO is very likely your primary point of contact — not NABARD or SFAC directly.</p>
+
+      <hr>
+
+      <h2 id="what-support-looks-like">What support an FPO actually gets</h2>
+
+      <p>Under scheme guidelines, support to a newly formed FPO comes in three main components.</p>
+
+      <p><strong>1. Formation and management cost support.</strong> This is routed through the CBBO rather than paid directly to the FPO, and under scheme guidelines can total up to <strong>₹18 lakh per FPO spread over three years</strong>. It covers the CBBO's mobilisation work, training, business-plan preparation, and initial handholding — not a cash grant the FPO's board controls directly.</p>
+
+      <p><strong>2. Matching equity grant.</strong> Once the FPO is registered and has raised member equity (share capital contributed by farmer-members), the scheme matches this with an equity grant of up to <strong>₹2,000 per farmer member</strong>, capped at <strong>₹15 lakh per FPO</strong> under scheme guidelines. This strengthens the FPO's own capital base without diluting member ownership.</p>
+
+      <p><strong>3. Credit guarantee facility.</strong> To help FPOs access institutional credit without collateral constraints that many young FPOs cannot meet, the scheme provides a credit guarantee facility covering institutional loans, with guarantee cover reported at up to <strong>₹2 crore per FPO</strong> under scheme guidelines. This makes banks more willing to lend for working capital and infrastructure.</p>
+
+      <div class="highlight-box">
+        <h3>Remember: equity grant and credit guarantee both favour company/cooperative forms</h3>
+        <p style="margin-bottom:0;">As covered in our <a href="fpo-structure-comparison.html">FPO structure comparison guide</a>, the equity grant and much of the scheme's institutional-credit support is built around FPOs registered as <strong>producer companies or cooperatives</strong> — the FPO doing the trading and holding farmer equity, not a Section 8 promoting entity.</p>
+      </div>
+
+      <hr>
+
+      <h2 id="eligibility">Eligibility requirements</h2>
+
+      <p>Under scheme guidelines, the headline eligibility markers are:</p>
+
+      <ul>
+        <li><strong>Minimum membership</strong> — 300 farmer members for FPOs in plains areas, and 100 farmer members for FPOs in North-Eastern and hilly regions, as scheme-guideline figures.</li>
+        <li><strong>Cluster-based formation</strong> — FPOs are formed around a defined produce cluster (a crop, commodity, or livestock activity concentrated in a geography), rather than as a general-purpose collective. The <strong>"One District One Product" (ODOP)</strong> approach influences how clusters are selected in many states, aligning FPO formation with each district's identified priority produce.</li>
+        <li><strong>Formation through a designated CBBO</strong> — eligibility for the formation-cost support component specifically requires that the FPO is being formed by an implementing agency's engaged CBBO, not independently.</li>
+        <li><strong>Appropriate legal structure</strong> — registration as a producer company or cooperative society, in line with the scheme's design.</li>
+      </ul>
+
+      <hr>
+
+      <h2 id="application-flow">How the application flow works in practice</h2>
+
+      <div class="stepper">
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">1</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Step 1 — Cluster identification</h3>
+      <p>The implementing agency (NABARD, SFAC, NCDC, or another designated agency) identifies produce clusters for FPO formation, often guided by the state's ODOP priorities and existing farmer concentration data.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">2</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Step 2 — CBBO engagement</h3>
+      <p>A CBBO is appointed or engaged for the cluster. This organisation — often an experienced NGO, agri-business consultancy, or resource institution — becomes the FPO's handholding partner for the next five years.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">3</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Step 3 — Mobilisation and baseline</h3>
+      <p>The CBBO conducts farmer meetings, builds awareness, and mobilises the minimum required membership. A baseline survey typically captures crop patterns, existing market linkages, and aggregation potential.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">4</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Step 4 — Registration</h3>
+      <p>The CBBO supports the founding members through registration — as a producer company via SPICe+ with the MCA, or as a cooperative with the state Registrar of Cooperative Societies. See our <a href="fpo-section-8-registration.html">Section 8 registration guide</a> for the equivalent process if a promoting entity is also being set up alongside.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-rail"><span class="step-num">5</span><span class="step-line"></span></div>
+        <div class="step-content">
+      <h3>Step 5 — Business plan</h3>
+      <p>The CBBO helps the newly elected board draft a business plan — covering the produce value chain, input supply, aggregation and processing plans, and projected financials — which becomes the basis for subsequent scheme support decisions.</p>
+        </div>
+      </div>
+
+      <div class="step step-last">
+        <div class="step-rail"><span class="step-num">6</span></div>
+        <div class="step-content">
+      <h3>Step 6 — Equity grant and credit guarantee applications</h3>
+      <p>Once registered and with member equity raised, the FPO — again typically through the CBBO or implementing agency — applies for the matching equity grant and, where institutional credit is being sought, the credit guarantee cover.</p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="highlight-box">
+        <h3>Already registered? Read this before you "apply"</h3>
+        <p style="margin-bottom:0;">The scheme funds the <strong>formation of new FPOs</strong> through designated CBBOs — an FPO that is already registered and operating cannot simply submit an "application" for the formation package after the fact, because that support is tied to the CBBO-led formation process itself. If your FPO is already registered, the doors still open to you are the <strong>equity grant</strong> and <strong>credit guarantee</strong> components (where still available under current guidelines), and other NABARD schemes relevant to established FPOs — for example, arrangements for FPOs transitioning from earlier PRODUCE-fund-era support, or state-level FPO schemes. Confirm the current position with your regional NABARD/SFAC office rather than assuming the formation package is retroactively available.</p>
+      </div>
+
+      <hr>
+
+      <h2 id="common-mistakes">Common mistakes</h2>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Approaching NABARD directly instead of through a CBBO</p>
+        <p style="margin-bottom:0;">Farmer groups sometimes try to apply to NABARD's regional office directly for formation support. In practice, formation support flows through the CBBO the implementing agency has engaged for your cluster — going in cold to NABARD is more likely to get you redirected than funded.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Registering first, then looking for a CBBO</p>
+        <p style="margin-bottom:0;">Because formation-cost support is tied to CBBO-led formation, registering the FPO independently and then trying to retrofit CBBO involvement can forfeit that component entirely. If you want the formation-support package, engage the CBBO route before registration, not after.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Assuming membership thresholds are flexible</p>
+        <p style="margin-bottom:0;">The minimum-membership norms (300 in plains areas, 100 in hilly/North-Eastern regions, under scheme guidelines) exist to ensure the FPO has enough scale to be viable. Boards sometimes under-mobilise and hope to top up membership later — this can delay scheme benefits that are tied to registered membership numbers at key milestones.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Confusing the formation-cost ceiling with cash the FPO controls</p>
+        <p style="margin-bottom:0;">The up-to-₹18-lakh formation support figure is paid to and managed by the CBBO for services rendered to the FPO — it is not a lump sum transferred to the FPO's own bank account. Boards that expect direct cash access are often surprised by how this component is actually structured.</p>
+      </div>
+
+      <hr>
+
+      <div class="cta-card">
+        <h2>Need help navigating the scheme?</h2>
+        <p>Mujanti works alongside CBBOs and FPO boards to prepare business plans, structure equity-grant applications, and keep compliance on track through the five-year handholding period.</p>
+        <a href="../index.html#contact" class="cta-button">Book a free 30-minute consultation</a>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2.5em;"><em>This guide describes the Central Sector Scheme for Formation and Promotion of 10,000 FPOs and its implementation through NABARD, SFAC, NCDC, and CBBOs, as understood as of July 2026. Figures such as outlay, per-FPO support ceilings, per-farmer equity-grant caps, credit-guarantee cover, and membership norms are presented as scheme-guideline figures and are subject to revision. Always verify current terms with NABARD, SFAC, or your engaged CBBO before making formation or funding decisions.</em></p>
+
+      <hr>
+
+      <div class="related-guides callout">
+        <h3>Related guides</h3>
+        <ul>
+          <li><a href="fpo-structure-comparison.html">FPO structure comparison: Section 8 vs producer company vs cooperative</a></li>
+          <li><a href="fpo-section-8-registration.html">How to register an FPO under Section 8 of the Companies Act</a></li>
+          <li><a href="fpo-compliance-calendar.html">FPO annual compliance calendar 2026–27</a></li>
+          <li><a href="index.html">Browse all guides in the Knowledge Hub</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Mujanti Services Pvt. Ltd. · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a>
+    </div>
+  </footer>
+</body>
+</html>

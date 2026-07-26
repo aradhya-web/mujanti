@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regenerative agriculture and Soil Organic Carbon basics | Mujanti Knowledge Hub</title>
+  <meta name="description" content="A plain-language guide to Soil Organic Carbon (SOC) for FPOs, NGOs, and farmer groups — what it is, why it matters for yields and drought resilience, how to build it, and how it connects to carbon-credit income.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4FAF5;
+      --white: #fff;
+      --g1: #1B5E20;
+      --g2: #2E7D32;
+      --g3: #43A047;
+      --g4: #66BB6A;
+      --g5: #A5D6A7;
+      --soft: #E8F5E9;
+      --dark: #07110A;
+      --dark2: #0D1F12;
+      --text: #1A2B1E;
+      --muted: #5A7A63;
+      --border: #DCE8DE;
+      --gold: #C8A84B;
+      --gold2: #F5E9C2;
+      --r: 26px;
+      --r-sm: 14px;
+      --shadow-sm: 0 2px 12px rgba(27, 94, 32, 0.07);
+      --shadow-md: 0 8px 32px rgba(27, 94, 32, 0.12);
+      --red: #C62828;
+      --red-soft: #FBE9E7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      background: var(--dark);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header a {
+      color: var(--g5);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: var(--white);
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--g1);
+      font-weight: 800;
+      font-size: 1.5rem;
+      margin-top: 2.2em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.6em;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--g1);
+    }
+
+    ul, ol {
+      margin: 1.2em 0 1.2em 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5em 0;
+    }
+
+    a {
+      color: var(--g3);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--g2);
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5em 0;
+    }
+
+    table th {
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin: 2em 0;
+    }
+
+    .callout h3 {
+      margin-top: 0;
+    }
+
+    .callout ul {
+      margin: 1em 0 1em 1.5em;
+    }
+
+    .callout li {
+      margin-bottom: 0.6em;
+    }
+
+    .cta-card {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--r);
+      padding: 36px;
+      margin: 3em 0 2em;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      color: var(--white);
+      margin-top: 0;
+    }
+
+    .cta-card p {
+      margin-bottom: 1.5em;
+      color: var(--g5);
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--g3);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--g2);
+      text-decoration: none;
+    }
+
+    .related-guides {
+      margin-top: 2em;
+    }
+
+    .related-guides h3 {
+      margin-top: 0;
+    }
+
+    .related-guides ul {
+      list-style: none;
+      margin: 1em 0;
+    }
+
+    .related-guides li {
+      margin-bottom: 0.8em;
+    }
+
+    .related-guides a {
+      color: var(--g3);
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--g5);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* At-a-glance summary card */
+    .glance-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .glance-item {
+      text-align: center;
+    }
+
+    .glance-value {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--g1);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .glance-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--soft);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      color: var(--g1);
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc li {
+      margin-bottom: 0.6em;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--g1);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Gold audience-relevance callout */
+    .highlight-box {
+      background: var(--gold2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin: 2em 0;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    /* Step-by-step stepper */
+    .stepper {
+      margin-top: 1.5em;
+    }
+
+    .step {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .step-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 36px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-height: 36px;
+      background: var(--g1);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .step-line {
+      flex: 1;
+      width: 0;
+      border-left: 2px solid var(--g5);
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .step-content {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 8px;
+    }
+
+    .step-content h3 {
+      margin-top: 0.1em;
+    }
+
+    .step-last .step-rail {
+      align-items: center;
+    }
+
+    /* Warning cards for common mistakes */
+    .warning-card {
+      background: var(--red-soft);
+      border-left: 4px solid var(--red);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      margin-bottom: 14px;
+    }
+
+    .warning-title {
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 0.5em;
+    }
+
+    /* Timeline / cost table total row highlight */
+    table tr.total-row td {
+      background: var(--soft);
+      font-weight: 800;
+      color: var(--g1);
+    }
+
+    @media (max-width: 600px) {
+      .glance-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .toc ul {
+        columns: 1;
+      }
+
+      .step-rail {
+        width: 30px;
+        margin-right: 14px;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        min-height: 30px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+      }
+
+      main {
+        padding: 32px 0;
+      }
+
+      .cta-card {
+        padding: 24px;
+        margin: 2em 0 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../index.html"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+      <a href="index.html">← Back to Knowledge Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Guide · Regenerative Ag · 7 min read</div>
+
+      <h1>Regenerative agriculture and Soil Organic Carbon basics</h1>
+
+      <p class="byline">Mujanti Knowledge Hub · Last updated July 2026</p>
+
+      <div class="glance-card">
+        <div class="glance-item">
+          <div class="glance-value">🌱 0.5% vs 0.75%+</div>
+          <div class="glance-label">Common vs healthy SOC (indicative)</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">⏳ Years, not seasons</div>
+          <div class="glance-label">Realistic build-up timeframe</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">📈 ~0.1–0.5 t C/ha/yr</div>
+          <div class="glance-label">Indicative accumulation range</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">6 practices</div>
+          <div class="glance-label">Core SOC-building levers</div>
+        </div>
+      </div>
+
+      <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#what-is-soc">What Soil Organic Carbon actually is</a></li>
+          <li><a href="#why-it-matters">Why SOC matters agronomically</a></li>
+          <li><a href="#indian-context">The Indian context</a></li>
+          <li><a href="#building-practices">Practices that build SOC</a></li>
+          <li><a href="#how-fast">How fast does SOC actually build?</a></li>
+          <li><a href="#carbon-credits">The carbon-credit connection</a></li>
+          <li><a href="#common-mistakes">Common mistakes</a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <h2 id="what-is-soc">What Soil Organic Carbon actually is</h2>
+
+      <p>Soil Organic Carbon, or SOC, is often introduced as a number on a soil test report, which makes it sound like a mineral you either have or don't. It is more useful to think of SOC as the <strong>living, decomposing fraction of your soil</strong> — the residue of roots, crop stubble, manure, and microbial life in various stages of breakdown. It is not one substance; it is a community process happening below the surface.</p>
+
+      <p>When farmers, agronomists, and carbon-project developers talk about "building SOC," they mean building the conditions under which that community — earthworms, fungi, bacteria, decomposing organic matter — can thrive and accumulate over time. A soil with healthy SOC is not just carbon-rich; it is biologically active, better structured, and more resilient to stress.</p>
+
+      <p>This distinction matters because it explains why SOC cannot be manufactured overnight with a single input. It has to be grown, in the same sense that a forest floor's humus layer is grown — through repeated cycles of biomass returning to the soil and being processed by living organisms.</p>
+
+      <hr>
+
+      <h2 id="why-it-matters">Why SOC matters agronomically</h2>
+
+      <p>SOC is not a compliance metric — it is a practical driver of farm performance. The agronomic case rests on a few connected mechanisms.</p>
+
+      <p><strong>Water-holding capacity.</strong> Organic matter acts like a sponge in the soil profile. Soils with higher SOC typically hold more plant-available water per unit of rainfall or irrigation, which matters enormously in rainfed regions where the gap between one rain event and the next can determine whether a crop survives.</p>
+
+      <p><strong>Nutrient cycling.</strong> A large share of the nitrogen, phosphorus, and micronutrients a crop uses each season comes from the mineralisation of organic matter, not directly from fertiliser bags. Soils low in SOC lean almost entirely on external inputs, which is one reason fertiliser responsiveness tends to decline on long-degraded land even as application rates rise.</p>
+
+      <p><strong>Soil structure.</strong> Organic matter binds soil particles into stable aggregates. This improves aeration, reduces crusting after rain, and lowers erosion risk — all of which support root development.</p>
+
+      <p><strong>Drought resilience.</strong> The combined effect of better water retention and structure is that SOC-rich soils buffer crops through dry spells more effectively than degraded soils, even under identical rainfall.</p>
+
+      <p><strong>Yields.</strong> None of the above guarantees a yield bump in any single season — weather, pest pressure, and management still dominate short-term outcomes. But across seasons, farms that steadily build SOC tend to see more stable and often higher yields, largely because the soil buffers variability rather than amplifying it.</p>
+
+      <hr>
+
+      <h2 id="indian-context">The Indian context</h2>
+
+      <p>Large tracts of Indian cropland carry SOC levels well below what most agronomists consider desirable for long-term productivity. As an indicative benchmark used widely in extension literature, SOC is commonly found below 0.5% in intensively cultivated soils across parts of India, where levels of 0.75% or higher are considered healthier for most Indian agro-climates. These figures are illustrative rather than a precise national average — actual SOC varies widely by soil type, cropping history, and rainfall zone, and a proper baseline always requires a local soil test.</p>
+
+      <p>Three drivers show up repeatedly across regions:</p>
+
+      <ul>
+        <li><strong>Decades of intensive tillage.</strong> Repeated ploughing accelerates the breakdown of organic matter by exposing it to oxygen, releasing stored carbon faster than it can be replenished.</li>
+        <li><strong>Crop residue burning.</strong> Burning stubble after harvest — common ahead of a tight sowing window, particularly in rice-wheat systems — destroys organic matter that would otherwise decompose back into the soil, in addition to its well-known air-quality costs.</li>
+        <li><strong>Chemical-only fertilisation.</strong> Reliance on synthetic fertiliser without organic inputs feeds the current crop but does not replenish the soil's underlying organic matter bank, so SOC drifts downward over years even as short-term yields hold.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h3>Why this matters for FPOs and field teams</h3>
+        <p style="margin-bottom: 0;">If your FPO or programme area sits in a region with these characteristics — heavy tillage, residue burning, and long-term chemical-only input use — a baseline SOC assessment is worth commissioning before you design any regenerative-agriculture programme. It tells you where you're starting from and gives you a number to track progress against.</p>
+      </div>
+
+      <hr>
+
+      <h2 id="building-practices">Practices that build SOC</h2>
+
+      <p>No single practice rebuilds SOC on its own. The practices below work best in combination, and each one addresses a different part of the carbon cycle.</p>
+
+      <h3>Cover cropping</h3>
+      <p>Growing a non-cash crop — legumes, grasses, or mixes — in the gap between main crop cycles keeps living roots in the soil for more of the year. Living roots feed soil biology directly through root exudates, and the above-ground biomass adds organic matter when terminated and incorporated or left as mulch.</p>
+
+      <h3>Crop residue retention instead of burning</h3>
+      <p>Leaving stubble in the field — chopped, mulched, or incorporated rather than burnt — returns carbon and nutrients to the soil instead of releasing them as smoke. Where burning is driven by a tight sowing window, mechanised residue management (happy seeders, mulchers) is usually a more durable fix than an awareness campaign alone.</p>
+
+      <h3>Compost and Farmyard Manure (FYM) application</h3>
+      <p>Adding decomposed organic material directly introduces carbon and jump-starts microbial activity. This is the most direct SOC-building lever available to a smallholder and pairs well with on-farm or village-level composting units.</p>
+
+      <h3>Reduced or zero tillage</h3>
+      <p>Minimising soil disturbance slows the oxidation of existing organic matter and protects the soil aggregates and fungal networks that tillage otherwise breaks apart. Transition can be gradual — reduced tillage before a move to zero tillage — to manage weed and equipment adjustments.</p>
+
+      <h3>Diversified crop rotation</h3>
+      <p>Rotating between crop families, including legumes that fix atmospheric nitrogen, varies the type and depth of root biomass entering the soil and reduces the pest and disease build-up that monocultures encourage.</p>
+
+      <h3>Agroforestry</h3>
+      <p>Integrating trees or perennial shrubs into farm boundaries or alleys adds a continuous, deep-rooted source of organic matter and litter, while also diversifying farm income and improving microclimate.</p>
+
+      <hr>
+
+      <h2 id="how-fast">How fast does SOC actually build?</h2>
+
+      <p>Here the honest answer is: slowly. SOC accumulation is measured in years, not in a single cropping season, and anyone promising a dramatic jump after one season of any single practice is overstating what soil science supports.</p>
+
+      <p>As a broad, indicative planning range — not a guarantee — sustained adoption of the practices above can build somewhere in the order of a few hundred kilograms to roughly half a tonne of additional carbon per hectare per year, depending on practice intensity, baseline degradation, soil type, and agro-climate. Degraded soils starting from a very low base sometimes show faster relative gains in the early years; well-managed soils closer to their local ceiling will show smaller absolute gains. Rainfall, temperature, and how many of the practices are combined all move this number meaningfully in either direction.</p>
+
+      <p>The practical implication: design programmes and farmer expectations around a multi-year horizon — typically three to five years before a measurable, defensible shift shows up in repeat soil testing — rather than a single-season demonstration plot.</p>
+
+      <hr>
+
+      <h2 id="carbon-credits">The carbon-credit connection</h2>
+
+      <p>SOC gains are precisely what soil-carbon projects monetise. A verified increase in organic carbon stored per hectare, measured against a documented baseline, is the underlying asset that gets converted into tradeable carbon credits or results-based payments to farmers.</p>
+
+      <p>This is also why baseline measurement and rigorous monitoring, reporting, and verification (MRV) matter so much in this space — see our companion guide on <a href="how-mrv-verification-works.html">how MRV verification works</a> for how project developers turn field-level soil data into a credible, auditable claim.</p>
+
+      <p>If your FPO or programme area is considering whether a soil-carbon project is realistic, two starting points are useful:</p>
+
+      <ul>
+        <li><a href="../soc-readiness-quiz.html">Score your farm's SOC readiness in two minutes</a> — a short quiz that flags the practices and documentation most soil-carbon programmes will expect before enrolment.</li>
+        <li><a href="../tools/carbon-revenue-estimator.html">Estimate potential carbon revenue</a> — a planning tool to get an indicative sense of what verified SOC gains could be worth before you commit programme resources.</li>
+      </ul>
+
+      <p>Choosing between the two major voluntary carbon standards that certify these projects is a separate decision — our <a href="verra-vs-gold-standard.html">Verra vs Gold Standard comparison</a> walks through the trade-offs relevant to agricultural projects specifically.</p>
+
+      <hr>
+
+      <h2 id="common-mistakes">Common mistakes</h2>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Expecting results in one season</p>
+        <p style="margin-bottom:0;">SOC is a multi-year build. A single season of cover cropping or reduced tillage will not move a soil test meaningfully, and setting that expectation with farmers or funders sets up disappointment and abandonment of the practice before it has had time to work.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Adopting one practice in isolation</p>
+        <p style="margin-bottom:0;">Compost application without addressing tillage intensity, or cover cropping without stopping residue burning elsewhere on the same farm, dilutes the benefit. The practices reinforce each other; picking one and expecting full results from it is a common source of underwhelming outcomes.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Burning residue while composting elsewhere</p>
+        <p style="margin-bottom:0;">It is not unusual to see a farm compost kitchen or farm waste diligently while still burning cereal stubble in the field each season. The stubble is usually the larger carbon pool. Fixing the highest-volume leak matters more than the smaller, more visible one.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Skipping baseline measurement</p>
+        <p style="margin-bottom:0;">Without a documented starting SOC value, there is no credible way to demonstrate improvement later — to funders, to a carbon-credit verifier, or even to yourself. Commission a baseline soil test before launching any regenerative-agriculture initiative, not after.</p>
+      </div>
+
+      <hr>
+
+      <div class="cta-card">
+        <h2>Planning a regenerative agriculture programme?</h2>
+        <p>Mujanti helps FPOs and NGO field teams design SOC-building programmes, set realistic baselines, and connect verified soil-carbon gains to revenue and donor reporting.</p>
+        <a href="../index.html#contact" class="cta-button">Book a free 30-minute consultation</a>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2.5em;"><em>Figures on SOC thresholds and accumulation rates in this guide are indicative planning aids drawn from widely cited extension and research ranges, not precise measurements for any specific farm. Actual outcomes vary substantially by region, soil type, cropping history, and rainfall. Always commission a local soil test before setting programme targets. Content current as of July 2026.</em></p>
+
+      <hr>
+
+      <div class="related-guides callout">
+        <h3>Related guides</h3>
+        <ul>
+          <li><a href="water-conservation-planning.html">Water conservation planning for smallholder farms</a></li>
+          <li><a href="verra-vs-gold-standard.html">Verra vs Gold Standard: which carbon registry fits your project?</a></li>
+          <li><a href="how-mrv-verification-works.html">How MRV verification works for agricultural carbon projects</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Mujanti Services Pvt. Ltd. · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a>
+    </div>
+  </footer>
+</body>
+</html>

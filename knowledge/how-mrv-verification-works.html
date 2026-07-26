@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How MRV verification actually works | Mujanti Knowledge Hub</title>
+  <meta name="description" content="A plain-language walkthrough of Measurement, Reporting, and Verification (MRV) for agricultural carbon projects — what auditors check, why buffer pools reduce issued credits, and how FPOs should keep records from day one.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4FAF5;
+      --white: #fff;
+      --g1: #1B5E20;
+      --g2: #2E7D32;
+      --g3: #43A047;
+      --g4: #66BB6A;
+      --g5: #A5D6A7;
+      --soft: #E8F5E9;
+      --dark: #07110A;
+      --dark2: #0D1F12;
+      --text: #1A2B1E;
+      --muted: #5A7A63;
+      --border: #DCE8DE;
+      --gold: #C8A84B;
+      --gold2: #F5E9C2;
+      --r: 26px;
+      --r-sm: 14px;
+      --shadow-sm: 0 2px 12px rgba(27, 94, 32, 0.07);
+      --shadow-md: 0 8px 32px rgba(27, 94, 32, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      background: var(--dark);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header a {
+      color: var(--g5);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: var(--white);
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--g1);
+      font-weight: 800;
+      font-size: 1.5rem;
+      margin-top: 2.2em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.6em;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--g1);
+    }
+
+    ul, ol {
+      margin: 1.2em 0 1.2em 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5em 0;
+    }
+
+    a {
+      color: var(--g3);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--g2);
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5em 0;
+    }
+
+    table th {
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin: 2em 0;
+    }
+
+    .callout h3 {
+      margin-top: 0;
+    }
+
+    .callout ul {
+      margin: 1em 0 1em 1.5em;
+    }
+
+    .callout li {
+      margin-bottom: 0.6em;
+    }
+
+    .cta-card {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--r);
+      padding: 36px;
+      margin: 3em 0 2em;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      color: var(--white);
+      margin-top: 0;
+    }
+
+    .cta-card p {
+      margin-bottom: 1.5em;
+      color: var(--g5);
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--g3);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--g2);
+      text-decoration: none;
+    }
+
+    .related-guides {
+      margin-top: 2em;
+    }
+
+    .related-guides h3 {
+      margin-top: 0;
+    }
+
+    .related-guides ul {
+      list-style: none;
+      margin: 1em 0;
+    }
+
+    .related-guides li {
+      margin-bottom: 0.8em;
+    }
+
+    .related-guides a {
+      color: var(--g3);
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--g5);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* At-a-glance summary card */
+    .glance-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .glance-item {
+      text-align: center;
+    }
+
+    .glance-value {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--g1);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .glance-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--soft);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      color: var(--g1);
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc li {
+      margin-bottom: 0.6em;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--g1);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Gold audience-relevance callout */
+    .highlight-box {
+      background: var(--gold2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin: 2em 0;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    /* Step-by-step stepper */
+    .stepper {
+      margin-top: 1.5em;
+    }
+
+    .step {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .step-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 36px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-height: 36px;
+      background: var(--g1);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .step-line {
+      flex: 1;
+      width: 0;
+      border-left: 2px solid var(--g5);
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .step-content {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 8px;
+    }
+
+    .step-content h3 {
+      margin-top: 0.1em;
+    }
+
+    .step-last .step-rail {
+      align-items: center;
+    }
+
+    /* Warning cards for common mistakes */
+    .warning-card {
+      background: var(--red-soft);
+      border-left: 4px solid var(--red);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      margin-bottom: 14px;
+    }
+
+    .warning-title {
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 0.5em;
+    }
+
+    /* Timeline / cost table total row highlight */
+    table tr.total-row td {
+      background: var(--soft);
+      font-weight: 800;
+      color: var(--g1);
+    }
+
+    @media (max-width: 600px) {
+      .glance-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .toc ul {
+        columns: 1;
+      }
+
+      .step-rail {
+        width: 30px;
+        margin-right: 14px;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        min-height: 30px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+      }
+
+      main {
+        padding: 32px 0;
+      }
+
+      .cta-card {
+        padding: 24px;
+        margin: 2em 0 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../index.html"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+      <a href="index.html">← Back to Knowledge Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Guide · Carbon Credits · 7 min read</div>
+
+      <h1>How MRV verification actually works</h1>
+
+      <p class="byline">Mujanti Knowledge Hub · Last updated July 2026</p>
+
+      <div class="glance-card">
+        <div class="glance-item">
+          <div class="glance-value">M · R · V</div>
+          <div class="glance-label">Measurement, Reporting, Verification</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">🔍 Independent VVBs</div>
+          <div class="glance-label">Audits are third-party, not by the standard itself</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">📅 Annual – biennial</div>
+          <div class="glance-label">Typical verification cycle</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">0.65 – 0.90</div>
+          <div class="glance-label">Illustrative buffer-adjusted issuance factors</div>
+        </div>
+      </div>
+
+      <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#what-mrv-means">What MRV stands for and why buyers insist on it</a></li>
+          <li><a href="#the-measurement">The M — what gets measured</a></li>
+          <li><a href="#the-reporting">The R — monitoring reports</a></li>
+          <li><a href="#the-verification">The V — what auditors actually check</a></li>
+          <li><a href="#buffer-pools">Buffer pools and issued vs measured credits</a></li>
+          <li><a href="#auditor-checklist">What auditors ask for — a checklist</a></li>
+          <li><a href="#record-keeping">What this means for FPO record-keeping</a></li>
+          <li><a href="#common-failures">Common failure points</a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <h2 id="what-mrv-means">What MRV stands for and why buyers insist on it</h2>
+
+      <p><strong>MRV stands for Measurement (or Monitoring), Reporting, and Verification.</strong> It is the discipline that turns "we changed farming practices on X hectares" into a number a buyer can trust and retire against their own emissions.</p>
+
+      <p>Buyers of carbon credits are, in effect, buying a claim about something that happened in a farmer's field months or years ago. They were not there to see it. MRV is the mechanism that lets them trust the claim anyway — a structured, auditable chain from what was measured, to what was reported, to what an independent party confirmed actually happened. Without it, a carbon credit is just an assertion.</p>
+
+      <p>This is also why MRV, more than methodology choice, determines whether a smallholder aggregation project succeeds. A project can pick the right standard and methodology and still fail verification if its underlying data trail is weak. Our companion guide, <a href="verra-vs-gold-standard.html">Carbon credit basics for smallholders: Verra vs Gold Standard</a>, covers how standards and methodologies differ — this guide covers what happens once you're inside either one.</p>
+
+      <hr>
+
+      <h2 id="the-measurement">The M — what gets measured</h2>
+
+      <p>For agricultural soil-carbon projects, measurement typically draws on several complementary sources rather than one single method:</p>
+
+      <ul>
+        <li><strong>Physical soil sampling with lab analysis.</strong> Samples are taken at defined depths and locations, then analysed in a laboratory to estimate soil organic carbon content.</li>
+        <li><strong>Remote sensing and modelling.</strong> Increasingly combined with physical sampling under methodologies such as VM0042, satellite and modelled data help extend limited physical sampling across larger areas.</li>
+        <li><strong>Activity data.</strong> Records of what was actually done — which fields had tillage reduced, which had cover crops sown, and when.</li>
+        <li><strong>Farmer records.</strong> Enrolment details, land documentation, and practice logs tying a measured outcome back to a specific farmer and plot.</li>
+      </ul>
+
+      <p>On the lab side, <strong>dry combustion</strong> is the reference method for measuring soil organic carbon, while <strong>Walkley-Black wet oxidation</strong> — an older, cheaper method — remains common in many Indian labs. Which method a project uses, and how consistently, is itself something auditors ask about, since switching methods mid-project can introduce inconsistency into the baseline-versus-monitoring comparison.</p>
+
+      <hr>
+
+      <h2 id="the-reporting">The R — monitoring reports against the methodology</h2>
+
+      <p>Reporting is the step where measured and activity data gets assembled into a formal <strong>monitoring report</strong> — a document structured specifically around the requirements of the registered methodology (for example, VM0042). It has to show its work: what was measured, how, when, by whom, and how results compare to the baseline established when the project was first registered.</p>
+
+      <p>This is not a narrative summary. It is a structured, numbers-first document designed to be checked line by line against the methodology's own requirements — which is exactly what happens next.</p>
+
+      <hr>
+
+      <h2 id="the-verification">The V — what third-party auditors actually check</h2>
+
+      <p>Verification is carried out by <strong>accredited independent validation and verification bodies (VVBs)</strong> — not by Verra or Gold Standard staff themselves. The standards accredit and license these auditing organisations, but the on-the-ground and in-the-data checking is done independently, which is what gives the resulting credit its credibility.</p>
+
+      <p>Verification cycles are typically <strong>annual to every couple of years</strong>, depending on the standard and the specific project design. During a verification, a VVB will typically:</p>
+
+      <ul>
+        <li>Cross-check the monitoring report's figures against underlying raw data — lab results, sampling logs, satellite/model outputs.</li>
+        <li>Sample a subset of farmer records and, often, visit a sample of fields in person to confirm practices match what was reported.</li>
+        <li>Check that the baseline used for comparison is still the one originally registered, and that no undocumented changes have crept in.</li>
+        <li>Review consistency across successive monitoring reports — an unexplained jump or drop in reported figures invites scrutiny.</li>
+      </ul>
+
+      <p>Only once a VVB signs off does the standard issue credits. This independence is precisely why MRV credibility rests on the auditor's work, not on the project developer's own reporting.</p>
+
+      <hr>
+
+      <h2 id="buffer-pools">Buffer pools and why issued credits are less than measured sequestration</h2>
+
+      <p>Even after a VVB confirms a measured carbon benefit, a project does not receive tradable credits for the full amount measured. A percentage is withheld into a <strong>buffer pool</strong> — a shared, non-tradable reserve that the standard holds against the risk of future reversals (a drought, flood, fire, or a farmer reverting to old practices that releases stored carbon back into the atmosphere).</p>
+
+      <div class="highlight-box">
+        <h3>Why the estimator applies a discount, not the full measured number</h3>
+        <p style="margin-bottom: 0;">This is exactly why Mujanti's <a href="../tools/carbon-revenue-estimator.html">Carbon Revenue Estimator</a> applies volume discounts of <strong>0.65, 0.80, and 0.90</strong> across its three scenarios — modelling the reality that issued, sellable credits are always a fraction of gross measured sequestration, not the full amount. Model your own numbers there before setting farmer-facing revenue expectations.</p>
+      </div>
+
+      <hr>
+
+      <h2 id="auditor-checklist">What auditors ask for — a checklist</h2>
+
+      <table>
+        <tr>
+          <th>Record type</th>
+          <th>What it needs to show</th>
+        </tr>
+        <tr>
+          <td>Farmer land records</td>
+          <td>Ownership or verified tenancy/cultivation rights tied to the specific enrolled plot</td>
+        </tr>
+        <tr>
+          <td>Practice evidence</td>
+          <td>Dated and geotagged records showing the specific practice change (e.g., reduced tillage, cover crop sowing) actually occurred on that plot</td>
+        </tr>
+        <tr>
+          <td>Input purchase records</td>
+          <td>Receipts or logs for seeds, cover-crop inputs, or amendments consistent with the claimed practice</td>
+        </tr>
+        <tr>
+          <td>Training logs</td>
+          <td>Attendance and content records showing farmers were actually trained on the practices they are credited for adopting</td>
+        </tr>
+        <tr>
+          <td>Sampling lab results</td>
+          <td>Raw soil sampling and lab analysis data, traceable to specific plots and dates, using a consistent method</td>
+        </tr>
+        <tr>
+          <td>Monitoring report consistency</td>
+          <td>Figures that reconcile cleanly across successive reporting periods, with any changes explained</td>
+        </tr>
+      </table>
+
+      <hr>
+
+      <h2 id="record-keeping">What this means for how an FPO should keep records from day one</h2>
+
+      <p>The single most common smallholder-project failure is not a methodology problem — it is <strong>data hygiene</strong>. Farmer enrolment records, land documents, and dated, geotagged practice evidence need to be collected continuously, in the normal course of running the programme, not reconstructed retroactively when a verification date approaches.</p>
+
+      <p>In practice, this means an FPO should treat record-keeping as an operational habit from the first farmer enrolled, not as a paperwork exercise triggered by an upcoming audit. Consent forms, land documentation, and geotagged photos of practice changes should be captured at the moment they happen, stored centrally, and kept consistent in format across every field agent and every season.</p>
+
+      <hr>
+
+      <h2 id="common-failures">Common failure points</h2>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Reconstructed records</p>
+        <p style="margin-bottom:0;">Records assembled after the fact — recreating dates, filling in gaps from memory, backdating forms — are a leading cause of failed or delayed verification. Auditors are trained to spot inconsistencies that reconstructed data almost always contains.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Missing consent or land documentation</p>
+        <p style="margin-bottom:0;">If a farmer's right to the enrolled plot — ownership or verified cultivation rights — isn't clearly documented at enrolment, the credit tied to that plot is vulnerable to challenge later, regardless of how good the soil data is.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Practice claims that don't match satellite evidence</p>
+        <p style="margin-bottom:0;">Where remote sensing is used alongside ground data, a mismatch between what was reported (e.g., "cover crop sown") and what satellite imagery shows for that plot and period is one of the fastest ways to trigger deeper audit scrutiny.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Sampling shortcuts</p>
+        <p style="margin-bottom:0;">Skipping planned sampling locations, switching lab methods mid-project without documenting it, or reducing sample sizes to save cost all undermine the statistical basis auditors rely on to trust the reported result.</p>
+      </div>
+
+      <hr>
+
+      <div class="cta-card">
+        <h2>Building your MRV data pipeline?</h2>
+        <p>Mujanti helps FPOs and NGOs design farmer-level data collection systems that hold up under verification — from enrolment through to annual monitoring reports.</p>
+        <a href="../index.html#contact" class="cta-button">Book a free 30-minute consultation</a>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2.5em;"><em>MRV requirements, verification cycles, and buffer-pool mechanics vary by standard and methodology and are updated periodically. This guide reflects a general understanding of MRV practice under current standard requirements as of July 2026 and is not a substitute for the specific methodology and program documents governing your project. Always verify current requirements directly with your chosen standard and VVB.</em></p>
+
+      <hr>
+
+      <div class="related-guides callout">
+        <h3>Related guides</h3>
+        <ul>
+          <li><a href="verra-vs-gold-standard.html">Carbon credit basics for smallholders: Verra vs Gold Standard</a></li>
+          <li><a href="soil-organic-carbon-basics.html">Soil organic carbon basics for FPOs</a></li>
+          <li><a href="fpo-compliance-calendar.html">FPO annual compliance calendar</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Mujanti Services Pvt. Ltd. · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a>
+    </div>
+  </footer>
+</body>
+</html>

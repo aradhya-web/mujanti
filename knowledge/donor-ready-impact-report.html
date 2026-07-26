@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a donor-ready impact report | Mujanti Knowledge Hub</title>
+  <meta name="description" content="A practical template and guide for NGOs and FPOs on structuring a donor-ready impact report — outputs vs outcomes vs impact, evidence hierarchy, a one-page report skeleton, and where SROI fits.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4FAF5;
+      --white: #fff;
+      --g1: #1B5E20;
+      --g2: #2E7D32;
+      --g3: #43A047;
+      --g4: #66BB6A;
+      --g5: #A5D6A7;
+      --soft: #E8F5E9;
+      --dark: #07110A;
+      --dark2: #0D1F12;
+      --text: #1A2B1E;
+      --muted: #5A7A63;
+      --border: #DCE8DE;
+      --gold: #C8A84B;
+      --gold2: #F5E9C2;
+      --r: 26px;
+      --r-sm: 14px;
+      --shadow-sm: 0 2px 12px rgba(27, 94, 32, 0.07);
+      --shadow-md: 0 8px 32px rgba(27, 94, 32, 0.12);
+      --red: #C62828;
+      --red-soft: #FBE9E7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      background: var(--dark);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header a {
+      color: var(--g5);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: var(--white);
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .byline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--g1);
+      font-weight: 800;
+      font-size: 1.5rem;
+      margin-top: 2.2em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.6em;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--g1);
+    }
+
+    ul, ol {
+      margin: 1.2em 0 1.2em 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5em 0;
+    }
+
+    a {
+      color: var(--g3);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--g2);
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5em 0;
+    }
+
+    table th {
+      background: var(--soft);
+      color: var(--g1);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin: 2em 0;
+    }
+
+    .callout h3 {
+      margin-top: 0;
+    }
+
+    .callout ul {
+      margin: 1em 0 1em 1.5em;
+    }
+
+    .callout li {
+      margin-bottom: 0.6em;
+    }
+
+    .cta-card {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--r);
+      padding: 36px;
+      margin: 3em 0 2em;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      color: var(--white);
+      margin-top: 0;
+    }
+
+    .cta-card p {
+      margin-bottom: 1.5em;
+      color: var(--g5);
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--g3);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--g2);
+      text-decoration: none;
+    }
+
+    .related-guides {
+      margin-top: 2em;
+    }
+
+    .related-guides h3 {
+      margin-top: 0;
+    }
+
+    .related-guides ul {
+      list-style: none;
+      margin: 1em 0;
+    }
+
+    .related-guides li {
+      margin-bottom: 0.8em;
+    }
+
+    .related-guides a {
+      color: var(--g3);
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--g5);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* At-a-glance summary card */
+    .glance-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .glance-item {
+      text-align: center;
+    }
+
+    .glance-value {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--g1);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .glance-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--soft);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      color: var(--g1);
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc li {
+      margin-bottom: 0.6em;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--g1);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Gold audience-relevance callout */
+    .highlight-box {
+      background: var(--gold2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin: 2em 0;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    /* Step-by-step stepper */
+    .stepper {
+      margin-top: 1.5em;
+    }
+
+    .step {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .step-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 36px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-height: 36px;
+      background: var(--g1);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .step-line {
+      flex: 1;
+      width: 0;
+      border-left: 2px solid var(--g5);
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .step-content {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 8px;
+    }
+
+    .step-content h3 {
+      margin-top: 0.1em;
+    }
+
+    .step-last .step-rail {
+      align-items: center;
+    }
+
+    /* Warning cards for common mistakes */
+    .warning-card {
+      background: var(--red-soft);
+      border-left: 4px solid var(--red);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      margin-bottom: 14px;
+    }
+
+    .warning-title {
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 0.5em;
+    }
+
+    /* Timeline / cost table total row highlight */
+    table tr.total-row td {
+      background: var(--soft);
+      font-weight: 800;
+      color: var(--g1);
+    }
+
+    @media (max-width: 600px) {
+      .glance-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .toc ul {
+        columns: 1;
+      }
+
+      .step-rail {
+        width: 30px;
+        margin-right: 14px;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        min-height: 30px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+      }
+
+      main {
+        padding: 32px 0;
+      }
+
+      .cta-card {
+        padding: 24px;
+        margin: 2em 0 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../index.html"><img src="../assets/logo.png" alt="Mujanti Logo"></a>
+      <a href="index.html">← Back to Knowledge Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="eyebrow">Template · Digital & Impact · 8 min read</div>
+
+      <h1>Building a donor-ready impact report</h1>
+
+      <p class="byline">Mujanti Knowledge Hub · Last updated July 2026</p>
+
+      <div class="glance-card">
+        <div class="glance-item">
+          <div class="glance-value">3 decisions</div>
+          <div class="glance-label">Continue, scale, or exit</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">8 sections</div>
+          <div class="glance-label">In the recommended structure</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">📊 Outputs ≠ outcomes ≠ impact</div>
+          <div class="glance-label">The distinction donors check for</div>
+        </div>
+        <div class="glance-item">
+          <div class="glance-value">1 page</div>
+          <div class="glance-label">Skeleton you can copy today</div>
+        </div>
+      </div>
+
+      <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#what-funders-decide">What funders are actually deciding</a></li>
+          <li><a href="#report-structure">The structure that works</a></li>
+          <li><a href="#evidence-hierarchy">Evidence hierarchy</a></li>
+          <li><a href="#report-skeleton">A one-page report skeleton</a></li>
+          <li><a href="#sroi">Where SROI fits</a></li>
+          <li><a href="#common-mistakes">Common mistakes</a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <h2 id="what-funders-decide">What funders are actually deciding when they read your report</h2>
+
+      <p>An impact report is rarely read for its own sake. Somewhere behind the person reading it is a decision with three possible outcomes: <strong>continue</strong> the current funding at the same level, <strong>scale</strong> it up because the evidence justifies more, or <strong>exit</strong> because the results don't support continued investment. Every section of a good report should make that decision easier, not harder, for the reader.</p>
+
+      <p>This reframes what a report is for. It is not a record of activity for its own sake, and it is not a marketing document designed to make every number look good. It is evidence, organised so a funder — who is usually reading dozens of these a quarter — can quickly assess whether the programme is working, why, and what it would take to do more of it.</p>
+
+      <hr>
+
+      <h2 id="report-structure">The structure that works</h2>
+
+      <p>The following section order has proven durable across CSR, foundation, and institutional donor audiences. Not every report needs every section at full length, but skipping one usually shows.</p>
+
+      <h3>1. Executive summary</h3>
+      <p>One page, written last, covering the headline result, the scale of reach, and the single most important learning — written so that a funder who reads nothing else still understands the programme's trajectory.</p>
+
+      <h3>2. Context and theory of change</h3>
+      <p>What problem the programme addresses, why this intervention was chosen, and the causal chain connecting activities to the change you expect to see. A theory of change stated up front makes every later results section easier to interpret, because the reader already knows what you were trying to achieve and why you expected it to work.</p>
+
+      <h3>3. Outputs vs outcomes vs impact</h3>
+      <p>This is the distinction that separates a credible report from an activity log, and it is worth stating explicitly rather than assuming the reader will infer it.</p>
+      <ul>
+        <li><strong>Outputs</strong> are what the programme directly delivered — for example, the number of farmer training sessions conducted.</li>
+        <li><strong>Outcomes</strong> are the behaviour change that resulted — for example, the share of trained farmers who actually adopted the recommended practice.</li>
+        <li><strong>Impact</strong> is the longer-term, higher-order change — for example, the resulting shift in farm income, yield stability, or resilience to a bad rainfall year.</li>
+      </ul>
+      <p>Reporting only outputs ("we trained 4,000 farmers") tells a funder nothing about whether the training worked. Reporting all three levels — even when outcome and impact numbers are more modest or harder to attribute — is what builds credibility.</p>
+
+      <h3>4. Methodology and data quality</h3>
+      <p>How the numbers were collected, from whom, over what period, and with what known limitations. A short, honest methodology paragraph builds more trust than a polished number with no stated source.</p>
+
+      <h3>5. Results against targets</h3>
+      <p>A table comparing planned targets to actuals, at the output and outcome level, for the reporting period.</p>
+
+      <h3>6. Stories, with consent and dignity</h3>
+      <p>Individual stories humanise the data, but only when the subject has given informed consent to be featured, retains control over how they're portrayed, and is treated as a person with agency rather than as an illustration of need.</p>
+
+      <h3>7. Financial summary</h3>
+      <p>Funds received, spent, and any variance against budget, at a level of detail appropriate to the funder relationship — usually a summary table rather than a full ledger.</p>
+
+      <h3>8. Learnings and what changed</h3>
+      <p>What didn't go as planned, and what the programme changed in response. Donors who fund field programmes repeatedly tend to trust organisations that visibly learn and adapt more than those whose reports show uninterrupted success — an unbroken record of good news reads, to an experienced funder, as a report that isn't telling the whole story.</p>
+
+      <hr>
+
+      <h2 id="evidence-hierarchy">Evidence hierarchy</h2>
+
+      <p>Not all evidence carries the same weight, and it helps to be explicit — both internally and to the funder — about where a given claim sits on this ladder.</p>
+
+      <table>
+        <tr>
+          <th>Evidence type</th>
+          <th>What it shows</th>
+          <th>Feasibility for field NGOs</th>
+        </tr>
+        <tr>
+          <td>Anecdote / individual story</td>
+          <td>Illustrates a case, does not establish a pattern</td>
+          <td>Always feasible; use to humanise, not to prove scale</td>
+        </tr>
+        <tr>
+          <td>Before / after (same group)</td>
+          <td>Shows change over time, but not what caused it</td>
+          <td>Feasible with basic monitoring data already collected</td>
+        </tr>
+        <tr>
+          <td>Before / after with comparison group</td>
+          <td>Approximates attribution — the change plausibly linked to the programme</td>
+          <td>Harder, but achievable by comparing to a similar non-participating village or cohort where a formal control isn't practical</td>
+        </tr>
+      </table>
+
+      <p>Most field NGOs cannot run a randomised controlled trial, and funders in this sector do not usually expect one. What they do expect is that you are honest about which rung of this ladder each claim sits on, rather than presenting an anecdote with the confidence of a controlled study.</p>
+
+      <hr>
+
+      <h2 id="report-skeleton">A one-page report skeleton</h2>
+
+      <p>Use this as a working checklist when drafting or reviewing a report before it goes out.</p>
+
+      <div class="callout">
+        <h3>Copy-and-use skeleton</h3>
+        <ul>
+          <li><strong>☐ Executive summary</strong> — one page, headline result + biggest learning</li>
+          <li><strong>☐ Context and theory of change</strong> — problem, intervention logic, expected causal chain</li>
+          <li><strong>☐ Outputs table</strong> — activities delivered, against target</li>
+          <li><strong>☐ Outcomes table</strong> — behaviour change observed, against target</li>
+          <li><strong>☐ Impact narrative</strong> — longer-term change, with evidence-hierarchy level stated</li>
+          <li><strong>☐ Methodology note</strong> — data source, sample, period, known limitations</li>
+          <li><strong>☐ 2–3 consented stories</strong> — with explicit consent noted</li>
+          <li><strong>☐ Financial summary table</strong> — received vs spent vs variance</li>
+          <li><strong>☐ Learnings section</strong> — what changed and why</li>
+          <li><strong>☐ SROI or ratio (optional)</strong> — with assumptions stated alongside it, not buried in an appendix</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2 id="sroi">Where SROI fits</h2>
+
+      <p>Boards and CSR committees generally love a single ratio — "for every rupee invested, this programme generated ₹X of social value" is an easy number to remember and repeat internally. Social Return on Investment (SROI) is the most common framework for producing that ratio.</p>
+
+      <p>The catch is that an SROI ratio is only as credible as the assumptions behind it — the valuation placed on each outcome, the deadweight and attribution adjustments, and the time horizon used. A ratio presented without its assumptions is not more credible than an anecdote; it is just a more precise-looking one. The right way to use SROI is to compute it, then put the assumptions in front of the reader rather than in a footnote or appendix they are unlikely to read.</p>
+
+      <p>If you want a starting estimate, <a href="../tools/sroi-calculator.html">estimate yours in two minutes</a> using Mujanti's SROI calculator — then make the assumptions behind that number explicit in your report rather than presenting the ratio alone.</p>
+
+      <hr>
+
+      <h2 id="common-mistakes">Common mistakes</h2>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Activity counting dressed as impact</p>
+        <p style="margin-bottom:0;">"We conducted 50 training sessions" is an output, not an impact, but it is often presented with impact-level language and confidence. Funders who read many reports notice this substitution quickly, and it costs more credibility than reporting a smaller, honestly-labelled outcome number.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ No baseline</p>
+        <p style="margin-bottom:0;">Without a documented starting point, any "improvement" claimed later cannot be verified, including by the organisation itself. Baseline data collection should be built into programme design from day one, not reconstructed retrospectively when the report is due.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Cherry-picked stories</p>
+        <p style="margin-bottom:0;">Featuring only the most dramatic success stories, without noting whether they are representative of the typical participant, misleads readers about what most beneficiaries actually experienced. Pair standout stories with the median or typical outcome data.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Hiding failures</p>
+        <p style="margin-bottom:0;">A report with no setbacks reads as incomplete or curated to experienced funders, and can damage trust more than an honestly reported shortfall. Naming what didn't work, and what changed as a result, tends to increase — not decrease — funder confidence.</p>
+      </div>
+
+      <div class="warning-card">
+        <p class="warning-title">⚠ Data without consent</p>
+        <p style="margin-bottom:0;">Photographs, quotes, or personal details used without explicit, informed consent from the individual — particularly from children or vulnerable adults — is both an ethical failure and an increasing area of donor due-diligence scrutiny. Build consent documentation into your field data-collection process itself.</p>
+      </div>
+
+      <hr>
+
+      <div class="cta-card">
+        <h2>Preparing your next donor report?</h2>
+        <p>Mujanti helps NGOs and FPOs structure impact reports, build defensible outcome and impact metrics, and present SROI with the assumptions funders expect to see.</p>
+        <a href="../index.html#contact" class="cta-button">Book a free 30-minute consultation</a>
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2.5em;"><em>This guide reflects common practice in impact reporting for NGOs, FPOs, and CSR-funded programmes as of July 2026. Specific funder requirements vary by donor and programme; always confirm reporting format and metrics expectations directly with your funding partner. Figures and ratios referenced are indicative planning aids, not guarantees of any specific report's reception.</em></p>
+
+      <hr>
+
+      <div class="related-guides callout">
+        <h3>Related guides</h3>
+        <ul>
+          <li><a href="csr-compliance-checklist.html">CSR compliance checklist for implementing partners</a></li>
+          <li><a href="section-135-csr-spend-explained.html">Section 135 CSR spend, explained</a></li>
+          <li><a href="index.html">Browse the full Knowledge Hub</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Mujanti Services Pvt. Ltd. · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a>
+    </div>
+  </footer>
+</body>
+</html>
