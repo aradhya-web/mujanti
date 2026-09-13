@@ -1,0 +1,4 @@
+
+# large media kept out of the repo (host videos on YouTube/Drive instead)
+assets/farm-visits/*.mp4
+assets/farm-visits/*.mov

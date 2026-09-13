@@ -20,8 +20,15 @@ mujanti/
 │   ├── projects.json   ← Case studies / project portfolio
 │   ├── testimonials.json ← Farmer testimonials
 │   └── faq.json        ← FAQ questions and answers
+├── farm-visits/        ← Farm Visits page + Google Forms automation
+│   ├── index.html      ← Public listing & booking page
+│   └── automation/     ← Apps Script (Code.gs) + SETUP.md
 ├── assets/             ← Images, logos (add your own here)
-│   └── og-image.jpg    ← Social preview image (1200×630px)
+│   ├── logo.png        ← Original square master (keep; do not link directly)
+│   ├── logo-wordmark.png ← Cropped wordmark used in every page header
+│   ├── favicon.png / apple-touch-icon.png
+│   ├── og-image.jpg    ← Social preview image (1200×630px)
+│   └── og-farm-visits.jpg ← Social preview for the Farm Visits page
 └── README.md           ← This file
 ```
 
@@ -48,6 +55,9 @@ All content that changes frequently lives in the `content/` folder as simple JSO
 | `projects.json` | Add case studies with project name, location, description, metrics |
 | `testimonials.json` | Add farmer/client quotes with name, role, and rating |
 | `faq.json` | Add, edit, or remove FAQ questions and answers |
+| `farm-visits.json` | Farm visit listings, prices, Google Form field IDs (see `farm-visits/automation/SETUP.md`) |
+
+Service cards accept three optional extras: `"link"` (makes the whole card clickable, e.g. `farm-visits/index.html`), `"link_text"` (the call-to-action wording) and `"badge"` (a small gold flag such as `New`).
 
 ### Example — Adding a new testimonial:
 Open `content/testimonials.json` and add a new entry:

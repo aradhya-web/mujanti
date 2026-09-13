@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Visits | Mujanti Master Farmer Network</title>
+<meta name="description" content="Book a curated day on a working Karnataka farm — hands-on modules with the farmer who runs it, small groups, fixed terms. Host farmers keep 70% of every booking.">
+<link rel="canonical" href="https://mujanti.com/farm-visits/">
+
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#07110A">
+
+<meta property="og:title" content="Mujanti Farm Visits — learn on a real farm, from a farmer who proved it">
+<meta property="og:description" content="Curated farm visits across Karnataka. Learn in the field from the farmer who does it, small groups, coordinator on call. Farmers keep 70% of every booking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mujanti.com/farm-visits/">
+<meta property="og:image" content="https://mujanti.com/assets/og-farm-visits.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F4FAF5; --white:#fff;
+  --g1:#1B5E20; --g2:#2E7D32; --g3:#43A047; --g4:#66BB6A; --g5:#A5D6A7;
+  --soft:#E8F5E9; --dark:#07110A; --dark2:#0D1F12;
+  --text:#1A2B1E; --muted:#5A7A63; --border:#DCE8DE;
+  --gold:#C8A84B; --gold2:#F5E9C2;
+  --r:26px; --r-sm:14px;
+  --shadow-sm:0 2px 12px rgba(27,94,32,0.07);
+  --shadow-md:0 8px 32px rgba(27,94,32,0.12);
+  --shadow-lg:0 24px 60px rgba(27,94,32,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{max-width:100vw;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:90%;max-width:1180px;margin:auto}
+[id]{scroll-margin-top:110px}
+:focus-visible{outline:3px solid var(--g4);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;color:var(--g1);padding:10px 16px;border-radius:10px;font-weight:700;z-index:400}
+.skip:focus{left:16px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ── header / brand lockup ── */
+header{background:var(--dark);position:sticky;top:0;z-index:80;border-bottom:1px solid rgba(255,255,255,.07)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.brand img{height:34px;width:auto;object-fit:contain}
+.brand .divider{width:1px;height:26px;background:rgba(255,255,255,.18);flex:none}
+.brand .brand-sub{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.brand .brand-sub b{color:#fff;font-size:.96rem;font-weight:700;letter-spacing:-.2px}
+.brand .brand-sub small{color:var(--g5);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.header-nav{display:flex;align-items:center;gap:22px}
+.header-nav a{color:var(--g5);font-weight:600;font-size:.92rem;white-space:nowrap}
+.header-nav a:hover{color:#fff}
+.header-nav .hbtn{background:var(--g3);color:#fff;padding:10px 18px;border-radius:10px;font-size:.88rem}
+.header-nav .hbtn:hover{background:var(--g2);color:#fff}
+
+/* ── hero ── */
+.hero{
+  color:#fff;padding:88px 0 76px;
+  background:
+    linear-gradient(160deg,rgba(5,20,8,.72) 0%,rgba(5,18,8,.86) 100%),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=70&w=1600&auto=format&fit=crop');
+  background-size:cover;background-position:center;
+}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--g4)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.9rem);font-weight:900;letter-spacing:-1.6px;line-height:1.06;margin-bottom:20px;max-width:16ch}
+.hero h1 .gold{color:var(--gold)}
+.hero p.lead{color:rgba(255,255,255,.85);font-size:1.06rem;max-width:640px;line-height:1.8;margin-bottom:30px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.btn{padding:14px 26px;border-radius:12px;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.25s;border:0;cursor:pointer;font-family:inherit;text-align:center}
+.btn-white{background:#fff;color:var(--g1)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.btn-ghost{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.28);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+.btn-green{background:var(--g1);color:#fff}
+.btn-green:hover{background:var(--g2);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:2px solid var(--g3);color:var(--g1)}
+.btn-outline:hover{background:var(--soft)}
+.hero-stats{display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:28px}
+.hero-stats div span{display:block;font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--gold)}
+.hero-stats div small{color:rgba(255,255,255,.72);font-size:.82rem;letter-spacing:.04em}
+
+section{padding:76px 0}
+.section-head{max-width:760px;margin-bottom:44px}
+.section-head .tag{color:var(--g3);font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:10px}
+.section-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.7rem);letter-spacing:-1px;margin-bottom:14px}
+.section-head p{color:var(--muted);font-size:1.01rem}
+.centered{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ── demo banner ── */
+.demo-note{background:var(--gold2);border:1px solid #E3D08A;color:#6B5410;border-radius:var(--r-sm);padding:14px 18px;font-size:.88rem;font-weight:600;margin-bottom:26px}
+
+/* ── how ── */
+.how{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.step{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:24px}
+.step b{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--g1);color:#fff;font-size:.9rem;margin-bottom:14px}
+.step h4{font-size:1.02rem;margin-bottom:8px;color:var(--g1)}
+.step p{color:var(--muted);font-size:.9rem;line-height:1.6}
+
+/* ── controls ── */
+.controls{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:24px}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:9px 18px;border-radius:999px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-weight:600;font-size:.86rem;cursor:pointer;transition:.2s;font-family:inherit}
+.chip:hover{border-color:var(--g4);color:var(--g1)}
+.chip.on{background:var(--g1);border-color:var(--g1);color:#fff}
+.sortwrap{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted);font-weight:600}
+.sortwrap select{font-family:inherit;font-size:.85rem;font-weight:600;color:var(--text);background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;cursor:pointer}
+.count{font-size:.86rem;color:var(--muted);margin-bottom:18px}
+
+/* ── cards ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.card-img{position:relative;aspect-ratio:16/10;background:var(--soft);display:block}
+.card-img img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+/* shown only when the photo is missing, so a card never renders a broken image */
+.card-img .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:3rem;
+  background:linear-gradient(135deg,var(--soft),#D7ECDA)}
+.card-img.noimg .ph{display:flex}
+.card-img .verified{position:absolute;top:12px;left:12px;background:rgba(7,17,10,.82);color:#fff;font-size:.72rem;font-weight:700;padding:6px 11px;border-radius:999px;backdrop-filter:blur(6px);letter-spacing:.03em}
+.card-img .rating{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.94);color:var(--g1);font-size:.76rem;font-weight:800;padding:6px 10px;border-radius:999px}
+.card-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.card-meta{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g3);margin-bottom:9px}
+.card-body h3{font-size:1.12rem;line-height:1.35;margin-bottom:8px;color:var(--text)}
+.card-host{font-size:.88rem;color:var(--muted);margin-bottom:12px}
+.card-sum{font-size:.9rem;color:var(--muted);line-height:1.62;margin-bottom:16px}
+.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+.mini{background:var(--soft);color:var(--g1);font-size:.74rem;font-weight:700;padding:5px 10px;border-radius:8px}
+.card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--border);padding-top:16px}
+.price{font-size:1.25rem;font-weight:800;color:var(--g1);line-height:1.2}
+.price small{display:block;font-size:.74rem;font-weight:600;color:var(--muted)}
+.card-foot button,.card-foot .btn{padding:11px 18px;border-radius:10px;font-size:.86rem}
+.card-actions{display:flex;align-items:center;gap:12px}
+.peek{background:none;border:0;font-family:inherit;font-size:.84rem;font-weight:700;color:var(--muted);cursor:pointer;padding:6px 2px}
+.peek:hover{color:var(--g1);text-decoration:underline}
+.card-body h3 a:hover{color:var(--g1)}
+.empty{padding:44px;text-align:center;color:var(--muted);background:var(--white);border:1px dashed var(--border);border-radius:var(--r-sm)}
+/* loading skeleton */
+.sk{background:var(--white);border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden}
+.sk .b{background:linear-gradient(90deg,#EDF4EE 25%,#F7FBF8 50%,#EDF4EE 75%);background-size:400% 100%;animation:sh 1.3s infinite}
+.sk .b1{aspect-ratio:16/10}
+.sk .b2{height:14px;margin:20px 22px;border-radius:6px}
+.sk .b3{height:14px;margin:0 22px 26px;width:60%;border-radius:6px}
+@keyframes sh{0%{background-position:100% 0}100%{background-position:0 0}}
+
+/* ── trust ── */
+.trust{background:var(--dark2);color:#fff}
+.trust .section-head h2{color:#fff}
+.trust .section-head p{color:rgba(255,255,255,.72)}
+.gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.gate{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-sm);padding:22px}
+.gate h4{color:var(--gold);font-size:.98rem;margin-bottom:8px}
+.gate p{color:rgba(255,255,255,.72);font-size:.88rem;line-height:1.6}
+.trust-note{margin-top:26px;color:rgba(255,255,255,.6);font-size:.88rem}
+
+/* ── host ── */
+.host-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.calc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-md)}
+.calc h3{font-size:1.15rem;color:var(--g1);margin-bottom:6px}
+.calc .sub{font-size:.86rem;color:var(--muted);margin-bottom:20px}
+.field{margin-bottom:16px}
+.field label{display:flex;justify-content:space-between;font-size:.85rem;font-weight:700;margin-bottom:7px}
+.field label span{color:var(--g3)}
+.field input[type=range]{width:100%;accent-color:var(--g3)}
+.calc-out{background:var(--soft);border-radius:var(--r-sm);padding:20px;text-align:center;margin-top:6px}
+.calc-out b{display:block;font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--g1);line-height:1.2}
+.calc-out small{color:var(--muted);font-size:.84rem}
+.calc-split{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:14px;gap:10px}
+/* language switch — Kannada for the farmer-facing half of the page */
+.lang-switch{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px;font-size:.86rem;color:var(--muted);font-weight:600}
+.lang-btns{display:inline-flex;background:var(--white);border:1.5px solid var(--border);border-radius:999px;padding:4px;gap:4px}
+.lang-btn{font-family:inherit;font-size:.85rem;font-weight:700;padding:7px 16px;border:0;border-radius:999px;background:none;color:var(--muted);cursor:pointer;transition:.2s}
+.lang-btn:hover{color:var(--g1)}
+.lang-btn.on{background:var(--g1);color:#fff}
+.lang-btn[lang="kn"]{font-family:'Noto Sans Kannada','Inter',sans-serif}
+#host[data-lang="kn"] [data-i18n],
+#host[data-lang="kn"] .host-list li,
+#host[data-lang="kn"] .calc label,
+#host[data-lang="kn"] .calc-split span{font-family:'Noto Sans Kannada','Inter',sans-serif;line-height:1.85}
+#host[data-lang="kn"] h2{letter-spacing:0;font-size:clamp(1.6rem,2.8vw,2.2rem)}
+.host-list{list-style:none;margin:22px 0 26px}
+.host-list li{padding-left:28px;position:relative;margin-bottom:12px;color:var(--muted);font-size:.95rem}
+.host-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--g3);font-weight:900}
+
+/* ── faq ── */
+.faq details{background:var(--white);border:1px solid var(--border);border-radius:var(--r-sm);padding:18px 22px;margin-bottom:12px}
+.faq summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:.98rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--g3);font-weight:900;font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);font-size:.93rem;margin-top:12px;line-height:1.7}
+
+.band{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border-radius:var(--r);padding:44px;text-align:center}
+.band h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2.3rem);margin-bottom:12px}
+.band p{color:rgba(255,255,255,.85);max-width:620px;margin:0 auto 24px}
+
+/* ── modal ── */
+.modal{position:fixed;inset:0;background:rgba(7,17,10,.62);backdrop-filter:blur(4px);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto}
+.modal.on{display:flex}
+.modal-card{background:var(--white);border-radius:var(--r);max-width:660px;width:100%;margin:auto;overflow:hidden;box-shadow:var(--shadow-lg)}
+.modal-hero{aspect-ratio:16/7;position:relative;background:var(--soft)}
+.modal-hero img{width:100%;height:100%;object-fit:cover}
+.modal-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.95);border:0;width:38px;height:38px;border-radius:50%;font-size:1.2rem;cursor:pointer;color:var(--g1);font-weight:700}
+.modal-body{padding:28px}
+.modal-body h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:6px;letter-spacing:-.5px}
+.modal-body .mhost{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:18px;margin-bottom:20px}
+.kv div small{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:3px}
+.kv div b{font-size:.95rem;color:var(--text)}
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.inc h5{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--g1);margin-bottom:9px}
+.inc ul{list-style:none;font-size:.89rem;color:var(--muted)}
+.inc li{margin-bottom:6px;padding-left:18px;position:relative}
+.inc li::before{content:"•";position:absolute;left:4px;color:var(--g4)}
+.inc .no li::before{content:"×";color:#C0654B}
+/* price estimator inside the modal */
+.est{border:1px solid var(--border);border-radius:var(--r-sm);padding:18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.est .stepper{display:flex;align-items:center;gap:12px}
+.est .stepper button{width:38px;height:38px;border-radius:10px;border:1.5px solid var(--border);background:var(--white);font-size:1.2rem;font-weight:700;color:var(--g1);cursor:pointer;line-height:1}
+.est .stepper button:disabled{opacity:.35;cursor:not-allowed}
+.est .stepper b{min-width:34px;text-align:center;font-size:1.1rem}
+.est .stepper small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+.est .total{text-align:right}
+.est .total b{display:block;font-size:1.5rem;color:var(--g1);font-weight:800;line-height:1.2}
+.est .total small{color:var(--muted);font-size:.78rem}
+.policy-note{font-size:.83rem;color:var(--muted);background:var(--soft);border-radius:10px;padding:14px;margin-bottom:20px;line-height:1.6}
+.modal-actions{display:flex;gap:12px;flex-wrap:wrap}
+.modal-actions .btn{flex:1;min-width:170px}
+.share-row{display:flex;gap:10px;margin-top:14px;align-items:center;font-size:.82rem;color:var(--muted)}
+.share-row button{background:none;border:0;color:var(--g1);font-weight:700;font-family:inherit;font-size:.82rem;cursor:pointer;padding:4px 6px}
+.share-row button:hover{text-decoration:underline}
+
+/* sticky mobile CTA */
+.mobile-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(255,255,255,.97);border-top:1px solid var(--border);padding:12px 5%;gap:12px;align-items:center;justify-content:space-between;backdrop-filter:blur(10px)}
+.mobile-cta span{font-size:.82rem;font-weight:700;color:var(--g1)}
+
+footer{background:var(--dark);color:var(--g5);padding:30px 0;text-align:center;font-size:.85rem}
+footer a{color:var(--gold);font-weight:600}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:860px){
+  .host-wrap{grid-template-columns:1fr}
+  .header-nav a:not(.hbtn){display:none}
+  .brand .divider,.brand .brand-sub small{display:none}
+}
+@media(max-width:600px){
+  section{padding:56px 0}
+  .hero{padding:60px 0 52px}
+  .hero-stats{gap:26px}
+  .grid{grid-template-columns:1fr}
+  .inc{grid-template-columns:1fr}
+  .modal{padding:0}
+  .modal-card{border-radius:0}
+  .mobile-cta{display:flex}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<a href="#visits" class="skip">Skip to farm visits</a>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Mujanti home">
+      <img src="../assets/logo-wordmark.png" alt="Mujanti" width="393" height="181">
+      <span class="divider" aria-hidden="true"></span>
+      <span class="brand-sub"><b>Farm Visits</b><small>Master Farmer Network</small></span>
+    </a>
+    <nav class="header-nav" aria-label="Page sections">
+      <a href="#visits">Browse visits</a>
+      <a href="#trust">How we verify</a>
+      <a href="#host">Host a visit</a>
+      <a href="../index.html">← Mujanti.com</a>
+      <a href="#visits" class="hbtn">Book a visit</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span> Master Farmer Network · Karnataka</span>
+    <h1>Spend a day on a farm that <span class="gold">actually works</span>.</h1>
+    <p class="lead">
+      Curated visits to farms with something proven to teach. Learn the crop calendar from the farmer who navigated it,
+      handle the hives and the compost yourself, eat lunch under the trees. Small groups, terms fixed before you travel,
+      and <strong style="color:#fff">70% of what you pay goes straight to the farmer</strong>.
+    </p>
+    <div class="hero-btns">
+      <a href="#visits" class="btn btn-white">Browse farm visits</a>
+      <a href="#host" class="btn btn-ghost">I want to host visits</a>
+    </div>
+    <div class="hero-stats">
+      <div><span id="statFarms">—</span><small>VERIFIED FARMS</small></div>
+      <div><span id="statVisits">—</span><small>VISITS HOSTED</small></div>
+      <div><span id="statRating">—</span><small>AVERAGE RATING</small></div>
+      <div><span>70%</span><small>GOES TO THE FARMER</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="tag">How it works</span>
+      <h2>Four steps. One coordinator. No guesswork.</h2>
+      <p>Every booking is tracked from request to payout, so you always know where you stand — and so does the farmer.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1</b><h4>Pick a farm</h4><p>Filter by district, price and what you want to learn. Every listing shows the price, group size and what's included before you commit.</p></div>
+      <div class="step"><b>2</b><h4>Request your date</h4><p>A short form — three fields plus your preferred dates. You get a booking ID immediately and a confirmed answer from the host within 24 hours.</p></div>
+      <div class="step"><b>3</b><h4>Pay and get your ticket</h4><p>Pay by UPI on the link we send. Your ticket carries the pin location, the host's number and a Mujanti coordinator on call for the whole visit.</p></div>
+      <div class="step"><b>4</b><h4>Visit, then take it home</h4><p>Peer visits end with the crop calendar and real cost sheet. Family visits end with a produce bag. Everyone gets a feedback form — that's how hosts keep their badge.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LISTINGS ══ -->
+<section id="visits">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Open for booking</span>
+      <h2>Curated farm visits</h2>
+      <p>Our team walks every farm before it is listed. A farm carries the green <strong>Verified</strong> badge only after it clears the full 50-point check; pilot farms are marked as such while that is in progress. Any listing is paused the moment its rating drops below 4.2.</p>
+    </div>
+
+    <div id="demoNote" hidden></div>
+
+    <div class="controls">
+      <div class="filters" id="filters"></div>
+      <label class="sortwrap">Sort
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="price_asc">Price: low to high</option>
+          <option value="price_desc">Price: high to low</option>
+          <option value="rating">Rating</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ══ TRUST ══ -->
+<section class="trust" id="trust">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" style="color:var(--gold)">Verification</span>
+      <h2>We reject most farms that apply.</h2>
+      <p>A farm visit is only worth paying for if the farmer has something proven to teach and can keep you safe while teaching it. Five gates, scored out of 50. A listing needs 35 and zero red flags.</p>
+    </div>
+    <div class="gates">
+      <div class="gate"><h4>Proven agronomy · 15</h4><p>Yields 25%+ above the local average, held for three years or more. Verified against sale receipts, mandi slips and a neighbour's word.</p></div>
+      <div class="gate"><h4>Teaching ability · 10</h4><p>Scored on a mystery visit. Can the host explain <em>why</em>, admit what failed, and show real numbers — not just walk you around?</p></div>
+      <div class="gate"><h4>Guest safety · 10</h4><p>Drinking water, clean toilet, shade, first-aid kit, no unfenced machinery, safe parking, phone reachable. Photographed and checked in person.</p></div>
+      <div class="gate"><h4>Hospitality · 10</h4><p>Punctual, clean, and at least one person in the household fluent in your language. Food only from hosts who clear a kitchen check.</p></div>
+      <div class="gate"><h4>Documentation · 5</h4><p>ID, land record, bank details and a signed code of conduct. Bonded labour, illegal borewells or caste-based exclusion mean instant rejection.</p></div>
+    </div>
+    <p class="trust-note">Re-certified every year. Rating floor of 4.2 across the last 10 visits — two bad visits and the listing is paused until we've re-visited and coached the host.</p>
+  </div>
+</section>
+
+<!-- ══ HOST ══ (bilingual — English / Kannada, see the I18N block in the script) ══ -->
+<section id="host">
+  <div class="container">
+    <div class="lang-switch">
+      <span data-i18n="lang_label">Read this section in</span>
+      <div class="lang-btns" role="group" aria-label="Language">
+        <button class="lang-btn on" data-lang="en" lang="en">English</button>
+        <button class="lang-btn" data-lang="kn" lang="kn">ಕನ್ನಡ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container host-wrap">
+    <div>
+      <div class="section-head" style="margin-bottom:0">
+        <span class="tag" data-i18n="host_tag">For Master Farmers</span>
+        <h2 data-i18n="host_h2">Your field is already the classroom. Get paid for it.</h2>
+        <p data-i18n="host_p">If you're running consistently above local yields and you enjoy explaining how, hosting visits turns your existing farm into a second income — no new investment, no crop risk.</p>
+      </div>
+      <ul class="host-list">
+        <li data-i18n="host_b1">You keep <strong>70% of every booking</strong>, paid by UPI within 72 hours of the visit</li>
+        <li data-i18n="host_b2">You set the price band, group size, dates and blackout days</li>
+        <li data-i18n="host_b3">Mujanti handles the listing, the enquiries, the money and the guest support</li>
+        <li data-i18n="host_b4">Free host kit: safety card, farm board, and a one-page visit script in Kannada</li>
+        <li data-i18n="host_b5">Group accident cover for every guest, paid from the community fund — not by you</li>
+      </ul>
+      <a href="#" id="hostApplyBtn" class="btn btn-green" data-i18n="host_cta">Apply to become a host farm</a>
+      <p style="font-size:.84rem;color:var(--muted);margin-top:14px" data-i18n="host_note">Takes about 10 minutes. A Mujanti team member visits within two weeks to complete the verification.</p>
+    </div>
+
+    <div class="calc">
+      <h3 data-i18n="calc_h3">What could hosting earn you?</h3>
+      <p class="sub" data-i18n="calc_sub">Move the sliders. This is your share after the Mujanti fee and community fund.</p>
+      <div class="field">
+        <label for="pax"><span data-i18n="calc_pax">Guests per visit</span> <span id="paxOut">8</span></label>
+        <input type="range" id="pax" min="2" max="25" value="8">
+      </div>
+      <div class="field">
+        <label for="priceR"><span data-i18n="calc_price">Price per guest</span> <span id="priceOut">₹1,200</span></label>
+        <input type="range" id="priceR" min="400" max="3000" step="100" value="1200">
+      </div>
+      <div class="field">
+        <label for="freq"><span data-i18n="calc_freq">Visits per month</span> <span id="freqOut">4</span></label>
+        <input type="range" id="freq" min="1" max="12" value="4">
+      </div>
+      <div class="calc-out">
+        <b id="earn">₹26,880</b>
+        <small><span data-i18n="calc_out_pre">your monthly share</span> · <span id="earnYear">₹3,22,560</span> <span data-i18n="calc_out_post">a year</span></small>
+      </div>
+      <div class="calc-split">
+        <span data-i18n="split_farmer">Farmer 70%</span>
+        <span data-i18n="split_mujanti">Mujanti 25%</span>
+        <span data-i18n="split_fund">Safety fund 5%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq" style="background:var(--white);border-top:1px solid var(--border)">
+  <div class="container" style="max-width:860px">
+    <div class="section-head centered">
+      <span class="tag">Questions</span>
+      <h2>Before you book</h2>
+    </div>
+
+    <details open><summary>How do I know the farm is worth the money?</summary>
+      <p>Verified farms cleared the five-gate check described above, including a mystery visit where we paid as a guest and scored the day — the certification month is printed on the card. Farms still going through that process are labelled <strong>Pilot farm</strong>, and we tell you plainly which one you are booking. Either way: if a visit doesn't match its listing, tell us within 48 hours and we refund you.</p></details>
+
+    <details><summary>What happens after I submit the request form?</summary>
+      <p>You get a booking ID by email and WhatsApp immediately. We check the host's availability and confirm your date within 24 hours (usually within 6 working hours). Then you get a UPI payment link, and once paid, a ticket with the pin location, the host's number and your coordinator's number. Reminders go out three days and one day before.</p></details>
+
+    <details><summary>Can I cancel or reschedule?</summary>
+      <p>Free reschedule up to 72 hours before the visit. Full refund if the host cancels or the visit is rained off. 50% refund between 24 and 72 hours, and no refund under 24 hours — by then the host has bought food and blocked the day.</p></details>
+
+    <details><summary>Is this a training course or a farm holiday?</summary>
+      <p>Both exist, and the card tells you which. <strong>Peer learning</strong> visits are for working farmers: crop calendar, technology demos, real cost sheets. <strong>Farm experience</strong> days are built for families and first-timers. <strong>Institutional programmes</strong> are curriculum-linked days for schools, colleges and CSR teams.</p></details>
+
+    <details><summary>I learned something on the visit. Can I actually implement it on my land?</summary>
+      <p>That's the point, and it's why Mujanti sits in the middle. What works on a 40-acre estate can bankrupt a two-acre holding. After a peer learning visit, our team adapts the practice to your land size, working capital, irrigation and labour, and sends a customised advisory — so you adopt a de-risked version, not a copy.</p></details>
+
+    <details><summary>Are children allowed? Is it safe?</summary>
+      <p>Yes, on farm experience days, accompanied by an adult. Every listed farm passed a physical safety check — drinking water, clean toilet, first aid, no unfenced machinery, controlled dogs. Group accident cover applies to every booked guest for the day of the visit.</p></details>
+
+    <details><summary>I'm a farmer and I want to host. What's the catch?</summary>
+      <p>No catch and no fee to apply. You keep 70%, paid within 72 hours. What we ask for is honesty about your numbers, a safe farm and punctuality. The bar is high because our reputation and yours are the same asset.</p></details>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="band">
+      <h2>Booking for a group, a college, or a CSR team?</h2>
+      <p>Cohorts of 15 to 60 get a structured curriculum, certificates, a Mujanti facilitator and an invoice for your finance team. Tell us the dates and the learning objective.</p>
+      <a href="#" id="groupBtn" class="btn btn-white">Request a group programme</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MODAL ══ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-card">
+    <div class="modal-hero">
+      <img id="mImg" alt="">
+      <button class="modal-close" id="mClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <h3 id="mTitle"></h3>
+      <p class="mhost" id="mHost"></p>
+      <div class="kv" id="mKv"></div>
+
+      <div class="est">
+        <div class="stepper">
+          <small>Guests</small>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+            <button id="mMinus" aria-label="Fewer guests">−</button>
+            <b id="mPax">2</b>
+            <button id="mPlus" aria-label="More guests">+</button>
+          </div>
+        </div>
+        <div class="total"><b id="mTotal">₹0</b><small id="mTotalSub"></small></div>
+      </div>
+
+      <div class="inc">
+        <div><h5>Included</h5><ul id="mInc"></ul></div>
+        <div><h5>Not included</h5><ul class="no" id="mNot"></ul></div>
+      </div>
+      <p class="policy-note" id="mPolicy"></p>
+      <div class="modal-actions">
+        <a href="#" class="btn btn-green" id="mBook">Request this visit →</a>
+        <a href="#" class="btn btn-outline" id="mMore" hidden>See the full farm page</a>
+        <a href="#" class="btn btn-outline" id="mWa">Ask on WhatsApp</a>
+      </div>
+      <div class="share-row">
+        <span>Share this farm:</span>
+        <button id="mShareWa">WhatsApp</button>
+        <button id="mCopy">Copy link</button>
+        <span id="mCopied" hidden style="color:var(--g3);font-weight:700">Link copied</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-cta">
+  <span id="mobileCtaText">Visits from ₹—</span>
+  <a href="#visits" class="btn btn-green" style="padding:11px 20px">Browse & book</a>
+</div>
+
+<footer>
+  <div class="container">
+    © 2026 Mujanti Services Pvt. Ltd. · <a href="../index.html">Home</a> · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms</a>
+  </div>
+</footer>
+
+<script type="application/json" id="fallbackData">
+{"_readme": "Edit this file to add / change farm visit listings. The page reads it live. booking_mode: 'whatsapp' sends every booking button to WhatsApp (use this until the Google Forms exist); switch it to 'form' once booking_form_base and the entry.XXXXX ids below are real. To get those: open the form, Send -> link -> 'Get pre-filled link', fill dummy values, copy the URL and read the entry numbers out of it. See farm-visits/automation/SETUP.md.", "demo_data": false, "forms": {"booking_mode": "whatsapp", "booking_form_base": "https://docs.google.com/forms/d/e/REPLACE_WITH_BOOKING_FORM_ID/viewform", "host_form_url": "https://docs.google.com/forms/d/e/REPLACE_WITH_HOST_FORM_ID/viewform", "entry": {"experience_id": "entry.1000000001", "experience_name": "entry.1000000002", "price_per_head": "entry.1000000003", "district": "entry.1000000004", "track": "entry.1000000005", "source": "entry.1000000006", "pax": "entry.1000000007"}}, "coordinator": {"whatsapp": "+919480356357", "email": "ashok@mujanti.com", "hours": "Mon–Sat · 9 AM – 6 PM IST"}, "policy": {"farmer_share_percent": 70, "reschedule_free_hours": 72, "refund_note": "Free reschedule up to 72 hours before the visit. Full refund if the host cancels or the visit is rained off. 50% refund between 24 and 72 hours. No refund under 24 hours."}, "experiences": [{"id": "MFV-SRV-001", "title": "SARVAANI Farm: Bees, Medicinal Plants & Coffee", "page": "sarvaani.html", "host": "Kantharaju and family", "host_since": "2025", "district": "Karnataka coffee belt", "state": "Karnataka", "track": "peer", "badge": "Pilot farm", "duration": "Half day or full day, by arrangement", "price_on_request": true, "min_pax": 2, "max_pax": 15, "languages": ["Kannada", "English"], "emoji": "🐝", "image": "../assets/farm-visits/sarvaani-apiculture-01.jpg", "gallery": ["../assets/farm-visits/sarvaani-apiculture-01.jpg", "../assets/farm-visits/sarvaani-apiculture-02.jpg", "../assets/farm-visits/sarvaani-apiculture-03.jpg", "../assets/farm-visits/sarvaani-apiculture-04.jpg", "../assets/farm-visits/sarvaani-apiculture-05.jpg", "../assets/farm-visits/sarvaani-session-01.jpg"], "summary": "Five hands-on modules on one working farm — a medicinal plant walk, a beekeeping workshop covering native stingless bees, vermicompost and biogas, livestock care, and a walk through the coffee estate. Hosted by Kantharaju and his family, with home-cooked meals and estate coffee.", "includes": ["Five guided modules (pick the ones you need)", "Traditional home-cooked farm lunch", "Freshly plucked farm fruit — star fruit, guava, papaya", "Estate coffee on arrival and departure"], "not_included": ["Travel to the farm", "Overnight stay"], "best_months": "Ask us — the coffee and honey calendars run at different times", "modules": [{"n": 1, "title": "Medicinal & Herbal Plants Walk", "overview": "A guided sensory tour of the farm's medicinal plant life.", "learn": "Identification, taste and human health uses of native medicinal leaves — Kaama Kasturi (sweet basil), lemon grass, Navrangi, mint and Kirataka.", "takeaway": "How to use backyard plants as natural remedies for everyday health."}, {"n": 2, "title": "Apiculture (Beekeeping) Workshop", "overview": "A deep dive into the life cycle of bees and their ecological role.", "learn": "Colony hierarchy and the roles inside a hive, with a special focus on native varieties including the stingless Mujanti bee and its life cycle."}, {"n": 3, "title": "Sustainable Energy & Composting", "overview": "Circular farming and waste management as actually practised here.", "learn": "The role of Erehula (earthworms) in building rich compost, and step-by-step guidance on building and running a gobar gas (biogas) plant — including the safety precautions."}, {"n": 4, "title": "Livestock & Animal Husbandry", "overview": "Integrated farm animal management.", "learn": "Care requirements across the farm's livestock — the different cows, sheep and goats, and how they fit the rest of the system."}, {"n": 5, "title": "Coffee Cultivation Tour", "overview": "A backend look at what it takes to produce a good cup.", "learn": "A walking tour of the coffee estate covering planting, cultivation and crop care through the season."}], "amenities": ["Hosted by Kantharaju and his family", "Farm-to-table meals — local pulao, rice and sambar", "Fresh farm fruit tasting", "Estate-brewed coffee"]}]}
+</script>
+
+<script>
+const money = n => '₹' + Math.round(Number(n) || 0).toLocaleString('en-IN');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const track = (name, params) => { if (typeof gtag === 'function') gtag('event', name, params || {}); };
+/* narrower images for cards, full size for the modal — cuts ~60% off the image payload */
+const img = (url, w) => String(url || '').replace(/([?&]w=)\d+/, '$1' + w);
+
+const TRACKS = {
+  peer:        { label: 'Peer learning',   chip: 'For farmers' },
+  experience:  { label: 'Farm experience', chip: 'For families' },
+  institution: { label: 'Institutional',   chip: 'Schools & CSR' }
+};
+
+let DATA = null, FILTER = 'all', SORT = 'featured', MPAX = 2, MEXP = null, LAST_FOCUS = null;
+
+skeleton_();
+fetch('../content/farm-visits.json')
+  .then(r => r.json())
+  .then(d => {
+    DATA = d;
+    renderStats(); renderDemoNote(); renderFilters(); renderGrid(); wireCtas(); seo_();
+    const deep = new URLSearchParams(location.search).get('visit');
+    if (deep) openModal(deep, true);
+  })
+  .catch(() => {
+    /* fetch() is blocked when the page is opened straight off disk (file://) and
+       fails if the JSON is missing — fall back to the copy embedded above. */
+    try {
+      DATA = JSON.parse(document.getElementById('fallbackData').textContent);
+      renderStats(); renderDemoNote(); renderFilters(); renderGrid(); wireCtas(); seo_();
+      const deep = new URLSearchParams(location.search).get('visit');
+      if (deep) openModal(deep, true);
+    } catch (err) {
+      document.getElementById('grid').innerHTML =
+        '<div class="empty">Listings could not load right now. WhatsApp us on ' +
+        '<a href="https://wa.me/919480356357" style="color:var(--g1);font-weight:700">+91 94803 56357</a> and we will send them to you.</div>';
+    }
+  });
+
+function skeleton_() {
+  document.getElementById('grid').innerHTML =
+    '<div class="sk"><div class="b b1"></div><div class="b b2"></div><div class="b b3"></div></div>'.repeat(3);
+}
+
+function active() { return (DATA.experiences || []).filter(e => e.active !== false); }
+
+/* Stats only claim what the data actually supports — a pilot with one farm and no
+   ratings yet shows modules and districts instead of inventing numbers. */
+function renderStats() {
+  const list = active();
+  const visits = list.reduce((s, e) => s + (Number(e.visits_hosted) || 0), 0);
+  const rated = list.filter(e => e.rating);
+  const modules = list.reduce((s, e) => s + ((e.modules || []).length), 0);
+
+  setStat('statFarms', list.length, 'FARMS OPEN');
+  if (visits) setStat('statVisits', visits + '+', 'VISITS HOSTED');
+  else setStat('statVisits', modules || '—', 'HANDS-ON MODULES');
+  if (rated.length) setStat('statRating', (rated.reduce((s, e) => s + e.rating, 0) / rated.length).toFixed(1), 'AVERAGE RATING');
+  else setStat('statRating', new Set(list.map(e => e.district)).size, 'DISTRICTS');
+
+  const cheapest = Math.min.apply(null, list.map(e => (e.price_on_request ? Infinity : Number(e.price) || Infinity)));
+  document.getElementById('mobileCtaText').textContent = isFinite(cheapest)
+    ? 'Visits from ' + money(cheapest) + ' / guest'
+    : 'Curated farm visits';
+}
+
+function setStat(id, value, label) {
+  const el = document.getElementById(id);
+  el.textContent = value;
+  const small = el.parentElement.querySelector('small');
+  if (small) small.textContent = label;
+}
+
+function renderDemoNote() {
+  if (!DATA.demo_data) return;
+  const el = document.getElementById('demoNote');
+  el.hidden = false;
+  el.className = 'demo-note';
+  el.textContent = 'Sample listings — these farms are placeholders while we complete verification of the first hosts. ' +
+    'Replace them in content/farm-visits.json before announcing the page.';
+}
+
+function renderFilters() {
+  const districts = [...new Set(active().map(e => e.district))];
+  const chips = [{ k: 'all', t: 'All visits' }]
+    .concat(Object.keys(TRACKS).map(k => ({ k: 't:' + k, t: TRACKS[k].label })))
+    .concat(districts.map(d => ({ k: 'd:' + d, t: d })));
+
+  document.getElementById('filters').innerHTML = chips.map(c =>
+    `<button class="chip${c.k === FILTER ? ' on' : ''}" data-k="${esc(c.k)}">${esc(c.t)}</button>`).join('');
+
+  document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+    FILTER = b.dataset.k;
+    document.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b));
+    renderGrid();
+    track('fv_filter', { filter: FILTER });
+  }));
+
+  document.getElementById('sort').addEventListener('change', ev => {
+    SORT = ev.target.value; renderGrid(); track('fv_sort', { sort: SORT });
+  });
+}
+
+function matches(e) {
+  if (FILTER === 'all') return true;
+  if (FILTER.startsWith('t:')) return e.track === FILTER.slice(2);
+  if (FILTER.startsWith('d:')) return e.district === FILTER.slice(2);
+  return true;
+}
+
+function sorted(list) {
+  const l = list.slice();
+  if (SORT === 'price_asc')  l.sort((a, b) => a.price - b.price);
+  if (SORT === 'price_desc') l.sort((a, b) => b.price - a.price);
+  if (SORT === 'rating')     l.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+  return l;
+}
+
+function renderGrid() {
+  const list = sorted(active().filter(matches));
+  const grid = document.getElementById('grid');
+  document.getElementById('count').textContent =
+    list.length ? list.length + (list.length === 1 ? ' farm open for booking' : ' farms open for booking') : '';
+
+  if (!list.length) { grid.innerHTML = '<div class="empty">No visits match that filter yet. Try “All visits”.</div>'; return; }
+
+  /* A listing with its own page opens that page directly — the quick-look modal
+     is the fallback for listings that don't have one yet. */
+  grid.innerHTML = list.map(e => {
+    const open = e.page
+      ? `<a class="btn btn-green" href="${esc(e.page)}">See this farm →</a>`
+      : `<button class="btn btn-green" data-id="${esc(e.id)}">View &amp; book</button>`;
+    const peek = e.page
+      ? `<button class="peek" data-id="${esc(e.id)}">Quick look</button>`
+      : '';
+    return `
+    <article class="card">
+      ${e.page ? `<a href="${esc(e.page)}" class="card-img" aria-label="${esc(e.title)}">` : '<div class="card-img">'}
+        <img src="${esc(img(e.image, 760))}" alt="${esc(e.title)} — ${esc(e.district)}" loading="lazy" decoding="async"
+             onerror="this.closest('.card-img').classList.add('noimg');this.remove()">
+        <span class="ph" aria-hidden="true">${esc(e.emoji || '🌾')}</span>
+        <span class="verified">${badgeText(e)}</span>
+        ${e.rating ? `<span class="rating">★ ${esc(e.rating)}</span>` : ''}
+      ${e.page ? '</a>' : '</div>'}
+      <div class="card-body">
+        <div class="card-meta">${esc(e.emoji || '')} ${esc((TRACKS[e.track] || {}).chip || '')} · ${esc(e.district)}</div>
+        <h3>${e.page ? `<a href="${esc(e.page)}">${esc(e.title)}</a>` : esc(e.title)}</h3>
+        <div class="card-host">Hosted by ${esc(e.host)}${e.visits_hosted ? ' · ' + esc(e.visits_hosted) + ' visits hosted' : ''}</div>
+        <p class="card-sum">${esc(e.summary)}</p>
+        <div class="tagrow">
+          <span class="mini">${esc(e.duration)}</span>
+          <span class="mini">${esc(e.min_pax)}–${esc(e.max_pax)} guests</span>
+          ${e.modules && e.modules.length ? `<span class="mini">${esc(e.modules.length)} modules</span>` : ''}
+          <span class="mini">${esc((e.languages || []).join(', '))}</span>
+        </div>
+        <div class="card-foot">
+          <div class="price">${priceLabel(e)}<small>${priceSub(e)}</small></div>
+          <div class="card-actions">${peek}${open}</div>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+
+  grid.querySelectorAll('[data-id]').forEach(b =>
+    b.addEventListener('click', () => openModal(b.dataset.id)));
+
+  track('fv_view_listing', { count: list.length, filter: FILTER, sort: SORT });
+}
+
+/* A listing only claims "Verified" once it carries a verification date; anything
+   else shows its own badge (e.g. a pilot farm still going through the gates). */
+function badgeText(e) {
+  if (e.verified_on) return '✓ Verified ' + esc(String(e.verified_on).slice(0, 7));
+  return esc(e.badge || 'Onboarding');
+}
+function priceLabel(e) { return e.price_on_request || !e.price ? 'Price on request' : money(e.price); }
+function priceSub(e)   { return e.price_on_request || !e.price ? 'we quote per group' : 'per guest · all inclusive'; }
+
+/* Booking link. Google Forms carry the listing and campaign, which is what makes
+   a booking attributable with no backend — but until the forms exist, every
+   booking button falls back to WhatsApp so the page is publishable today. */
+function formsReady() {
+  const f = DATA.forms || {};
+  if (f.booking_mode === 'whatsapp') return false;   // explicit override
+  const base = f.booking_form_base || '';
+  return base.indexOf('REPLACE') < 0 && base.indexOf('docs.google.com') >= 0;
+}
+
+function bookingUrl(e, pax) {
+  if (!formsReady()) {
+    const num = ((DATA.coordinator || {}).whatsapp || '').replace(/\D/g, '');
+    const msg = `Hello Mujanti, I would like to book the farm visit "${e.title}" (${e.id}), hosted by ${e.host}.\n`
+      + `Guests: ${pax}\nPreferred dates: \nCity I am travelling from: `;
+    return 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
+  }
+  const f = DATA.forms || {}, en = f.entry || {};
+  const p = new URLSearchParams({ usp: 'pp_url' });
+  const put = (key, val) => { if (en[key] && val != null && val !== '') p.set(en[key], val); };
+  put('experience_id', e.id);
+  put('experience_name', e.title + ' — ' + e.host);
+  put('price_per_head', e.price);
+  put('district', e.district);
+  put('track', (TRACKS[e.track] || {}).label || e.track);
+  put('pax', pax);
+  put('source', new URLSearchParams(location.search).get('utm_source') || 'website');
+  return f.booking_form_base + '?' + p.toString();
+}
+
+function waUrl(e) {
+  const num = ((DATA.coordinator || {}).whatsapp || '').replace(/\D/g, '');
+  const msg = `Hello Mujanti, I have a question about the farm visit "${e.title}" (${e.id}) hosted by ${e.host}.`;
+  return 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
+}
+
+function listingLink(e) {
+  return location.origin + location.pathname + '?visit=' + encodeURIComponent(e.id);
+}
+
+function openModal(id, fromDeepLink) {
+  const e = active().find(x => x.id === id);
+  if (!e) return;
+  MEXP = e;
+  MPAX = Number(e.min_pax) || 1;
+  LAST_FOCUS = document.activeElement;
+
+  const im = document.getElementById('mImg');
+  im.src = img(e.image, 1200); im.alt = e.title + ' — ' + e.district;
+  document.getElementById('mTitle').textContent = e.title;
+  document.getElementById('mHost').textContent = [
+    e.host,
+    [e.district, e.state].filter(Boolean).join(', '),
+    e.host_since ? 'hosting since ' + e.host_since : '',
+    e.visits_hosted ? e.visits_hosted + ' visits' : '',
+    e.rating ? '★ ' + e.rating : ''
+  ].filter(Boolean).join(' · ');
+
+  document.getElementById('mKv').innerHTML = [
+    ['Price', e.price_on_request || !e.price ? 'On request' : money(e.price) + ' / guest'],
+    ['Duration', e.duration],
+    ['Group size', e.min_pax + '–' + e.max_pax + ' guests'],
+    ['Best months', e.best_months],
+    ['Languages', (e.languages || []).join(', ')],
+    ['Listing ID', e.id]
+  ].map(([k, v]) => `<div><small>${esc(k)}</small><b>${esc(v)}</b></div>`).join('');
+
+  document.getElementById('mInc').innerHTML = (e.includes || []).map(i => `<li>${esc(i)}</li>`).join('');
+  document.getElementById('mNot').innerHTML = (e.not_included || []).map(i => `<li>${esc(i)}</li>`).join('');
+  document.getElementById('mPolicy').textContent =
+    ((DATA.policy || {}).refund_note || '') +
+    ` ${(DATA.policy || {}).farmer_share_percent || 70}% of what you pay goes to the host farmer, paid within 72 hours of the visit.`;
+
+  const wa = document.getElementById('mWa');
+  wa.href = waUrl(e); wa.target = '_blank'; wa.rel = 'noopener';
+
+  paint_();
+  document.getElementById('modal').classList.add('on');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('mClose').focus();
+  if (!fromDeepLink) history.pushState({ visit: e.id }, '', '?visit=' + encodeURIComponent(e.id));
+  track('fv_click_book', { experience_id: e.id, deep_link: !!fromDeepLink });
+}
+
+/* guest stepper → live total, and the booking link carries the guest count */
+function paint_() {
+  const e = MEXP; if (!e) return;
+  const onRequest = e.price_on_request || !e.price;
+  document.getElementById('mPax').textContent = MPAX;
+  document.getElementById('mTotal').textContent = onRequest ? 'On request' : money(MPAX * Number(e.price));
+  document.getElementById('mTotalSub').textContent = onRequest
+    ? 'we quote for ' + MPAX + ' guests'
+    : MPAX + ' × ' + money(e.price) + ' · all inclusive';
+  document.getElementById('mMinus').disabled = MPAX <= (Number(e.min_pax) || 1);
+  document.getElementById('mPlus').disabled  = MPAX >= (Number(e.max_pax) || 99);
+
+  const book = document.getElementById('mBook');
+  book.href = bookingUrl(e, MPAX);
+  book.target = '_blank'; book.rel = 'noopener';
+  book.textContent = formsReady() ? 'Request this visit →' : 'Request on WhatsApp →';
+  book.onclick = () => track('fv_open_form', {
+    experience_id: e.id, price: e.price || 0, pax: MPAX, channel: formsReady() ? 'form' : 'whatsapp'
+  });
+
+  const more = document.getElementById('mMore');
+  if (e.page) { more.hidden = false; more.href = e.page; } else { more.hidden = true; }
+}
+
+document.getElementById('mMinus').addEventListener('click', () => { MPAX = Math.max((Number(MEXP.min_pax) || 1), MPAX - 1); paint_(); });
+document.getElementById('mPlus').addEventListener('click',  () => { MPAX = Math.min((Number(MEXP.max_pax) || 99), MPAX + 1); paint_(); });
+
+document.getElementById('mShareWa').addEventListener('click', () => {
+  if (!MEXP) return;
+  const priceBit = MEXP.price_on_request || !MEXP.price ? 'price on request' : money(MEXP.price) + ' per guest';
+  const text = `${MEXP.title} — a Mujanti farm visit in ${MEXP.district}, ${priceBit}. ${listingLink(MEXP)}`;
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  track('fv_share', { experience_id: MEXP.id, channel: 'whatsapp' });
+});
+
+document.getElementById('mCopy').addEventListener('click', async () => {
+  if (!MEXP) return;
+  try { await navigator.clipboard.writeText(listingLink(MEXP)); } catch (err) { /* clipboard blocked */ }
+  const tag = document.getElementById('mCopied');
+  tag.hidden = false; setTimeout(() => tag.hidden = true, 2000);
+  track('fv_share', { experience_id: MEXP.id, channel: 'copy' });
+});
+
+function closeModal(skipHistory) {
+  document.getElementById('modal').classList.remove('on');
+  document.body.style.overflow = '';
+  if (LAST_FOCUS) LAST_FOCUS.focus();
+  if (!skipHistory && location.search.indexOf('visit=') >= 0) {
+    history.pushState({}, '', location.pathname);
+  }
+}
+document.getElementById('mClose').addEventListener('click', () => closeModal());
+document.getElementById('modal').addEventListener('click', ev => { if (ev.target.id === 'modal') closeModal(); });
+window.addEventListener('popstate', () => {
+  const id = new URLSearchParams(location.search).get('visit');
+  if (id) openModal(id, true); else closeModal(true);
+});
+
+/* keyboard: Escape closes, Tab stays inside the dialog */
+document.addEventListener('keydown', ev => {
+  const modal = document.getElementById('modal');
+  if (!modal.classList.contains('on')) return;
+  if (ev.key === 'Escape') return closeModal();
+  if (ev.key !== 'Tab') return;
+  const f = modal.querySelectorAll('a[href], button:not([disabled])');
+  if (!f.length) return;
+  const first = f[0], last = f[f.length - 1];
+  if (ev.shiftKey && document.activeElement === first) { ev.preventDefault(); last.focus(); }
+  else if (!ev.shiftKey && document.activeElement === last) { ev.preventDefault(); first.focus(); }
+});
+
+function wireCtas() {
+  const f = DATA.forms || {};
+  const num = ((DATA.coordinator || {}).whatsapp || '').replace(/\D/g, '');
+  const hostFormReady = String(f.host_form_url || '').indexOf('REPLACE') < 0;
+
+  const host = document.getElementById('hostApplyBtn');
+  host.href = hostFormReady ? f.host_form_url : 'https://wa.me/' + num + '?text=' +
+    encodeURIComponent('Hello Mujanti, I am a farmer and I would like to host farm visits. My village/taluk: __, main crops: __, land size: __.');
+  host.target = '_blank'; host.rel = 'noopener';
+  host.onclick = () => track('fv_host_apply', { channel: hostFormReady ? 'form' : 'whatsapp' });
+
+  const grp = document.getElementById('groupBtn');
+  grp.href = 'https://wa.me/' + num + '?text=' +
+    encodeURIComponent('Hello Mujanti, I would like to plan a group farm visit programme. Group size: __, preferred dates: __.');
+  grp.target = '_blank'; grp.rel = 'noopener';
+}
+
+/* structured data — lets each listing show price and rating in Google results */
+function seo_() {
+  const items = active().map((e, i) => ({
+    '@type': 'ListItem', position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: e.title,
+      description: e.summary,
+      image: e.image,
+      category: (TRACKS[e.track] || {}).label,
+      brand: { '@type': 'Brand', name: 'Mujanti' },
+      offers: e.price && !e.price_on_request ? {
+        '@type': 'Offer', price: e.price, priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock', url: listingLink(e)
+      } : undefined,
+      aggregateRating: e.rating ? {
+        '@type': 'AggregateRating', ratingValue: e.rating,
+        reviewCount: Math.max(Number(e.visits_hosted) || 1, 1)
+      } : undefined
+    }
+  }));
+  const ld = {
+    '@context': 'https://schema.org', '@type': 'ItemList',
+    name: 'Mujanti Farm Visits', numberOfItems: items.length, itemListElement: items
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+}
+
+/* ── Kannada for the host section ───────────────────────────────────────────
+   Only the farmer-facing half is translated: this is the acquisition surface,
+   and most Master Farmers read Kannada far more comfortably than English.
+   Strings are static and trusted, so innerHTML is safe here. */
+const I18N = {
+  en: {
+    lang_label: 'Read this section in',
+    host_tag: 'For Master Farmers',
+    host_h2: 'Your field is already the classroom. Get paid for it.',
+    host_p: "If you're running consistently above local yields and you enjoy explaining how, hosting visits turns your existing farm into a second income — no new investment, no crop risk.",
+    host_b1: 'You keep <strong>70% of every booking</strong>, paid by UPI within 72 hours of the visit',
+    host_b2: 'You set the price band, group size, dates and blackout days',
+    host_b3: 'Mujanti handles the listing, the enquiries, the money and the guest support',
+    host_b4: 'Free host kit: safety card, farm board, and a one-page visit script in Kannada',
+    host_b5: 'Group accident cover for every guest, paid from the community fund — not by you',
+    host_cta: 'Apply to become a host farm',
+    host_note: 'Takes about 10 minutes. A Mujanti team member visits within two weeks to complete the verification.',
+    calc_h3: 'What could hosting earn you?',
+    calc_sub: 'Move the sliders. This is your share after the Mujanti fee and community fund.',
+    calc_pax: 'Guests per visit',
+    calc_price: 'Price per guest',
+    calc_freq: 'Visits per month',
+    calc_out_pre: 'your monthly share',
+    calc_out_post: 'a year',
+    split_farmer: 'Farmer 70%',
+    split_mujanti: 'Mujanti 25%',
+    split_fund: 'Safety fund 5%'
+  },
+  kn: {
+    lang_label: 'ಈ ಭಾಗವನ್ನು ಓದಿ',
+    host_tag: 'ಮಾಸ್ಟರ್ ಫಾರ್ಮರ್‌ಗಳಿಗಾಗಿ',
+    host_h2: 'ನಿಮ್ಮ ಹೊಲವೇ ಈಗಾಗಲೇ ಪಾಠಶಾಲೆ. ಅದಕ್ಕೀಗ ಆದಾಯವೂ ಸಿಗಲಿ.',
+    host_p: 'ಸ್ಥಳೀಯ ಸರಾಸರಿಗಿಂತ ಹೆಚ್ಚು ಇಳುವರಿಯನ್ನು ನಿರಂತರವಾಗಿ ಪಡೆಯುತ್ತಿದ್ದರೆ ಮತ್ತು ಅದನ್ನು ಇತರರಿಗೆ ವಿವರಿಸಲು ಇಷ್ಟಪಡುತ್ತಿದ್ದರೆ, ಭೇಟಿಗಳನ್ನು ಆಯೋಜಿಸುವುದು ನಿಮ್ಮ ಈಗಿನ ಹೊಲವನ್ನೇ ಎರಡನೇ ಆದಾಯವನ್ನಾಗಿ ಮಾಡುತ್ತದೆ — ಹೊಸ ಬಂಡವಾಳ ಬೇಡ, ಬೆಳೆಗೆ ಯಾವುದೇ ಅಪಾಯವಿಲ್ಲ.',
+    host_b1: 'ಪ್ರತಿ ಬುಕಿಂಗ್‌ನ <strong>70% ನಿಮಗೇ</strong> — ಭೇಟಿ ಮುಗಿದ 72 ಗಂಟೆಗಳ ಒಳಗೆ UPI ಮೂಲಕ ಪಾವತಿ',
+    host_b2: 'ದರ, ಗುಂಪಿನ ಗಾತ್ರ, ದಿನಾಂಕಗಳು ಮತ್ತು ಬಿಡುವಿಲ್ಲದ ದಿನಗಳನ್ನು ನೀವೇ ನಿರ್ಧರಿಸುತ್ತೀರಿ',
+    host_b3: 'ಪಟ್ಟಿ, ವಿಚಾರಣೆಗಳು, ಹಣಕಾಸು ಮತ್ತು ಅತಿಥಿಗಳ ಬೆಂಬಲವನ್ನು ಮುಜಂತಿ ನಿರ್ವಹಿಸುತ್ತದೆ',
+    host_b4: 'ಉಚಿತ ಹೋಸ್ಟ್ ಕಿಟ್: ಸುರಕ್ಷತಾ ಕಾರ್ಡ್, ಫಾರ್ಮ್ ಬೋರ್ಡ್ ಮತ್ತು ಕನ್ನಡದಲ್ಲಿ ಒಂದು ಪುಟದ ಭೇಟಿ ಮಾರ್ಗದರ್ಶಿ',
+    host_b5: 'ಪ್ರತಿ ಅತಿಥಿಗೂ ಅಪಘಾತ ವಿಮೆ — ಸಮುದಾಯ ನಿಧಿಯಿಂದ, ನಿಮ್ಮ ಜೇಬಿನಿಂದ ಅಲ್ಲ',
+    host_cta: 'ಹೋಸ್ಟ್ ಫಾರ್ಮ್ ಆಗಲು ಅರ್ಜಿ ಸಲ್ಲಿಸಿ',
+    host_note: 'ಸುಮಾರು 10 ನಿಮಿಷ ಸಾಕು. ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳಿಸಲು ಮುಜಂತಿ ತಂಡದವರು ಎರಡು ವಾರಗಳ ಒಳಗೆ ನಿಮ್ಮ ಹೊಲಕ್ಕೆ ಭೇಟಿ ನೀಡುತ್ತಾರೆ.',
+    calc_h3: 'ಹೋಸ್ಟ್ ಆದರೆ ಎಷ್ಟು ಸಂಪಾದಿಸಬಹುದು?',
+    calc_sub: 'ಸ್ಲೈಡರ್ ಸರಿಸಿ ನೋಡಿ. ಮುಜಂತಿ ಶುಲ್ಕ ಮತ್ತು ಸಮುದಾಯ ನಿಧಿ ಕಳೆದ ನಂತರ ನಿಮಗೆ ಸಿಗುವ ಪಾಲು ಇದು.',
+    calc_pax: 'ಪ್ರತಿ ಭೇಟಿಗೆ ಅತಿಥಿಗಳು',
+    calc_price: 'ಒಬ್ಬ ಅತಿಥಿಗೆ ದರ',
+    calc_freq: 'ತಿಂಗಳಿಗೆ ಭೇಟಿಗಳು',
+    calc_out_pre: 'ನಿಮ್ಮ ಮಾಸಿಕ ಪಾಲು',
+    calc_out_post: 'ವರ್ಷಕ್ಕೆ',
+    split_farmer: 'ರೈತ 70%',
+    split_mujanti: 'ಮುಜಂತಿ 25%',
+    split_fund: 'ಸುರಕ್ಷತಾ ನಿಧಿ 5%'
+  }
+};
+
+function setLang(lang) {
+  const dict = I18N[lang] || I18N.en;
+  const host = document.getElementById('host');
+  host.setAttribute('data-lang', lang);
+  host.setAttribute('lang', lang);
+  host.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.dataset.i18n];
+    if (v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+  try { localStorage.setItem('mujanti_host_lang', lang); } catch (err) { /* private mode */ }
+  track('fv_lang', { lang: lang });
+}
+
+document.querySelectorAll('.lang-btn').forEach(b =>
+  b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+/* remember the choice, and open in Kannada for Kannada browsers */
+(function initLang() {
+  let saved = null;
+  try { saved = localStorage.getItem('mujanti_host_lang'); } catch (err) { /* private mode */ }
+  const browserKn = (navigator.languages || [navigator.language || '']).some(l => String(l).toLowerCase().startsWith('kn'));
+  setLang(saved || (browserKn ? 'kn' : 'en'));
+})();
+
+/* host earnings calculator */
+const SHARE = 0.70;
+const pax = document.getElementById('pax'), priceR = document.getElementById('priceR'), freq = document.getElementById('freq');
+function calc() {
+  const p = +pax.value, pr = +priceR.value, f = +freq.value;
+  document.getElementById('paxOut').textContent = p;
+  document.getElementById('priceOut').textContent = money(pr);
+  document.getElementById('freqOut').textContent = f;
+  const monthly = p * pr * f * SHARE;
+  document.getElementById('earn').textContent = money(monthly);
+  document.getElementById('earnYear').textContent = money(monthly * 12);
+}
+[pax, priceR, freq].forEach(el => el.addEventListener('input', calc));
+calc();
+</script>
+
+</body>
+</html>

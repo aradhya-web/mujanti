@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mujanti — Your Strategic Capacity Partner</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="description" content="Mujanti drives precise, mentorship-led transitions for lasting rural development success. FPO empowerment, carbon credits, capacity building and impact storytelling across India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
@@ -264,6 +267,15 @@ nav.scrolled .hamburger span{background:var(--g1)}
 .service-card ul{list-style:none;display:grid;gap:6px}
 .service-card ul li{font-size:0.83rem;color:var(--muted);padding-left:15px;position:relative}
 .service-card ul li::before{content:'→';position:absolute;left:0;color:var(--g3);font-size:0.75rem}
+.svc-link{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-weight:700;font-size:0.86rem;color:var(--g1);position:relative;z-index:2}
+.svc-link:hover{color:var(--g3)}
+.svc-new{display:inline-block;background:var(--gold);color:#2A2205;font-size:0.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.farm-banner .tool-banner-inner{background:linear-gradient(135deg,var(--dark2),var(--g1));border-color:transparent;color:#fff}
+.farm-banner .tool-banner-tag{background:var(--gold);color:#2A2205}
+.farm-banner .tool-banner-text h3{color:#fff}
+.farm-banner .tool-banner-text p{color:rgba(255,255,255,.82)}
+.farm-banner .tool-banner-btn{background:#fff;color:var(--g1)}
+.farm-banner .tool-banner-btn:hover{background:var(--gold2)}
 
 /* ══════ CARBON ══════ */
 .carbon-section{background:var(--dark);color:white;overflow:hidden}
@@ -617,7 +629,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
 <nav id="navbar" class="top">
 <div class="container nav-inner">
   <a href="#home" class="logo">
-     <img src="assets/logo.png" alt="Mujanti Logo" style="height: 100px; max-width: 300px; object-fit: contain;">
+     <img src="assets/logo-wordmark.png" alt="Mujanti Logo" style="height: 52px; max-width: 230px; object-fit: contain;">
   </a>
   <div class="nav-links">
     <a href="#services">Services</a>
@@ -625,6 +637,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
     <a href="#team">Our Team</a>
     <a href="#projects">Projects</a>
     <a href="#media">Media</a>
+    <a href="farm-visits/index.html">Farm Visits</a>
     <a href="knowledge/index.html">Knowledge Hub</a>
     <a href="tools/index.html">Tools</a>
     <a href="#faq">FAQ</a>
@@ -641,6 +654,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
   <a href="#carbon" onclick="closeMenu()">Carbon Credits</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#media" onclick="closeMenu()">Media</a>
+  <a href="farm-visits/index.html" onclick="closeMenu()">Farm Visits</a>
   <a href="knowledge/index.html" onclick="closeMenu()">Knowledge Hub</a>
   <a href="tools/index.html" onclick="closeMenu()">Free Tools</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
@@ -816,6 +830,18 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
 </section>
 
 <!-- ════ FREE TOOL: SOC QUIZ ════ -->
+<!-- ════ FARM VISITS BANNER ════ -->
+<section class="tool-banner farm-banner">
+  <div class="container tool-banner-inner">
+    <div class="tool-banner-text">
+      <span class="tool-banner-tag">🚜 New · Master Farmer Network</span>
+      <h3>Book a day on a farm that actually works</h3>
+      <p>Spend a day on a working Karnataka farm learning what the farmer actually does — bees, compost and biogas, medicinal plants, livestock, coffee. Small groups, a coordinator on call, and 70% of what you pay goes straight to the farmer.</p>
+    </div>
+    <a href="farm-visits/index.html" class="tool-banner-btn">Browse Farm Visits →</a>
+  </div>
+</section>
+
 <section class="tool-banner">
   <div class="container tool-banner-inner">
     <div class="tool-banner-text">
@@ -1089,7 +1115,7 @@ footer{background:var(--dark);padding:72px 0 36px;color:white}
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#home" class="logo">
-        <img src="assets/logo.png" alt="Mujanti Logo" style="height: 100px; max-width: 300px; object-fit: contain;">
+        <img src="assets/logo-wordmark.png" alt="Mujanti Logo" style="height: 52px; max-width: 230px; object-fit: contain;">
       </a>
       <p>Mujanti's dedicated FPO services, carbon credit consulting, and sustainability media platform. Every farmer deserves access to the systems, knowledge, and markets to thrive.</p>
       <div class="footer-social">
@@ -1314,12 +1340,19 @@ document.addEventListener("DOMContentLoaded", () => {
       let html = '';
       data.forEach((srv, i) => {
         const bulletHtml = srv.bullets.map(b => `<li>${b}</li>`).join('');
+        const badge = srv.badge ? `<span class="svc-new">${srv.badge}</span>` : '';
+        const cta = srv.link ? `<a class="svc-link" href="${srv.link}">${srv.link_text || 'Learn more'} →</a>` : '';
+        const open = srv.link ? `<a href="${srv.link}" style="display:block;color:inherit">` : '';
+        const close = srv.link ? `</a>` : '';
         html += `
         <div class="service-card fu" style="transition-delay:${i * 0.1}s">
+          ${open}
           <div class="svc-icon">${srv.icon}</div>
-          <h3>${srv.title}</h3>
+          <h3>${srv.title}${badge}</h3>
           <p>${srv.description}</p>
           <ul>${bulletHtml}</ul>
+          ${close}
+          ${cta}
         </div>`;
       });
       container.innerHTML = html;
