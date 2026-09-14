@@ -103,6 +103,16 @@ section{padding:64px 0}
 .module dt{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .module dd{font-size:.92rem;color:var(--muted);line-height:1.65}
 .kn{font-family:'Noto Sans Kannada','Inter',sans-serif}
+/* language switch — sessions are run in Kannada, so the page speaks it too */
+.lang-switch{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;font-size:.82rem;color:var(--g5);font-weight:600}
+.lang-btns{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px;gap:4px}
+.lang-btn{font-family:inherit;font-size:.84rem;font-weight:700;padding:6px 15px;border:0;border-radius:999px;background:none;color:rgba(255,255,255,.75);cursor:pointer;transition:.2s}
+.lang-btn:hover{color:#fff}
+.lang-btn.on{background:#fff;color:var(--g1)}
+.lang-btn[lang="kn"]{font-family:'Noto Sans Kannada','Inter',sans-serif}
+body[data-lang="kn"] [data-i18n]{font-family:'Noto Sans Kannada','Inter',sans-serif;line-height:1.85}
+body[data-lang="kn"] h1,body[data-lang="kn"] h2{letter-spacing:0}
+body[data-lang="kn"] .fhero h1{font-size:clamp(1.7rem,3.8vw,2.7rem)}
 
 /* amenities */
 .amen{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -155,10 +165,10 @@ footer a:hover{text-decoration:underline}
       <span class="brand-sub"><b>Farm Visits</b><small>Master Farmer Network</small></span>
     </a>
     <nav class="header-nav" aria-label="Sections">
-      <a href="index.html">All farm visits</a>
-      <a href="#modules">Modules</a>
-      <a href="#practical">Practical</a>
-      <a href="#book" class="hbtn">Request a visit</a>
+      <a href="index.html" data-i18n="nav_all">All farm visits</a>
+      <a href="#modules" data-i18n="nav_modules">Modules</a>
+      <a href="#practical" data-i18n="nav_practical">Practical</a>
+      <a href="#book" class="hbtn" data-i18n="nav_cta">Request a visit</a>
     </nav>
   </div>
 </header>
@@ -167,23 +177,30 @@ footer a:hover{text-decoration:underline}
 <section class="fhero">
   <div class="container">
     <div class="crumbs"><a href="../index.html">Mujanti</a> › <a href="index.html">Farm Visits</a> › SARVAANI</div>
-    <span class="pill">🐝 Pilot farm · Master Farmer Network</span>
-    <h1>SARVAANI Farm</h1>
-    <p class="sub">
+    <div class="lang-switch">
+      <span data-i18n="lang_label">Read this page in</span>
+      <div class="lang-btns" role="group" aria-label="Language">
+        <button class="lang-btn on" data-lang="en" lang="en">English</button>
+        <button class="lang-btn" data-lang="kn" lang="kn">ಕನ್ನಡ</button>
+      </div>
+    </div>
+    <span class="pill" data-i18n="pill">🐝 Pilot farm · Master Farmer Network</span>
+    <h1 data-i18n="h1">SARVAANI Farm</h1>
+    <p class="sub" data-i18n="hero_sub">
       A working Karnataka coffee farm where five different systems run side by side — medicinal plants, native bees,
       vermicompost and biogas, livestock, and coffee. Kantharaju and his family teach all five, in the field, on the
-      same day you visit.
+      same day you visit. Sessions are taught in Kannada.
     </p>
     <div class="facts">
-      <span class="fact">5 hands-on modules</span>
-      <span class="fact">Half day or full day</span>
-      <span class="fact">2–15 guests</span>
-      <span class="fact">Kannada · English</span>
-      <span class="fact">Farm lunch included</span>
+      <span class="fact" data-i18n="fact1">5 hands-on modules</span>
+      <span class="fact" data-i18n="fact2">Half day or full day</span>
+      <span class="fact" data-i18n="fact3">2–15 guests</span>
+      <span class="fact" data-i18n="fact4">Taught in Kannada</span>
+      <span class="fact" data-i18n="fact5">Farm lunch included</span>
     </div>
     <div class="fhero-actions">
-      <a href="#book" class="btn btn-white">Request a visit</a>
-      <a href="#modules" class="btn" style="background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.28);color:#fff">See the five modules</a>
+      <a href="#book" class="btn btn-white" data-i18n="hero_cta1">Request a visit</a>
+      <a href="#modules" class="btn" style="background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.28);color:#fff" data-i18n="hero_cta2">See the five modules</a>
     </div>
   </div>
 
@@ -202,7 +219,7 @@ footer a:hover{text-decoration:underline}
       <a href="../assets/farm-visits/sarvaani-session-01.jpg" target="_blank" rel="noopener">
         <img src="../assets/farm-visits/sarvaani-session-01.jpg" alt="Visitors seated on the farm verandah during a session" loading="lazy"></a>
     </div>
-    <p class="gallery-note">Photographs taken at SARVAANI during a Mujanti field session. Tap any image to open it full size.</p>
+    <p class="gallery-note" data-i18n="gallery_note">Photographs taken at SARVAANI during a Mujanti field session. Tap any image to open it full size.</p>
   </div>
 </section>
 
@@ -210,9 +227,9 @@ footer a:hover{text-decoration:underline}
 <section id="modules">
   <div class="container">
     <div class="section-head">
-      <span class="tag">What you will actually do</span>
-      <h2>Five modules, taught in the field</h2>
-      <p>Pick the ones you need. A half day usually covers two modules properly; a full day covers four to five with lunch in between. Tell us what you came to learn and Kantharaju builds the day around it.</p>
+      <span class="tag" data-i18n="mod_tag">What you will actually do</span>
+      <h2 data-i18n="mod_h2">Five modules, taught in the field</h2>
+      <p data-i18n="mod_intro">Pick the ones you need. A half day usually covers two modules properly; a full day covers four to five with lunch in between. Tell us what you came to learn and Kantharaju builds the day around it.</p>
     </div>
 
     <div class="modules">
@@ -220,11 +237,11 @@ footer a:hover{text-decoration:underline}
       <article class="module">
         <div class="num">1</div>
         <div>
-          <h3>Medicinal &amp; Herbal Plants Walk</h3>
-          <p class="ov">A guided sensory tour of the farm's medicinal plant life.</p>
+          <h3 data-i18n="m1_t">Medicinal &amp; Herbal Plants Walk</h3>
+          <p class="ov" data-i18n="m1_o">A guided sensory tour of the farm's medicinal plant life.</p>
           <dl>
-            <div><dt>Key learnings</dt><dd>Identification, taste and human health benefits of native medicinal leaves — <span class="kn">ಕಾಮ ಕಸ್ತೂರಿ</span> Kaama Kasturi (sweet basil), lemon grass, Navrangi, mint and Kirataka.</dd></div>
-            <div><dt>Takeaway</dt><dd>How to use the plants already growing in your backyard as natural remedies for everyday health.</dd></div>
+            <div><dt data-i18n="lbl_learn">Key learnings</dt><dd data-i18n="m1_l">Identification, taste and human health benefits of native medicinal leaves — <span class="kn">ಕಾಮ ಕಸ್ತೂರಿ</span> Kaama Kasturi (sweet basil), lemon grass, Navrangi, mint and Kirataka.</dd></div>
+            <div><dt data-i18n="lbl_take">Takeaway</dt><dd data-i18n="m1_k">How to use the plants already growing in your backyard as natural remedies for everyday health.</dd></div>
           </dl>
         </div>
       </article>
@@ -232,11 +249,11 @@ footer a:hover{text-decoration:underline}
       <article class="module">
         <div class="num">2</div>
         <div>
-          <h3>Apiculture (Beekeeping) Workshop</h3>
-          <p class="ov">A deep dive into the life cycle of bees and the work they do for the farm around them.</p>
+          <h3 data-i18n="m2_t">Apiculture (Beekeeping) Workshop</h3>
+          <p class="ov" data-i18n="m2_o">A deep dive into the life cycle of bees and the work they do for the farm around them.</p>
           <dl>
-            <div><dt>Key learnings</dt><dd>Colony hierarchy and the roles inside a hive — worker bees, drones and the queen — with a special focus on native varieties including the stingless <em>Mujanti</em> bee and its life cycle.</dd></div>
-            <div><dt>Hands-on</dt><dd>Opening a box, reading a frame, and understanding what a healthy colony looks like before you keep one yourself.</dd></div>
+            <div><dt data-i18n="lbl_learn">Key learnings</dt><dd data-i18n="m2_l">Colony hierarchy and the roles inside a hive — worker bees, drones and the queen — with a special focus on native varieties including the stingless <em>Mujanti</em> bee and its life cycle.</dd></div>
+            <div><dt data-i18n="lbl_hands">Hands-on</dt><dd data-i18n="m2_k">Opening a box, reading a frame, and understanding what a healthy colony looks like before you keep one yourself.</dd></div>
           </dl>
         </div>
       </article>
@@ -244,11 +261,11 @@ footer a:hover{text-decoration:underline}
       <article class="module">
         <div class="num">3</div>
         <div>
-          <h3>Sustainable Energy &amp; Composting</h3>
-          <p class="ov">Circular farming and waste management, as actually practised on this farm.</p>
+          <h3 data-i18n="m3_t">Sustainable Energy &amp; Composting</h3>
+          <p class="ov" data-i18n="m3_o">Circular farming and waste management, as actually practised on this farm.</p>
           <dl>
-            <div><dt>Key learnings</dt><dd>The role of <span class="kn">ಎರೆಹುಳು</span> Erehula (earthworms) in turning farm waste into rich compost, and step-by-step guidance on building and running a gobar gas (biogas) plant — including the safety precautions people skip.</dd></div>
-            <div><dt>Takeaway</dt><dd>A realistic view of what a biogas unit costs, what it saves, and what it needs from you every week.</dd></div>
+            <div><dt data-i18n="lbl_learn">Key learnings</dt><dd data-i18n="m3_l">The role of <span class="kn">ಎರೆಹುಳು</span> Erehula (earthworms) in turning farm waste into rich compost, and step-by-step guidance on building and running a gobar gas (biogas) plant — including the safety precautions people skip.</dd></div>
+            <div><dt data-i18n="lbl_take">Takeaway</dt><dd data-i18n="m3_k">A realistic view of what a biogas unit costs, what it saves, and what it needs from you every week.</dd></div>
           </dl>
         </div>
       </article>
@@ -256,10 +273,10 @@ footer a:hover{text-decoration:underline}
       <article class="module">
         <div class="num">4</div>
         <div>
-          <h3>Livestock &amp; Animal Husbandry</h3>
-          <p class="ov">An introduction to integrated farm animal management.</p>
+          <h3 data-i18n="m4_t">Livestock &amp; Animal Husbandry</h3>
+          <p class="ov" data-i18n="m4_o">An introduction to integrated farm animal management.</p>
           <dl>
-            <div><dt>Key learnings</dt><dd>Care requirements across the farm's livestock — the different cows, sheep and goats — and how they feed the compost, the biogas and the field.</dd></div>
+            <div><dt data-i18n="lbl_learn">Key learnings</dt><dd data-i18n="m4_l">Care requirements across the farm's livestock — the different cows, sheep and goats — and how they feed the compost, the biogas and the field.</dd></div>
           </dl>
         </div>
       </article>
@@ -267,10 +284,10 @@ footer a:hover{text-decoration:underline}
       <article class="module">
         <div class="num">5</div>
         <div>
-          <h3>Coffee Cultivation Tour</h3>
-          <p class="ov">A backend look at what it takes to produce the perfect cup.</p>
+          <h3 data-i18n="m5_t">Coffee Cultivation Tour</h3>
+          <p class="ov" data-i18n="m5_o">A backend look at what it takes to produce the perfect cup.</p>
           <dl>
-            <div><dt>Key learnings</dt><dd>A walking tour through the coffee estate covering planting, cultivation and crop care through the season — and how the bees, shade trees and pepper vines fit into it.</dd></div>
+            <div><dt data-i18n="lbl_learn">Key learnings</dt><dd data-i18n="m5_l">A walking tour through the coffee estate covering planting, cultivation and crop care through the season — and how the bees, shade trees and pepper vines fit into it.</dd></div>
           </dl>
         </div>
       </article>
@@ -283,15 +300,15 @@ footer a:hover{text-decoration:underline}
 <section class="amen">
   <div class="container">
     <div class="section-head">
-      <span class="tag">The farm experience</span>
-      <h2>You are a guest, not a tour group</h2>
-      <p>Group sizes stay small on purpose. You eat what the family eats, and there is time to sit and ask questions.</p>
+      <span class="tag" data-i18n="am_tag">The farm experience</span>
+      <h2 data-i18n="am_h2">You are a guest, not a tour group</h2>
+      <p data-i18n="am_intro">Group sizes stay small on purpose. You eat what the family eats, and there is time to sit and ask questions.</p>
     </div>
     <div class="amen-grid">
-      <div class="amen-card"><div class="ic">🏡</div><h4>Hosted by the family</h4><p>Kantharaju and his family host the day themselves — not a guide reading from a script.</p></div>
-      <div class="amen-card"><div class="ic">🍛</div><h4>Farm-to-table meals</h4><p>Traditional home cooking — local pulao, rice and sambar — made from what the farm and the village produce.</p></div>
-      <div class="amen-card"><div class="ic">🍈</div><h4>Fresh farm fruit</h4><p>Tasting of whatever is ripe that week: star fruit, guava, papaya.</p></div>
-      <div class="amen-card"><div class="ic">☕</div><h4>Estate coffee</h4><p>Freshly brewed estate coffee to open the day and to close it.</p></div>
+      <div class="amen-card"><div class="ic">🏡</div><h4 data-i18n="a1_t">Hosted by the family</h4><p data-i18n="a1_d">Kantharaju and his family host the day themselves — not a guide reading from a script.</p></div>
+      <div class="amen-card"><div class="ic">🍛</div><h4 data-i18n="a2_t">Farm-to-table meals</h4><p data-i18n="a2_d">Traditional home cooking — local pulao, rice and sambar — made from what the farm and the village produce.</p></div>
+      <div class="amen-card"><div class="ic">🍈</div><h4 data-i18n="a3_t">Fresh farm fruit</h4><p data-i18n="a3_d">Tasting of whatever is ripe that week: star fruit, guava, papaya.</p></div>
+      <div class="amen-card"><div class="ic">☕</div><h4 data-i18n="a4_t">Estate coffee</h4><p data-i18n="a4_d">Freshly brewed estate coffee to open the day and to close it.</p></div>
     </div>
   </div>
 </section>
@@ -300,32 +317,32 @@ footer a:hover{text-decoration:underline}
 <section id="practical">
   <div class="container">
     <div class="section-head">
-      <span class="tag">Practical</span>
-      <h2>Before you come</h2>
+      <span class="tag" data-i18n="pr_tag">Practical</span>
+      <h2 data-i18n="pr_h2">Before you come</h2>
     </div>
 
     <div class="book-wrap">
       <div class="practical">
-        <h3>Visit details</h3>
+        <h3 data-i18n="pr_h3">Visit details</h3>
         <dl>
-          <dt>Format</dt><dd>Half day (two modules) or full day (four to five modules with lunch)</dd>
-          <dt>Group size</dt><dd>2 to 15 guests. Larger cohorts by arrangement</dd>
-          <dt>Languages</dt><dd>Kannada and English</dd>
-          <dt>Price</dt><dd>On request — we quote per group once we know the modules, group size and date</dd>
-          <dt>Getting there</dt><dd>Karnataka coffee belt. The exact location and a map pin are shared once your date is confirmed</dd>
-          <dt>Bring</dt><dd>Closed shoes, a hat, a water bottle. Long sleeves if you want to stand close to the hives</dd>
-          <dt>Bees &amp; safety</dt><dd>Tell us in advance about any bee or wasp allergy. Hive work is optional — you can watch from a distance and still do every other module</dd>
-          <dt>Children</dt><dd>Welcome with an adult. Hive handling is for 12 and above</dd>
-          <dt>Changes</dt><dd>Free reschedule up to 72 hours before. Full refund if the host cancels or the day is rained off</dd>
+          <dt data-i18n="pr_k1">Format</dt><dd data-i18n="pr_v1">Half day (two modules) or full day (four to five modules with lunch)</dd>
+          <dt data-i18n="pr_k2">Group size</dt><dd data-i18n="pr_v2">2 to 15 guests. Larger cohorts by arrangement</dd>
+          <dt data-i18n="pr_k3">Language</dt><dd data-i18n="pr_v3">Kannada. All teaching is in Kannada — bring someone who can translate if you do not follow it</dd>
+          <dt data-i18n="pr_k4">Price</dt><dd data-i18n="pr_v4">On request — we quote per group once we know the modules, group size and date</dd>
+          <dt data-i18n="pr_k5">Getting there</dt><dd data-i18n="pr_v5">Karnataka coffee belt. The exact location and a map pin are shared once your date is confirmed</dd>
+          <dt data-i18n="pr_k6">Bring</dt><dd data-i18n="pr_v6">Closed shoes, a hat, a water bottle. Long sleeves if you want to stand close to the hives</dd>
+          <dt data-i18n="pr_k7">Bees &amp; safety</dt><dd data-i18n="pr_v7">Tell us in advance about any bee or wasp allergy. Hive work is optional — you can watch from a distance and still do every other module</dd>
+          <dt data-i18n="pr_k8">Children</dt><dd data-i18n="pr_v8">Welcome with an adult. Hive handling is for 12 and above</dd>
+          <dt data-i18n="pr_k9">Changes</dt><dd data-i18n="pr_v9">Free reschedule up to 72 hours before. Full refund if the host cancels or the day is rained off</dd>
         </dl>
       </div>
 
       <div class="bookcard" id="book">
-        <h3>Request this visit</h3>
-        <p>Tell us your dates, group size and which modules you want. We confirm with the host and come back to you within 24 hours with a quote.</p>
-        <a class="btn btn-white" id="waBook" href="#">Request on WhatsApp</a>
-        <a class="btn" id="mailBook" href="#" style="background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);color:#fff">Email us instead</a>
-        <p class="fine">Nothing is charged until the date and price are confirmed in writing. 70% of what you pay goes to the host farmer.</p>
+        <h3 data-i18n="bk_h3">Request this visit</h3>
+        <p data-i18n="bk_p">Tell us your dates, group size and which modules you want. We confirm with the host and come back to you within 24 hours with a quote.</p>
+        <a class="btn btn-white" id="waBook" href="#" data-i18n="bk_wa">Request on WhatsApp</a>
+        <a class="btn" id="mailBook" href="#" style="background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3);color:#fff" data-i18n="bk_mail">Email us instead</a>
+        <p class="fine" data-i18n="bk_fine">Nothing is charged until the date and price are confirmed in writing. 70% of what you pay goes to the host farmer.</p>
       </div>
     </div>
   </div>
@@ -334,8 +351,8 @@ footer a:hover{text-decoration:underline}
 <section style="padding-top:0">
   <div class="container">
     <div class="notice">
-      Are you a farmer who could host a day like this? Mujanti handles the listing, enquiries, money and guest support — you keep 70%.
-      <a href="index.html#host" style="color:#6B5410;text-decoration:underline">See what hosting involves →</a>
+      <span data-i18n="host_note">Are you a farmer who could host a day like this? Mujanti handles the listing, enquiries, money and guest support — you keep 70%.</span>
+      <a href="index.html#host" style="color:#6B5410;text-decoration:underline" data-i18n="host_link">See what hosting involves →</a>
     </div>
   </div>
 </section>
@@ -396,6 +413,168 @@ fetch('../content/farm-visits.json')
 })();
 
 if (typeof gtag === 'function') gtag('event', 'fv_farm_page', { experience_id: 'MFV-SRV-001' });
+
+/* ── English / Kannada ──────────────────────────────────────────────────────
+   Teaching at SARVAANI happens in Kannada, so the page carries both. The
+   Kannada for the modules and the farm experience is the host team's own
+   wording, used verbatim; the surrounding page copy is translated to match. */
+const I18N = {
+  en: {
+    lang_label: 'Read this page in',
+    nav_all: 'All farm visits', nav_modules: 'Modules', nav_practical: 'Practical', nav_cta: 'Request a visit',
+    pill: '🐝 Pilot farm · Master Farmer Network',
+    h1: 'SARVAANI Farm',
+    hero_sub: 'A working Karnataka coffee farm where five different systems run side by side — medicinal plants, native bees, vermicompost and biogas, livestock, and coffee. Kantharaju and his family teach all five, in the field, on the same day you visit. Sessions are taught in Kannada.',
+    fact1: '5 hands-on modules', fact2: 'Half day or full day', fact3: '2–15 guests',
+    fact4: 'Taught in Kannada', fact5: 'Farm lunch included',
+    hero_cta1: 'Request a visit', hero_cta2: 'See the five modules',
+    gallery_note: 'Photographs taken at SARVAANI during a Mujanti field session. Tap any image to open it full size.',
+
+    mod_tag: 'What you will actually do',
+    mod_h2: 'Five modules, taught in the field',
+    mod_intro: 'Pick the ones you need. A half day usually covers two modules properly; a full day covers four to five with lunch in between. Tell us what you came to learn and Kantharaju builds the day around it.',
+    lbl_learn: 'Key learnings', lbl_take: 'Takeaway', lbl_hands: 'Hands-on',
+
+    m1_t: 'Medicinal &amp; Herbal Plants Walk',
+    m1_o: "A guided sensory tour of the farm's medicinal plant life.",
+    m1_l: 'Identification, taste and human health benefits of native medicinal leaves — Kaama Kasturi (sweet basil), lemon grass, Navrangi, mint and Kirataka.',
+    m1_k: 'How to use the plants already growing in your backyard as natural remedies for everyday health.',
+
+    m2_t: 'Apiculture (Beekeeping) Workshop',
+    m2_o: 'A deep dive into the life cycle of bees and the work they do for the farm around them.',
+    m2_l: 'Colony hierarchy and the roles inside a hive — worker bees, drones and the queen — with a special focus on native varieties including the stingless <em>Mujanti</em> bee and its life cycle.',
+    m2_k: 'Opening a box, reading a frame, and understanding what a healthy colony looks like before you keep one yourself.',
+
+    m3_t: 'Sustainable Energy &amp; Composting',
+    m3_o: 'Circular farming and waste management, as actually practised on this farm.',
+    m3_l: 'The role of Erehula (earthworms) in turning farm waste into rich compost, and step-by-step guidance on building and running a gobar gas (biogas) plant — including the safety precautions people skip.',
+    m3_k: 'A realistic view of what a biogas unit costs, what it saves, and what it needs from you every week.',
+
+    m4_t: 'Livestock &amp; Animal Husbandry',
+    m4_o: 'An introduction to integrated farm animal management.',
+    m4_l: "Care requirements across the farm's livestock — the different cows, sheep and goats — and how they feed the compost, the biogas and the field.",
+
+    m5_t: 'Coffee Cultivation Tour',
+    m5_o: 'A backend look at what it takes to produce the perfect cup.',
+    m5_l: 'A walking tour through the coffee estate covering planting, cultivation and crop care through the season — and how the bees, shade trees and pepper vines fit into it.',
+
+    am_tag: 'The farm experience',
+    am_h2: 'You are a guest, not a tour group',
+    am_intro: 'Group sizes stay small on purpose. You eat what the family eats, and there is time to sit and ask questions.',
+    a1_t: 'Hosted by the family', a1_d: 'Kantharaju and his family host the day themselves — not a guide reading from a script.',
+    a2_t: 'Farm-to-table meals',  a2_d: 'Traditional home cooking — local pulao, rice and sambar — made from what the farm and the village produce.',
+    a3_t: 'Fresh farm fruit',     a3_d: 'Tasting of whatever is ripe that week: star fruit, guava, papaya.',
+    a4_t: 'Estate coffee',        a4_d: 'Freshly brewed estate coffee to open the day and to close it.',
+
+    pr_tag: 'Practical', pr_h2: 'Before you come', pr_h3: 'Visit details',
+    pr_k1: 'Format',        pr_v1: 'Half day (two modules) or full day (four to five modules with lunch)',
+    pr_k2: 'Group size',    pr_v2: '2 to 15 guests. Larger cohorts by arrangement',
+    pr_k3: 'Language',      pr_v3: 'Kannada. All teaching is in Kannada — bring someone who can translate if you do not follow it',
+    pr_k4: 'Price',         pr_v4: 'On request — we quote per group once we know the modules, group size and date',
+    pr_k5: 'Getting there', pr_v5: 'Karnataka coffee belt. The exact location and a map pin are shared once your date is confirmed',
+    pr_k6: 'Bring',         pr_v6: 'Closed shoes, a hat, a water bottle. Long sleeves if you want to stand close to the hives',
+    pr_k7: 'Bees &amp; safety', pr_v7: 'Tell us in advance about any bee or wasp allergy. Hive work is optional — you can watch from a distance and still do every other module',
+    pr_k8: 'Children',      pr_v8: 'Welcome with an adult. Hive handling is for 12 and above',
+    pr_k9: 'Changes',       pr_v9: 'Free reschedule up to 72 hours before. Full refund if the host cancels or the day is rained off',
+
+    bk_h3: 'Request this visit',
+    bk_p: 'Tell us your dates, group size and which modules you want. We confirm with the host and come back to you within 24 hours with a quote.',
+    bk_wa: 'Request on WhatsApp', bk_mail: 'Email us instead',
+    bk_fine: 'Nothing is charged until the date and price are confirmed in writing. 70% of what you pay goes to the host farmer.',
+    host_note: 'Are you a farmer who could host a day like this? Mujanti handles the listing, enquiries, money and guest support — you keep 70%.',
+    host_link: 'See what hosting involves →'
+  },
+
+  kn: {
+    lang_label: 'ಈ ಪುಟವನ್ನು ಓದಿ',
+    nav_all: 'ಎಲ್ಲಾ ತೋಟ ಭೇಟಿಗಳು', nav_modules: 'ಮಾಡ್ಯೂಲ್‌ಗಳು', nav_practical: 'ಮಾಹಿತಿ', nav_cta: 'ಭೇಟಿಗೆ ವಿನಂತಿಸಿ',
+    pill: '🐝 ಪ್ರಾಯೋಗಿಕ ತೋಟ · ಮಾಸ್ಟರ್ ಫಾರ್ಮರ್ ನೆಟ್‌ವರ್ಕ್',
+    h1: 'ಸರ್ವಾಣಿ ತೋಟ',
+    hero_sub: 'ಕರ್ನಾಟಕದ ಕಾಫಿ ಪ್ರದೇಶದ ಒಂದು ಕಾರ್ಯನಿರತ ತೋಟ, ಇಲ್ಲಿ ಐದು ವಿಭಿನ್ನ ಪದ್ಧತಿಗಳು ಒಟ್ಟಿಗೆ ನಡೆಯುತ್ತವೆ — ಔಷಧೀಯ ಸಸ್ಯಗಳು, ಸ್ಥಳೀಯ ಜೇನು, ಎರೆಗೊಬ್ಬರ ಮತ್ತು ಗೋಬರ್ ಗ್ಯಾಸ್, ಜಾನುವಾರು, ಹಾಗೂ ಕಾಫಿ. ಕಾಂತರಾಜು ಮತ್ತು ಅವರ ಕುಟುಂಬ ಇವೆಲ್ಲವನ್ನೂ ತೋಟದಲ್ಲಿಯೇ ಕಲಿಸಿಕೊಡುತ್ತಾರೆ. ತರಬೇತಿ ಕನ್ನಡದಲ್ಲಿ ನಡೆಯುತ್ತದೆ.',
+    fact1: '೫ ಪ್ರಾಯೋಗಿಕ ಮಾಡ್ಯೂಲ್‌ಗಳು', fact2: 'ಅರ್ಧ ದಿನ ಅಥವಾ ಪೂರ್ಣ ದಿನ', fact3: '೨–೧೫ ಅತಿಥಿಗಳು',
+    fact4: 'ಕನ್ನಡದಲ್ಲಿ ತರಬೇತಿ', fact5: 'ಮಧ್ಯಾಹ್ನದ ಊಟ ಸೇರಿದೆ',
+    hero_cta1: 'ಭೇಟಿಗೆ ವಿನಂತಿಸಿ', hero_cta2: 'ಐದು ಮಾಡ್ಯೂಲ್‌ಗಳನ್ನು ನೋಡಿ',
+    gallery_note: 'ಮುಜಂತಿ ಕ್ಷೇತ್ರ ಭೇಟಿಯ ವೇಳೆ ಸರ್ವಾಣಿ ತೋಟದಲ್ಲಿ ತೆಗೆದ ಛಾಯಾಚಿತ್ರಗಳು. ಪೂರ್ಣ ಗಾತ್ರದಲ್ಲಿ ನೋಡಲು ಯಾವುದೇ ಚಿತ್ರವನ್ನು ಒತ್ತಿ.',
+
+    mod_tag: 'ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ',
+    mod_h2: 'ತರಬೇತಿ ಮಾಡ್ಯೂಲ್‌ಗಳು ಮತ್ತು ಒದಗಿಸುವ ಕೃಷಿ ಅನುಭವಗಳು',
+    mod_intro: 'ನಿಮಗೆ ಬೇಕಾದವುಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಿ. ಅರ್ಧ ದಿನದಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಿ ಎರಡು ಮಾಡ್ಯೂಲ್‌ಗಳು, ಪೂರ್ಣ ದಿನದಲ್ಲಿ ಊಟದೊಂದಿಗೆ ನಾಲ್ಕರಿಂದ ಐದು ಮಾಡ್ಯೂಲ್‌ಗಳು ಆಗುತ್ತವೆ. ನೀವು ಏನು ಕಲಿಯಲು ಬಯಸುತ್ತೀರಿ ಎಂದು ತಿಳಿಸಿ; ಅದಕ್ಕೆ ತಕ್ಕಂತೆ ಕಾಂತರಾಜು ದಿನವನ್ನು ರೂಪಿಸುತ್ತಾರೆ.',
+    lbl_learn: 'ಪ್ರಮುಖ ಕಲಿಕೆಗಳು', lbl_take: 'ಉಪಯುಕ್ತತೆ', lbl_hands: 'ಪ್ರಾಯೋಗಿಕ ಅನುಭವ',
+
+    m1_t: 'ಔಷಧೀಯ ಮತ್ತು ಗಿಡಮೂಲಿಕೆ ಸಸ್ಯಗಳ ವೀಕ್ಷಣೆ',
+    m1_o: 'ತೋಟದಲ್ಲಿರುವ ವೈವಿಧ್ಯಮಯ ಔಷಧೀಯ ಸಸ್ಯಗಳ ಪರಿಚಯ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ.',
+    m1_l: 'ಕಾಮ ಕಸ್ತೂರಿ, ಲೆಮನ್ ಗ್ರಾಸ್ (ಮಜ್ಜಿಗೆ ಹುಲ್ಲು), ನವರಂಗಿ, ಪುದೀನಾ, ಮತ್ತು ಕಿರಾತಕದಂತಹ ಸ್ಥಳೀಯ ಔಷಧೀಯ ಎಲೆಗಳ ಗುರುತಿಸುವಿಕೆ, ಅವುಗಳ ವಿಶಿಷ್ಟ ರುಚಿ ಮತ್ತು ಮಾನವನ ಆರೋಗ್ಯದ ಮೇಲಾಗುವ ಪ್ರಯೋಜನಗಳ ಮಾಹಿತಿ.',
+    m1_k: 'ದೈನಂದಿನ ಆರೋಗ್ಯಕ್ಕಾಗಿ ಮನೆಯಂಗಳದ ಗಿಡಗಳನ್ನು ನೈಸರ್ಗಿಕ ಮದ್ದಾಗಿ ಹೇಗೆ ಬಳಸಬಹುದು ಎಂಬುದರ ಅರಿವು.',
+
+    m2_t: 'ಜೇನುಸಾಕಾಣಿಕೆ (Apiculture) ಕಾರ್ಯಾಗಾರ',
+    m2_o: 'ಜೇನುನೊಣಗಳ ಜೀವನ ಚಕ್ರ ಮತ್ತು ಪರಿಸರದ ಮೇಲಿನ ಅವುಗಳ ಪ್ರಭಾವದ ಬಗ್ಗೆ ಆಳವಾದ ಮಾಹಿತಿ.',
+    m2_l: 'ಜೇನುನೊಣಗಳ ಶ್ರೇಣಿ ವ್ಯವಸ್ಥೆ (ಕೆಲಸಗಾರ ಜೇನು, ರಾಜ, ರಾಣಿ), ಅವುಗಳ ಪಾತ್ರಗಳು ಮತ್ತು ಜವಾಬ್ದಾರಿಗಳ ತಿಳುವಳಿಕೆ. ಸ್ಥಳೀಯ ಜೇನು ಪ್ರಭೇದಗಳಾದ ಮುಜಂಟಿ ಜೇನು ಮತ್ತು ಅವುಗಳ ವಿಶಿಷ್ಟ ಜೀವನ ಚಕ್ರದ ಬಗ್ಗೆ ವಿಶೇಷ ಗಮನ.',
+    m2_k: 'ಪೆಟ್ಟಿಗೆ ತೆರೆಯುವುದು, ಜೇನುಹಲಗೆಯನ್ನು ಓದುವುದು, ಮತ್ತು ಆರೋಗ್ಯಕರ ಜೇನುಗೂಡು ಹೇಗಿರುತ್ತದೆ ಎಂಬುದನ್ನು ನೀವೇ ಸಾಕುವ ಮೊದಲು ಅರಿಯುವುದು.',
+
+    m3_t: 'ಸುಸ್ಥಿರ ಶಕ್ತಿ ಮತ್ತು ಗೊಬ್ಬರ ತಯಾರಿಕೆ',
+    m3_o: 'ಸಮಗ್ರ/ವೃತ್ತಾಕಾರದ ಕೃಷಿ (circular farming) ಮತ್ತು ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆಯ ಪ್ರಾಯೋಗಿಕ ಅನುಷ್ಠಾನ.',
+    m3_l: 'ಫಲವತ್ತಾದ ಗೊಬ್ಬರವನ್ನು ತಯಾರಿಸುವಲ್ಲಿ ಎರೆಹುಳುವಿನ ಪ್ರಮುಖ ಪಾತ್ರ. ಅಗತ್ಯ ಮುನ್ನೆಚ್ಚರಿಕೆಗಳೊಂದಿಗೆ ಗೋಬರ್ ಗ್ಯಾಸ್ (ಬಯೋಗ್ಯಾಸ್) ಘಟಕವನ್ನು ಹೇಗೆ ನಿರ್ಮಿಸುವುದು ಮತ್ತು ನಿರ್ವಹಿಸುವುದು ಎಂಬುದರ ಹಂತ-ಹಂತದ ಮಾರ್ಗದರ್ಶನ.',
+    m3_k: 'ಬಯೋಗ್ಯಾಸ್ ಘಟಕಕ್ಕೆ ಎಷ್ಟು ಖರ್ಚಾಗುತ್ತದೆ, ಎಷ್ಟು ಉಳಿತಾಯವಾಗುತ್ತದೆ ಮತ್ತು ವಾರಕ್ಕೆ ಎಷ್ಟು ನಿರ್ವಹಣೆ ಬೇಕು ಎಂಬ ವಾಸ್ತವಿಕ ಚಿತ್ರಣ.',
+
+    m4_t: 'ಜಾನುವಾರು ಮತ್ತು ಪಶುಸಂಗೋಪನೆ',
+    m4_o: 'ಸಮಗ್ರ ಕೃಷಿ ಪ್ರಾಣಿ ನಿರ್ವಹಣೆಯ ಪರಿಚಯ.',
+    m4_l: 'ವಿವಿಧ ಪ್ರಕಾರದ ಹಸುಗಳು, ಕುರಿಗಳು ಮತ್ತು ಮೇಕೆಗಳನ್ನು ಒಳಗೊಂಡಂತೆ ತೋಟದ ವಿವಿಧ ಜಾನುವಾರುಗಳ ನಿರ್ವಹಣೆ ಮತ್ತು ಆರೈಕೆಯ ಅವಶ್ಯಕತೆಗಳ ಮಾಹಿತಿ.',
+
+    m5_t: 'ಕಾಫಿ ಕೃಷಿ ವೀಕ್ಷಣೆ',
+    m5_o: 'ಒಂದು ಅತ್ಯುತ್ತಮ ಕಪ್ ಕಾಫಿಯನ್ನು ಉತ್ಪಾದಿಸಲು ಏನೆಲ್ಲಾ ಶ್ರಮ ಬೇಕು ಎಂಬುದರ ಹಿನ್ನೆಲೆಯ ನೋಟ.',
+    m5_l: 'ಕಾಫಿ ತೋಟದೊಳಗೆ ಒಂದು ನಡಿಗೆ, ಕಾಫಿ ಬೀಜಗಳನ್ನು ನೆಡುವುದು, ಬೆಳೆಸುವುದು ಮತ್ತು ಆರೈಕೆ ಮಾಡುವ ಸಂಕೀರ್ಣತೆಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ.',
+
+    am_tag: 'ಸೌಲಭ್ಯಗಳು ಮತ್ತು ತೋಟದ ಅನುಭವ',
+    am_h2: 'ನೀವು ಪ್ರವಾಸಿ ಗುಂಪಲ್ಲ, ಮನೆಯ ಅತಿಥಿ',
+    am_intro: 'ಗುಂಪಿನ ಗಾತ್ರವನ್ನು ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಚಿಕ್ಕದಾಗಿ ಇರಿಸಲಾಗುತ್ತದೆ. ಕುಟುಂಬ ಏನು ಊಟ ಮಾಡುತ್ತದೋ ಅದನ್ನೇ ನೀವೂ ಉಣ್ಣುತ್ತೀರಿ, ಮತ್ತು ಕುಳಿತು ಪ್ರಶ್ನೆ ಕೇಳಲು ಸಮಯವಿರುತ್ತದೆ.',
+    a1_t: 'ಕುಟುಂಬದ ಆತಿಥ್ಯ', a1_d: 'ಕಾಂತರಾಜು ಮತ್ತು ಅವರ ಕುಟುಂಬದವರು ಆಯೋಜಿಸುವ ಆತ್ಮೀಯ ಹಾಗೂ ಆರಾಮದಾಯಕ ವಾತಾವರಣ.',
+    a2_t: 'ಸಾಂಪ್ರದಾಯಿಕ ಊಟ', a2_d: 'ರುಚಿಯಾದ ಸಾಂಪ್ರದಾಯಿಕ ಮನೆಯೂಟ (ಸ್ಥಳೀಯ ಶೈಲಿಯ ಪುಲಾವ್ ಮತ್ತು ಅನ್ನ-ಸಾಂಬಾರ್).',
+    a3_t: 'ತಾಜಾ ಹಣ್ಣುಗಳು', a3_d: 'ತೋಟದಿಂದ ಹೊಸದಾಗಿ ಕಿತ್ತ ಸ್ಟಾರ್ ಫ್ರೂಟ್, ಸೀಬೆಕಾಯಿ ಮತ್ತು ಪರಂಗಿ ಹಣ್ಣುಗಳ ಸವಿಯುವಿಕೆ.',
+    a4_t: 'ಅಪ್ಪಟ ಕಾಫಿ', a4_d: 'ತೋಟದಲ್ಲಿ ಬೆಳೆದ ಕಾಫಿ ಪುಡಿಯಿಂದ ಮಾಡಿದ ಸ್ವಾಗತ ಮತ್ತು ಬೀಳ್ಕೊಡುಗೆಯ ತಾಜಾ ಕಾಫಿ.',
+
+    pr_tag: 'ಮಾಹಿತಿ', pr_h2: 'ಬರುವ ಮೊದಲು', pr_h3: 'ಭೇಟಿಯ ವಿವರಗಳು',
+    pr_k1: 'ಅವಧಿ',            pr_v1: 'ಅರ್ಧ ದಿನ (ಎರಡು ಮಾಡ್ಯೂಲ್) ಅಥವಾ ಪೂರ್ಣ ದಿನ (ಊಟದೊಂದಿಗೆ ನಾಲ್ಕರಿಂದ ಐದು ಮಾಡ್ಯೂಲ್)',
+    pr_k2: 'ಗುಂಪಿನ ಗಾತ್ರ',     pr_v2: '೨ ರಿಂದ ೧೫ ಅತಿಥಿಗಳು. ದೊಡ್ಡ ಗುಂಪುಗಳಿಗೆ ಮೊದಲೇ ಮಾತನಾಡಿ',
+    pr_k3: 'ಭಾಷೆ',            pr_v3: 'ಕನ್ನಡ. ಎಲ್ಲಾ ತರಬೇತಿ ಕನ್ನಡದಲ್ಲಿಯೇ ನಡೆಯುತ್ತದೆ',
+    pr_k4: 'ದರ',              pr_v4: 'ವಿನಂತಿಯ ಮೇರೆಗೆ — ಮಾಡ್ಯೂಲ್, ಗುಂಪಿನ ಗಾತ್ರ ಮತ್ತು ದಿನಾಂಕ ತಿಳಿದ ನಂತರ ದರ ತಿಳಿಸುತ್ತೇವೆ',
+    pr_k5: 'ತಲುಪುವುದು ಹೇಗೆ',   pr_v5: 'ಕರ್ನಾಟಕದ ಕಾಫಿ ಪ್ರದೇಶ. ದಿನಾಂಕ ಖಚಿತವಾದ ನಂತರ ನಿಖರ ವಿಳಾಸ ಮತ್ತು ನಕ್ಷೆಯ ಲೊಕೇಶನ್ ಕಳುಹಿಸಲಾಗುತ್ತದೆ',
+    pr_k6: 'ತರಬೇಕಾದವು',       pr_v6: 'ಮುಚ್ಚಿದ ಪಾದರಕ್ಷೆ, ಟೋಪಿ, ನೀರಿನ ಬಾಟಲಿ. ಜೇನುಪೆಟ್ಟಿಗೆಯ ಹತ್ತಿರ ನಿಲ್ಲುವವರು ಉದ್ದ ತೋಳಿನ ಬಟ್ಟೆ ಧರಿಸಿ',
+    pr_k7: 'ಜೇನು ಮತ್ತು ಸುರಕ್ಷತೆ', pr_v7: 'ಜೇನು ಅಥವಾ ಕಣಜದ ಅಲರ್ಜಿ ಇದ್ದರೆ ಮೊದಲೇ ತಿಳಿಸಿ. ಜೇನುಗೂಡಿನ ಕೆಲಸ ಕಡ್ಡಾಯವಲ್ಲ — ದೂರದಿಂದ ನೋಡಿಯೂ ಉಳಿದ ಎಲ್ಲಾ ಮಾಡ್ಯೂಲ್‌ಗಳಲ್ಲಿ ಭಾಗವಹಿಸಬಹುದು',
+    pr_k8: 'ಮಕ್ಕಳು',          pr_v8: 'ಹಿರಿಯರ ಜೊತೆಗೆ ಸ್ವಾಗತ. ಜೇನುಗೂಡು ಮುಟ್ಟುವುದು ೧೨ ವರ್ಷ ಮೇಲ್ಪಟ್ಟವರಿಗೆ ಮಾತ್ರ',
+    pr_k9: 'ಬದಲಾವಣೆಗಳು',      pr_v9: 'ಭೇಟಿಗೆ ೭೨ ಗಂಟೆಗಳ ಮೊದಲು ಉಚಿತವಾಗಿ ದಿನಾಂಕ ಬದಲಾಯಿಸಬಹುದು. ಹೋಸ್ಟ್ ರದ್ದುಗೊಳಿಸಿದರೆ ಅಥವಾ ಮಳೆಯಿಂದ ಭೇಟಿ ನಿಂತರೆ ಪೂರ್ಣ ಹಣ ಹಿಂತಿರುಗಿಸಲಾಗುತ್ತದೆ',
+
+    bk_h3: 'ಈ ಭೇಟಿಗೆ ವಿನಂತಿಸಿ',
+    bk_p: 'ನಿಮ್ಮ ದಿನಾಂಕ, ಗುಂಪಿನ ಗಾತ್ರ ಮತ್ತು ಬೇಕಾದ ಮಾಡ್ಯೂಲ್‌ಗಳನ್ನು ತಿಳಿಸಿ. ಹೋಸ್ಟ್ ಜೊತೆ ಖಚಿತಪಡಿಸಿಕೊಂಡು ೨೪ ಗಂಟೆಗಳ ಒಳಗೆ ದರದೊಂದಿಗೆ ಉತ್ತರಿಸುತ್ತೇವೆ.',
+    bk_wa: 'ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ವಿನಂತಿಸಿ', bk_mail: 'ಇಮೇಲ್ ಮೂಲಕ ಸಂಪರ್ಕಿಸಿ',
+    bk_fine: 'ದಿನಾಂಕ ಮತ್ತು ದರ ಲಿಖಿತವಾಗಿ ಖಚಿತವಾಗುವವರೆಗೆ ಯಾವುದೇ ಹಣ ಪಡೆಯುವುದಿಲ್ಲ. ನೀವು ಪಾವತಿಸುವ ಮೊತ್ತದ ೭೦% ಹೋಸ್ಟ್ ರೈತರಿಗೆ ಸೇರುತ್ತದೆ.',
+    host_note: 'ನೀವೂ ಇಂತಹ ಒಂದು ದಿನವನ್ನು ಆಯೋಜಿಸಬಲ್ಲ ರೈತರೇ? ಪಟ್ಟಿ, ವಿಚಾರಣೆ, ಹಣಕಾಸು ಮತ್ತು ಅತಿಥಿ ಬೆಂಬಲವನ್ನು ಮುಜಂತಿ ನಿರ್ವಹಿಸುತ್ತದೆ — ನಿಮಗೆ ೭೦% ಸಿಗುತ್ತದೆ.',
+    host_link: 'ಹೋಸ್ಟ್ ಆಗುವುದು ಹೇಗೆ ನೋಡಿ →'
+  }
+};
+
+function setLang(lang) {
+  const dict = I18N[lang] || I18N.en;
+  document.body.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.dataset.i18n];
+    if (v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+  try { localStorage.setItem('mujanti_lang', lang); } catch (err) { /* private mode */ }
+  if (typeof gtag === 'function') gtag('event', 'fv_lang', { lang: lang, page: 'sarvaani' });
+}
+
+document.querySelectorAll('.lang-btn').forEach(b =>
+  b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+(function initLang() {
+  let saved = null;
+  try { saved = localStorage.getItem('mujanti_lang'); } catch (err) { /* private mode */ }
+  const browserKn = (navigator.languages || [navigator.language || '']).some(l => String(l).toLowerCase().startsWith('kn'));
+  setLang(saved || (browserKn ? 'kn' : 'en'));
+})();
+
 </script>
 
 </body>

@@ -1,5 +1,5 @@
 {
-  "_readme": "Edit this file to add / change farm visit listings. The page reads it live. booking_mode: 'whatsapp' sends every booking button to WhatsApp (use this until the Google Forms exist); switch it to 'form' once booking_form_base and the entry.XXXXX ids below are real. To get those: open the form, Send -> link -> 'Get pre-filled link', fill dummy values, copy the URL and read the entry numbers out of it. See farm-visits/automation/SETUP.md.",
+  "_readme": "Farm visit listings shown on /farm-visits/. Edit this file to add or change a farm. booking_mode 'whatsapp' routes every booking button to WhatsApp; 'form' uses the booking form instead.",
   "demo_data": false,
   "forms": {
     "booking_mode": "whatsapp",
@@ -41,8 +41,7 @@
       "min_pax": 2,
       "max_pax": 15,
       "languages": [
-        "Kannada",
-        "English"
+        "Kannada"
       ],
       "emoji": "🐝",
       "image": "../assets/farm-visits/sarvaani-apiculture-01.jpg",
@@ -104,7 +103,10 @@
         "Farm-to-table meals — local pulao, rice and sambar",
         "Fresh farm fruit tasting",
         "Estate-brewed coffee"
-      ]
+      ],
+      "language_note": "All sessions are conducted in Kannada.",
+      "title_kn": "ಸರ್ವಾಣಿ ತೋಟ: ಜೇನು, ಔಷಧೀಯ ಸಸ್ಯಗಳು ಮತ್ತು ಕಾಫಿ",
+      "summary_kn": "ಒಂದೇ ತೋಟದಲ್ಲಿ ಐದು ಪ್ರಾಯೋಗಿಕ ತರಬೇತಿ ಮಾಡ್ಯೂಲ್‌ಗಳು — ಔಷಧೀಯ ಸಸ್ಯಗಳ ವೀಕ್ಷಣೆ, ಜೇನುಸಾಕಾಣಿಕೆ ಕಾರ್ಯಾಗಾರ, ಎರೆಗೊಬ್ಬರ ಮತ್ತು ಗೋಬರ್ ಗ್ಯಾಸ್, ಜಾನುವಾರು ಆರೈಕೆ, ಹಾಗೂ ಕಾಫಿ ತೋಟದ ನಡಿಗೆ. ಕಾಂತರಾಜು ಮತ್ತು ಅವರ ಕುಟುಂಬದ ಆತಿಥ್ಯ, ಮನೆಯೂಟ ಮತ್ತು ತೋಟದ ಕಾಫಿಯೊಂದಿಗೆ."
     }
   ]
 }
