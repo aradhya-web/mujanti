@@ -6,7 +6,6 @@
     "logo_emoji": "🌾",
     "established": "2025"
   },
-
   "hero": {
     "badge_text": "Your Strategic Capacity Partner",
     "headline_line1": "Empowering",
@@ -17,13 +16,29 @@
     "cta_primary": "Book Free Consultation",
     "cta_secondary": "View Impact Stories",
     "stats": [
-      { "number": 500, "suffix": "+", "label": "Farmers Reached" },
-      { "number": 20,  "suffix": "+", "label": "Impact Films Produced" },
-      { "number": 28,  "prefix": "₹", "suffix": "L+", "label": "Carbon Income Unlocked" },
-      { "number": 10,  "suffix": "K+", "label": "FPO Ecosystem Reach" }
+      {
+        "number": 500,
+        "suffix": "+",
+        "label": "Farmers Reached"
+      },
+      {
+        "number": 20,
+        "suffix": "+",
+        "label": "Impact Films Produced"
+      },
+      {
+        "number": 28,
+        "prefix": "₹",
+        "suffix": "L+",
+        "label": "Carbon Income Unlocked"
+      },
+      {
+        "number": 10,
+        "suffix": "K+",
+        "label": "FPO Ecosystem Reach"
+      }
     ]
   },
-
   "contact": {
     "whatsapp": "+919480356357",
     "email": "ashok@mujanti.com",
@@ -32,7 +47,6 @@
     "calendly_url": "https://calendly.com/mujanti/consultation",
     "address": "India"
   },
-
   "social": {
     "youtube": "#",
     "linkedin": "#",
@@ -40,17 +54,15 @@
     "facebook": "#",
     "whatsapp_community": "#"
   },
-
   "legal": {
     "company_name": "Mujanti Services Pvt. Ltd.",
-    "cin": "U01XXXXXXXXXXXXX",
-    "gst": "XXXXXXXXXXXX",
+    "cin": "",
+    "gst": "",
     "year": "2025"
   },
-
   "seo": {
     "google_analytics_id": "G-XXXXXXXXXX",
     "google_search_console": "",
-    "og_image": "https://mujanti.in/og-image.jpg"
+    "og_image": "https://mujanti.com/assets/og-image.jpg"
   }
 }
